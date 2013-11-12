@@ -20,8 +20,8 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 public  String[] numbers;
 	 Animation animFadein;
 	 int i =0 ;
-	   public Integer[] mThumbIds = new Integer[30];
-	   public String[] cThumbIds = new String[30];
+	   public Integer[] mThumbIds = new Integer[24];
+	   public String[] cThumbIds = new String[24];
 	   
 	   
 	   public ImageGridAdapter(Context c){
@@ -52,7 +52,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	        	//String name = cn.getName().toString();
 	        //	int NameINT = Integer.parseInt(cn.getName());
 	       	    mThumbIds[i] = R.drawable.imagefun;
-	       	 System.out.println("putting on images!");
+	       	 System.out.println("putting on images!" + i);
 	       	    cThumbIds[i] = cn.getName();
 	       	
 	       	 System.out.println("LOOP STRING:"+ cThumbIds[i]);
@@ -61,10 +61,10 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	       	 if ( animeOPandEd.get(i).getName().equals("naruto")){
 	       		 System.out.println("FUCK! YEAH");
 	       	//	 String imageUri = cn.getName();
-	       		int imagelink = mContext.getResources().getIdentifier("naruto", "drawable", mContext.getPackageName());
+	       //		int imagelink = mContext.getResources().getIdentifier("naruto", "drawable", mContext.getPackageName());
 
-	       		System.out.println("my imageResource: "+ imagelink +" real imageResource"+ R.drawable.imagefun3 );
-	       		 mThumbIds[i] = imagelink;
+	       	//	System.out.println("my imageResource: "+ imagelink +" real imageResource"+ R.drawable.imagefun3 );
+	       		// mThumbIds[i] = imagelink;
 	       	 }
 	       		
 	     
