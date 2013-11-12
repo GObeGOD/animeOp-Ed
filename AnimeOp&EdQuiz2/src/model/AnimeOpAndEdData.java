@@ -13,20 +13,38 @@ public class AnimeOpAndEdData {
     String question3;
     String question4;
     String image;
+    String level;
 
     
     public AnimeOpAndEdData(){
     	
     }
-    public AnimeOpAndEdData(int id, String name, String song){
-    	this.id = id;
-        this.name = name;
-        this.song = song;
-    }
+    
     public AnimeOpAndEdData(String name, String song){
         this.name = name;
         this.song = song;
     }
+    
+   // making new animeOpandEd entry 
+    //to0 much args 
+    public AnimeOpAndEdData(int id, String name, String song, String artist
+    							, String music, String youtube, String answer, String question1
+    							, String question2,String question3,String question4,String image,String level){
+    	this.id = id;
+        this.name = name;
+        this.artist = artist;
+        this.music = music;
+        this.youtube = youtube;
+        this.answer = answer;
+        
+        this.question1 = question1;
+        this.question2 = question2;
+        this.question3 = question3;
+        this.question4 = question4;
+        this.image = image;
+        
+    }
+ 
     public int getID(){
         return this.id;
     }

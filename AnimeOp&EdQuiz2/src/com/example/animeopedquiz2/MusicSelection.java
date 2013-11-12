@@ -2,6 +2,8 @@ package com.example.animeopedquiz2;
 
 
 
+import model.AnimeOpAndEdData;
+import model.DatabaseHandler;
 import model.ImageGridAdapter;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +17,7 @@ public class MusicSelection extends Activity  {
 	public final static String EXTRA_MESSAGE = "com.example.animeopedquiz2.MESSAGE";
 
 	GridView gridView;
+	DatabaseHandler db;
 	
 	 
 	public  String[] numbers;
@@ -23,27 +26,72 @@ public class MusicSelection extends Activity  {
   protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.music_selection);
-	    	
-		/*	  // Get the message from the intent
-		    Intent intent = getIntent();
-		    String message = intent.getStringExtra("levelId");
-		    numbers = new String[]{"asdas","asdasd",message,"im in a grid","GRID","qwe","435","34534","bleach"};
-
-		    // Create the text view
-		    TextView textView = new TextView(this);
-		    textView.setTextSize(40);
-		    textView.setText(message);
-		        // Set the text view as the activity layout
-		   // setContentView(textView);
-*/
-			
 	        
+	        db = new DatabaseHandler(getApplicationContext())  ;
+	        
+		  // Get the level from the intent
+		    Intent intent = getIntent();
+		    String level = intent.getStringExtra("levelId");
+		 
+            System.out.println("here is the level the user clicked" + level);
+		  
+         //   insertLevel(level);
+         
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                    , "question1", "question2", "question3", "question4", "image","level1"));
+            
 	        GridView gridView = (GridView) findViewById(R.id.gridView1);
-	      //  final ArrayList<String>  gridItems = new ArrayList<String>();
+	      /// final ArrayList<String>  gridItems = new ArrayList<String>();
 	        
 	        // Instance of ImageAdapter Class
 	        gridView.setAdapter(new  ImageGridAdapter(this));
-	       // ImageView view = (ImageView)findViewById(R.id.gridView1);
+	      // ImageView view = (ImageView)findViewById(R.id.gridView1);
 	        
 	   
 		        
@@ -62,7 +110,36 @@ public class MusicSelection extends Activity  {
 			});
 		
 		}
-	    
+	    public void insertLevel(String level){
+	    	 System.out.println("ABOUT TO COMPARE " + level + " with level1" );
+	    	 
+	    	if(level.equals("level1")){
+	    		
+           System.out.println("ITS A LEVEL 1");
+        
+           
+     
+           
+          // DatabaseHandler db = new DatabaseHandler(c);
+	         
+           
+	        /**
+	         * CRUD Operations
+	         * */
+	        // Inserting Contacts
+	   
+	      //  db.addContact(new Contact("Srinivas", "9199999999"));
+	      
+        //   System.out.println("count of db"+ db.getAnimeOpandEDCount("level1"));
+           
+           
+           
+           
+ 
+	    	}
+	    	
+	    	
+	    }
 	  private void changeAct(String message){
 		  Intent intent = new Intent(this, MusicPlayActivity.class);
 		  intent.putExtra(EXTRA_MESSAGE, message);
