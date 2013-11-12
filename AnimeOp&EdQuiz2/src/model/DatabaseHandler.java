@@ -64,6 +64,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	    values.put(KEY_NAME, opandEd.getName()); // anime Name
 	    values.put(KEY_Song, opandEd.getSong()); // anime song
 	    
+	    
+	 /*   values.put(KEY_Artist, opandEd.getArtist()); 
+	    values.put(KEY_Music, opandEd.getMusic()); 
+	    values.put(KEY_Youtube, opandEd.getYoutube()); 
+	    values.put(KEY_Answer, opandEd.getAnswer()); 
+	    values.put(KEY_Question1, opandEd.getQuestion1()); 
+	    values.put(KEY_Question2, opandEd.getQuestion1()); 
+	    values.put(KEY_Question3, opandEd.getQuestion1()); 
+	    values.put(KEY_Question4, opandEd.getQuestion1()); 
+	    values.put(KEY_Image, opandEd.image); 	   
+	    values.put(KEY_Level, opandEd.level); */
+	    
 	 
 	    // Inserting Row
 	    db.insert(TABLE_AnimeOPandEd, null, values);

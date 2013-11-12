@@ -42,6 +42,7 @@ public class AnimeOpAndEdData {
         this.question3 = question3;
         this.question4 = question4;
         this.image = image;
+        this.level = level;
         
     }
  
@@ -91,6 +92,14 @@ public class AnimeOpAndEdData {
     
     public void setYoutube(String youtube){
     	 this.youtube = youtube;
+    }
+    
+    public String getAnswer(){
+    	return this.answer;
+    }
+    
+    public void setAnswer(String answer){
+    	 this.answer = answer;
     }
     
     

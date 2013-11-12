@@ -59,12 +59,13 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	        	// System.out.println("LOOP:"+ i);
 	        	    
 	       	 if ( animeOPandEd.get(i).getName().equals("naruto")){
-	       		 System.out.println("FUCK! YEAH");
-	       	//	 String imageUri = cn.getName();
-	       //		int imagelink = mContext.getResources().getIdentifier("naruto", "drawable", mContext.getPackageName());
+	       		 
+	       		 String imageUri = cn.getImage();
+	       		System.out.println("YEAH" + "getImage() = " + imageUri + cn.getName() + cn.id + cn.getMusic() +  cn.getYoutube());
+	       		int imagelink = mContext.getResources().getIdentifier("naruto", "drawable", mContext.getPackageName());
 
-	       	//	System.out.println("my imageResource: "+ imagelink +" real imageResource"+ R.drawable.imagefun3 );
-	       		// mThumbIds[i] = imagelink;
+	       		System.out.println("my imageResource: "+ imagelink +" real imageResource"+ R.drawable.imagefun3 );
+	       		 mThumbIds[i] = imagelink;
 	       	 }
 	       		
 	     
