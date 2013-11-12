@@ -47,7 +47,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	        List<AnimeOpAndEdData> animeOPandEd = db.getAllAnimeOpAndEd();       
 	         
 	        for (AnimeOpAndEdData cn : animeOPandEd) {
-	        
+	        Log.d("stating",  "staring loop");
 	        if(i < mThumbIds.length){
 	        	//String name = cn.getName().toString();
 	        //	int NameINT = Integer.parseInt(cn.getName());

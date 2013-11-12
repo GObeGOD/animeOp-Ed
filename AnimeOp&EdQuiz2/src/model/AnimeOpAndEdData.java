@@ -137,5 +137,13 @@ public class AnimeOpAndEdData {
     public void SetImage(String image){
     	 this.image = image;
     }
+    
+    public String getLevel(){
+    	return this.image;
+    }
+    
+    public void SetLevel(String level){
+    	 this.level = level;
+    }
 
 }
