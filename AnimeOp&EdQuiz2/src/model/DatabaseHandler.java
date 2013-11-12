@@ -1,10 +1,12 @@
 package model;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -15,7 +17,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final int DATABASE_VERSION = 1;
 
 	// Database Name
-	private static final String DATABASE_NAME = "AnimeOpandEdManager";
+	public static final String DATABASE_NAME = "AnimeOpandEdManager";
 
 	// Contacts table name
 	private static final String TABLE_AnimeOPandEd = "AnimeOPandEd";
@@ -134,7 +136,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				animeOpandEdList.add(animeOpandEd);
 			} while (cursor.moveToNext());
 		}
-
+		
 		// return contact list
 		return animeOpandEdList;
 
@@ -145,8 +147,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 		List<AnimeOpAndEdData> animeOpandEdList = new ArrayList<AnimeOpAndEdData>();
 		// Select All Query
-		String selectQuery = "SELECT  * FROM  " + TABLE_AnimeOPandEd + "WHERE"
-				+ KEY_NAME + "=" + level;
+		String selectQuery = "SELECT  * FROM  " + TABLE_AnimeOPandEd + " WHERE "
+				+ KEY_Level + " = " + "level1";
+		
+		Log.d("getting all anime from level",  selectQuery);
 		// String selectQuery = "SELECT  * FROM " + TABLE_TODO + " WHERE "
 		// + KEY_ID + " = " + todo_id;
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -181,10 +185,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	// Getting AnimeOPandEd level count Count
 	public int getAnimeOpandEDCount(String level) {
+		
+		
 		String countQuery = "SELECT  * FROM " + TABLE_AnimeOPandEd;
-		System.out.println(countQuery);
-		// String selectQuery = "SELECT  * FROM " + TABLE_TODO + " WHERE " +
-		// KEY_ID + " = " + todo_id;
+		
+
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.rawQuery(countQuery, null);
 		cursor.close();
@@ -228,6 +233,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		db.delete(TABLE_AnimeOPandEd, KEY_ID + " = ?",
 				new String[] { String.valueOf(animeOpandED.getID()) });
 		db.close();
+	}
+	
+	public  boolean doesDatabaseExist(ContextWrapper context, String dbName) {
+	    File dbFile=context.getDatabasePath(dbName);
+	    return dbFile.exists();
 	}
 
 	@Override

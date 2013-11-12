@@ -8,16 +8,19 @@ import model.ImageGridAdapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+
 
 public class MusicSelection extends Activity  {
 	public final static String EXTRA_MESSAGE = "com.example.animeopedquiz2.MESSAGE";
 
 	GridView gridView;
 	DatabaseHandler db;
+	public String levelname; 
 	
 	 
 	public  String[] numbers;
@@ -34,7 +37,7 @@ public class MusicSelection extends Activity  {
 		    String level = intent.getStringExtra("levelId");
 		 
             System.out.println("here is the level the user clicked" + level);
-		  
+		  levelname = level;
            insertLevel(level);
          
           
@@ -63,74 +66,80 @@ public class MusicSelection extends Activity  {
 			});
 		
 		}
-	    public void insertLevel(String level){
-	    	 System.out.println("ABOUT TO COMPARE " + level + " with level1" );
+  
+  
+  public void insertLevel(String level){
+	    	// System.out.println("ABOUT TO COMPARE " + level + " with level1" );
 	    	 
-	    	if(level.equals("level1")){
-	    		
-           System.out.println("ITS A LEVEL 1");
+	 if(level.equals("level1")){
+		 System.out.println("ITS A LEVEL 1");
+		 
+	    if(db.doesDatabaseExist(getApplication(),DatabaseHandler.DATABASE_NAME) == false ){
+             Log.d("insertLevel: ", " DB NOT Exist! insert level1");
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "naruto","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "naruto","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "naruto","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "naruto","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "naruto","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+            
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "naruto","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "naruto","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun2","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "naruto","level1"));
+             db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
+                     , "question1", "question2", "question3", "question4", "imagefun3","level1"));
+            
+           
+             db.close();
+	    }
+          
         
            
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
-           db.addAnimeOPandED(new AnimeOpAndEdData(0, "naruto", "go", "artist", "music", "youtube", "answer"
-                   , "question1", "question2", "question3", "question4", "imagefun3","level1"));
 
-          // DatabaseHandler db = new DatabaseHandler(c);
-	         
-           
-	        /**
-	         * CRUD Operations
-	         * */
-	        // Inserting Contacts
+          // db = new DatabaseHandler(getApplicationContext())  ;
+        
+         
 	   
-	      //  db.addContact(new Contact("Srinivas", "9199999999"));
+	     
 	      
-        //   System.out.println("count of db"+ db.getAnimeOpandEDCount("level1"));
+      //    System.out.println("count of db"+ db.getAnimeOpandEDCount("level1"));
            
            
            

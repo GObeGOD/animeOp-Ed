@@ -13,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.example.animeopedquiz2.MusicSelection;
 import com.example.animeopedquiz2.R;
 
 public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
@@ -22,6 +23,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 int i =0 ;
 	   public Integer[] mThumbIds = new Integer[24];
 	   public String[] cThumbIds = new String[24];
+	   public MusicSelection   musicslection;
 	   
 	   
 	   public ImageGridAdapter(Context c){
@@ -33,7 +35,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	        }
 	        
 	        DatabaseHandler db = new DatabaseHandler(c);
-	         
+	         musicslection = new MusicSelection();
 	        /**
 	         * CRUD Operations
 	         * */
@@ -43,11 +45,10 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	      
 	         
 	        // Reading all contacts
-	        Log.d("Reading: ", "Reading all contacts.."); 
-	        List<AnimeOpAndEdData> animeOPandEd = db.getAllAnimeOpAndEd();       
+	        Log.d("Reading: ", "Reading all Anime Music.."); 
+	        List<AnimeOpAndEdData> animeOPandEd = db.getAnimeOpAndEdlevel(musicslection.levelname);       
 	         
 	        for (AnimeOpAndEdData cn : animeOPandEd) {
-	        Log.d("stating",  "staring loop");
 	        if(i < mThumbIds.length){
 	        	//String name = cn.getName().toString();
 	        //	int NameINT = Integer.parseInt(cn.getName());
@@ -59,23 +60,24 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	        	// System.out.println("LOOP:"+ i);
 	        	    
 	       	 if ( animeOPandEd.get(i).getName().equals("naruto")){
-	       		 
+ 
 	       		 String imageUri = cn.getImage();
 	       		System.out.println("YEAH" + "getImage() = " + imageUri + cn.getName() + cn.id + cn.getMusic() +  cn.getYoutube());
-	       		int imagelink = mContext.getResources().getIdentifier("naruto", "drawable", mContext.getPackageName());
+	       		int imagelink = mContext.getResources().getIdentifier(imageUri, "drawable", mContext.getPackageName());
 
 	       		System.out.println("my imageResource: "+ imagelink +" real imageResource"+ R.drawable.imagefun3 );
 	       		 mThumbIds[i] = imagelink;
 	       	 }
 	       		
-	     
-		      
+	        
+        	 Log.d("AnimeOpandEd list Loop: ", "listItem:" + cn.getID()); 
+
 	        i++;
 	        
 	        
 	        }
 	       
-	        	
+	       
 	    //        String log = "Id: "+cn.getID()+" ,Name: " + cn.getName() + " ,Song: " + cn.getSong();
 	                // Writing Contacts to log
 	    //    Log.d("Name: ", log);
