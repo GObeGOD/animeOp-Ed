@@ -148,7 +148,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		List<AnimeOpAndEdData> animeOpandEdList = new ArrayList<AnimeOpAndEdData>();
 		// Select All Query
 		String selectQuery = "SELECT  * FROM  " + TABLE_AnimeOPandEd + " WHERE "
-				+ KEY_Level + " = " + "level1";
+				+ KEY_NAME + " = " + "naruto";
 		
 		Log.d("getting all anime from level",  selectQuery);
 		// String selectQuery = "SELECT  * FROM " + TABLE_TODO + " WHERE "
