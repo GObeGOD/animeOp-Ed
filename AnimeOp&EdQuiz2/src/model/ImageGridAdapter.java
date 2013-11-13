@@ -45,8 +45,9 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	      
 	         
 	        // Reading all contacts
-	        Log.d("Reading: ", "Reading all Anime Music.."); 
-	        List<AnimeOpAndEdData> animeOPandEd = db.getAnimeOpAndEdlevel(musicslection.levelname);       
+	        Log.d("Reading: ", "Reading all Anime Music.." + musicslection.levelname ); 
+	     //   List<AnimeOpAndEdData> animeOPandEd = db.getAnimeOpAndEdlevel(musicslection.levelname);       
+	         List<AnimeOpAndEdData> animeOPandEd = db.getAllAnimeOpAndEd();       
 	         
 	        for (AnimeOpAndEdData cn : animeOPandEd) {
 	        if(i < mThumbIds.length){

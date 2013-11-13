@@ -29,15 +29,15 @@ public class MusicSelection extends Activity  {
   protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.music_selection);
-	        
-	        db = new DatabaseHandler(getApplicationContext())  ;
-	        
-		  // Get the level from the intent
+	        // Get the level from the intent
 		    Intent intent = getIntent();
 		    String level = intent.getStringExtra("levelId");
 		 
             System.out.println("here is the level the user clicked" + level);
 		  levelname = level;
+	        db = new DatabaseHandler(getApplicationContext())  ;
+	        
+		
            insertLevel(level);
          
           
