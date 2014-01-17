@@ -1,12 +1,12 @@
 package com.example.animeopedquiz2;
 
-import android.app.Activity;
+import model.BaseActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-public class LevelActivity extends Activity{
+public class LevelActivity extends BaseActivity{
 
 	
 	

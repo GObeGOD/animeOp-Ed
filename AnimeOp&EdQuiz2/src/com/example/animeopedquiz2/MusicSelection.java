@@ -3,9 +3,9 @@ package com.example.animeopedquiz2;
 
 
 import model.AnimeOpAndEdData;
+import model.BaseActivity;
 import model.DatabaseHandler;
 import model.ImageGridAdapter;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +15,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 
-public class MusicSelection extends Activity  {
+public class MusicSelection extends BaseActivity  {
 	public final static String EXTRA_MESSAGE = "com.example.animeopedquiz2.MESSAGE";
 
 	GridView gridView;

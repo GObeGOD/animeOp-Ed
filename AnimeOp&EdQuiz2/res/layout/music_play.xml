@@ -11,7 +11,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="52dp"
-        android:background="@drawable/music_playbutton"
+        android:background="@null"
+        android:src="@drawable/music_playbutton"
         android:contentDescription="@string/contentDescriptionMusicPlay" />
 
     <SeekBar

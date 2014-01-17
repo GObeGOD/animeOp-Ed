@@ -35,7 +35,7 @@
             
            <activity android:name=".MusicPlayActivity"  
           android:parentActivityName=".MusicSelection" 
-            android:label="@string/musicPlayActivity">
+          android:label="@string/musicPlayActivity">
             </activity>
     </application>
 

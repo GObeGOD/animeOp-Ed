@@ -1,6 +1,6 @@
 package com.example.animeopedquiz2;
 
-import android.app.Activity;
+import model.BaseActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends BaseActivity implements OnClickListener {
 	
 	private Button playButton;
 

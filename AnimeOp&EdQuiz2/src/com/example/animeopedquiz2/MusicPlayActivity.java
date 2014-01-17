@@ -4,21 +4,22 @@ package com.example.animeopedquiz2;
 
 import java.io.IOException;
 
+import model.BaseActivity;
 import model.Utilities;
-import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
 
-public class MusicPlayActivity extends Activity implements OnCompletionListener,SeekBar.OnSeekBarChangeListener  {
+public class MusicPlayActivity extends BaseActivity implements OnCompletionListener,SeekBar.OnSeekBarChangeListener  {
 	
 	 private ImageButton musicPlayButton;
 	 private  MediaPlayer mediaPlayer;
@@ -176,13 +177,24 @@ public class MusicPlayActivity extends Activity implements OnCompletionListener,
 		
 	}
 	
+
+	
+	 @Override
+	 public void onBackPressed() {
+		 System.out.println("HELP!!!!!!");
+		 this.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK)); 
+
+		 finish();
+	 }
+	
 	 @Override
      public void onDestroy(){
      super.onDestroy();
      mHandler.removeCallbacks(mUpdateTimeTask);
      mediaPlayer.release();
      }
- 
-	
+	 
+
+						
 	
 }

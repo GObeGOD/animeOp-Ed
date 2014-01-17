@@ -2,7 +2,7 @@
 
  <selector xmlns:android="http://schemas.android.com/apk/res/android">
      
-      <item android:drawable="@drawable/playbuttonpressed"
+    <item android:drawable="@drawable/playbuttonpressed"
         android:state_focused="true"
         android:state_pressed="true" />
     <item android:drawable="@drawable/playbuttonpressed"
