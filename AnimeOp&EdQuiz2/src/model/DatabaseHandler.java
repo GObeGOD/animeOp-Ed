@@ -111,6 +111,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		String selectQuery = "SELECT  * FROM " + TABLE_AnimeOPandEd;
 
 		SQLiteDatabase db = this.getWritableDatabase();
+		
+		
+		
+		
 		Cursor cursor = db.rawQuery(selectQuery, null);
 
 		// looping through all rows and adding to list
@@ -147,37 +151,55 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	//	Log.d("List AnimeOpAndEdData",  level);
 		List<AnimeOpAndEdData> animeOpandEdList = new ArrayList<AnimeOpAndEdData>();
 		// Select All Query
-		String selectQuery = "SELECT  * FROM  " + TABLE_AnimeOPandEd + " WHERE "
-				+ KEY_ID + " = " + "0";
+	/*	String selectQuery = "SELECT  * FROM  " + TABLE_AnimeOPandEd + " WHERE "
+				+ KEY_ID + " = " + "0";*/
+
+		/*String selectQuery = "SELECT  * FROM  " + TABLE_AnimeOPandEd + " WHERE "
+				+ KEY_Level + " = " + "level1";*/
 		
-		Log.d("getting all anime from level",  selectQuery);
+		//String selectQuery = "SELECT  * FROM " + TABLE_AnimeOPandEd + "WHERE KEY_Level = ?";
+		
+	
+		//	sqLiteDatabase.rawQuery(queryString, whereArgs);
+		
+		//Log.d("getting all anime from level",  selectQuery);
 		// String selectQuery = "SELECT  * FROM " + TABLE_TODO + " WHERE "
 		// + KEY_ID + " = " + todo_id;
+		//String[] whereArgs = new String[] {
+			//    "level1"
+		//	};; 
 		SQLiteDatabase db = this.getWritableDatabase();
-		Cursor cursor = db.rawQuery(selectQuery, null);
+		String[] columns= {KEY_NAME, KEY_Song, KEY_Artist, KEY_Music , KEY_Youtube , KEY_Answer , KEY_Question1 ,KEY_Question2 , KEY_Question3,	 KEY_Question4 ,KEY_Image,KEY_Level};
+		Cursor cursor = db.query(TABLE_AnimeOPandEd, columns, null, null, null, null, null,null);
+		
 
 		// looping through all rows and adding to list
-		if (cursor.moveToFirst()) {
-			do {
-				AnimeOpAndEdData animeOpandEd = new AnimeOpAndEdData();
-				animeOpandEd.setID(Integer.parseInt(cursor.getString(0)));
-				animeOpandEd.setName(cursor.getString(1));
-				animeOpandEd.setSong(cursor.getString(2));
-				animeOpandEd.setArtist((cursor.getString(3)));
-				animeOpandEd.setMusic((cursor.getString(4)));
-				animeOpandEd.setYoutube((cursor.getString(5)));
-				animeOpandEd.setAnswer((cursor.getString(6)));
-				animeOpandEd.setQuestion1((cursor.getString(7)));
-				animeOpandEd.setQuestion2((cursor.getString(8)));
-				animeOpandEd.setQuestion3((cursor.getString(9)));
-				animeOpandEd.setQuestion4((cursor.getString(10)));
-				animeOpandEd.SetImage((cursor.getString(11)));
-				animeOpandEd.SetLevel((cursor.getString(12)));
-				// Adding contact to list
-				animeOpandEdList.add(animeOpandEd);
-			} while (cursor.moveToNext());
-		}
+		  if (cursor != null){
 
+			  if (cursor.moveToFirst()) {
+					do {
+						AnimeOpAndEdData animeOpandEd = new AnimeOpAndEdData();
+						animeOpandEd.setID(Integer.parseInt(cursor.getString(0)));
+						animeOpandEd.setName(cursor.getString(1));
+						animeOpandEd.setSong(cursor.getString(2));
+						animeOpandEd.setArtist((cursor.getString(3)));
+						animeOpandEd.setMusic((cursor.getString(4)));
+						animeOpandEd.setYoutube((cursor.getString(5)));
+						animeOpandEd.setAnswer((cursor.getString(6)));
+						animeOpandEd.setQuestion1((cursor.getString(7)));
+						animeOpandEd.setQuestion2((cursor.getString(8)));
+						animeOpandEd.setQuestion3((cursor.getString(9)));
+						animeOpandEd.setQuestion4((cursor.getString(10)));
+						animeOpandEd.SetImage((cursor.getString(11)));
+						animeOpandEd.SetLevel((cursor.getString(12)));
+						// Adding contact to list
+						animeOpandEdList.add(animeOpandEd);
+					} while (cursor.moveToNext());
+				}
+
+		  }else{
+             Log.e("getallSOngs","Did not get songs by level"  );
+		  }		
 		// return contact list
 		return animeOpandEdList;
 

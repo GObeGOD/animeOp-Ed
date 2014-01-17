@@ -20,7 +20,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 private Context mContext;
 	 public  String[] numbers;
 	 Animation animFadein;
-	 int i =0 ;
+	 int i = 0 ;
 	   public Integer[] mThumbIds = new Integer[24];
 	   public String[] cThumbIds = new String[24];
 	   public MusicSelection   musicslection;
@@ -46,8 +46,9 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	         
 	        // Reading all contacts
 	        Log.d("Reading: ", "Reading all Anime Music.." + musicslection.levelname ); 
-	     //   List<AnimeOpAndEdData> animeOPandEd = db.getAnimeOpAndEdlevel(musicslection.levelname);       
-	         List<AnimeOpAndEdData> animeOPandEd = db.getAllAnimeOpAndEd();       
+	       List<AnimeOpAndEdData> animeOPandEd = db.getAnimeOpAndEdlevel("level1");       
+	      // List<AnimeOpAndEdData> animeOPandEd = db.getAnimeOpAndEdlevel(musicslection.levelname);       
+	       //  List<AnimeOpAndEdData> animeOPandEd = db.getAllAnimeOpAndEd();       
 	         
 	        for (AnimeOpAndEdData cn : animeOPandEd) {
 	        if(i < mThumbIds.length){
