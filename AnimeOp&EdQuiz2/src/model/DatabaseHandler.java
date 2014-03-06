@@ -169,6 +169,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 			//    "level1"
 		//	};; 
 		SQLiteDatabase db = this.getWritableDatabase();
+
+	//	Cursor mCount= db.rawQuery("select count(*) from AnimeOPandEd where level='" + level1 + "' and pwd='" + loginpass +"'", null);
+	//	mCount.moveToFirst();
+	//	int count= mCount.getInt(0);
+	//	mCount.close();
+		
 		String[] columns= {KEY_NAME, KEY_Song, KEY_Artist, KEY_Music , KEY_Youtube , KEY_Answer , KEY_Question1 ,KEY_Question2 , KEY_Question3,	 KEY_Question4 ,KEY_Image,KEY_Level};
 		Cursor cursor = db.query(TABLE_AnimeOPandEd, columns, null, null, null, null, null,null);
 		

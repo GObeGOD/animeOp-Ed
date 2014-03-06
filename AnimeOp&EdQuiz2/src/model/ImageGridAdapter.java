@@ -26,7 +26,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	   public MusicSelection   musicslection;
 	   
 	   
-	   public ImageGridAdapter(Context c){
+	   public ImageGridAdapter(Context c,String level){
 	        mContext = c;
 	       
 	       
@@ -35,7 +35,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	        }
 	        
 	        DatabaseHandler db = new DatabaseHandler(c);
-	         musicslection = new MusicSelection();
+	        // musicslection =  MusicSelection();
 	        /**
 	         * CRUD Operations
 	         * */
@@ -45,10 +45,10 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	      
 	         
 	        // Reading all contacts
-	        Log.d("Reading: ", "Reading all Anime Music.." + musicslection.levelname ); 
-	       List<AnimeOpAndEdData> animeOPandEd = db.getAnimeOpAndEdlevel("level1");       
+	        Log.d("Reading: ", "Reading all Anime Music.." + level ); 
+	    //   List<AnimeOpAndEdData> animeOPandEd = db.getAnimeOpAndEdlevel("level1");       
 	      // List<AnimeOpAndEdData> animeOPandEd = db.getAnimeOpAndEdlevel(musicslection.levelname);       
-	       //  List<AnimeOpAndEdData> animeOPandEd = db.getAllAnimeOpAndEd();       
+	         List<AnimeOpAndEdData> animeOPandEd = db.getAllAnimeOpAndEd();       
 	         
 	        for (AnimeOpAndEdData cn : animeOPandEd) {
 	        if(i < mThumbIds.length){

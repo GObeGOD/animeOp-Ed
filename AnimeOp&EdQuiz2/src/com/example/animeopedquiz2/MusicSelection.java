@@ -45,11 +45,11 @@ public class MusicSelection extends BaseActivity  {
 	        GridView gridView = (GridView) findViewById(R.id.gridView1);
 	      /// final ArrayList<String>  gridItems = new ArrayList<String>();
 	        
-	        // Instance of ImageAdapter Class
-	        gridView.setAdapter(new  ImageGridAdapter(this));
+	        // Instance of ImageAdapter Class and  Send Level 
+	        gridView.setAdapter(new  ImageGridAdapter(this,level));
 	      // ImageView view = (ImageView)findViewById(R.id.gridView1);
 	        
-	   
+	
 		        
 	 
 	 
