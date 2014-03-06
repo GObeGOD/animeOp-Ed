@@ -20,8 +20,8 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 public  String[] numbers;
 	 Animation animFadein;
 	 int i = 0 ;
-	 public Integer[] mThumbIds = new Integer[24];
-	 public String[] cThumbIds = new String[24];
+	 public Integer[] mThumbIds = new Integer[1];
+	 public String[] cThumbIds = new String[1];
  	AnimeOpandEdDataSource dataSource;
 
 	   
@@ -37,7 +37,9 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	        
 
 	   
-	         List<AnimeOpAndEdData> animeOPandEd = dataSource.getAllAnimeOpAndEd();    
+	      //   List<AnimeOpAndEdData> animeOPandEd = dataSource.getAllAnimeOpAndEd(); 
+	     String[] bylevel = {"1"};
+	      List<AnimeOpAndEdData> animeOPandEd = dataSource.listByLevel(bylevel);    
        
 	        // Reading all Songs
 		        if (animeOPandEd.size() == 0) {
@@ -60,6 +62,8 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 			 
 				       		 String imageUri = cn.getImage();
 				       		System.out.println("YEAH" + "getImage() = " + imageUri + cn.getName() + cn.id + cn.getMusic() +  cn.getYoutube());
+				       		
+				       		// find Image Resources 
 				       		int imagelink = mContext.getResources().getIdentifier(imageUri, "drawable", mContext.getPackageName());
 
 				       		System.out.println("my imageResource: "+ imagelink +" real imageResource"+ R.drawable.imagefun3 );
@@ -67,7 +71,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 				       	 }
 				       		
 				        
-			        	 Log.d("AnimeOpandEd list Loop: ", "listItem:" + cn.getID()); 
+			        	// Log.d("AnimeOpandEd list Loop: ", "listItem:" + cn.getID()); 
 
 				        i++;
 				        
@@ -75,7 +79,9 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 				        }
 				       
 				       
-				           String log = "Id: "+cn.getID()+" ,Name: " + cn.getName() + " ,Song: " + cn.getSong();
+				           String log = "Id: "+cn.getID()+" ,Name: " + cn.getName() + " ,Song: " + cn.getSong() + " Level: " + cn.level + " Music: " + cn.getMusic()+
+				        		   " youtube: " + cn.getYoutube() 
+				        		   ;
 				               
 				       Log.d("Name: ", log);
 				        
