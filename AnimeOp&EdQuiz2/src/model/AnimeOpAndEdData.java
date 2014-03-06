@@ -1,7 +1,7 @@
 package model;
 
 public class AnimeOpAndEdData {
-	int id;
+	long id;
     String name;
     String song;
     String artist;
@@ -46,11 +46,11 @@ public class AnimeOpAndEdData {
         
     }
  
-    public int getID(){
+    public long getID(){
         return this.id;
     }
     
-    public void setID(int id){
+    public void setID(long id){
         this.id = id;
     }
     
