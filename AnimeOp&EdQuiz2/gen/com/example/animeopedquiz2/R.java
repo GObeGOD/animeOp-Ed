@@ -56,11 +56,11 @@ public final class R {
         public static final int gridView1=0x7f09000d;
         public static final int le2vel2=0x7f090008;
         public static final int lev23l2=0x7f09000a;
-        public static final int level1=0x7f090003;
-        public static final int level2=0x7f090004;
-        public static final int level3=0x7f090005;
-        public static final int level4=0x7f090006;
-        public static final int level5=0x7f090007;
+        public static final int level_1=0x7f090003;
+        public static final int level_2=0x7f090004;
+        public static final int level_3=0x7f090005;
+        public static final int level_4=0x7f090006;
+        public static final int level_5=0x7f090007;
         public static final int lewevel1=0x7f090009;
         public static final int musicPlayButton=0x7f09000b;
         public static final int musicSeekBar=0x7f09000c;

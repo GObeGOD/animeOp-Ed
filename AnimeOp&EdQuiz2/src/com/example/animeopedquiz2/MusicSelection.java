@@ -17,11 +17,13 @@ import android.widget.GridView;
 
 public class MusicSelection extends BaseActivity  {
 	public final static String EXTRA_MESSAGE = "com.example.animeopedquiz2.MESSAGE";
+public enum Levels {level1,level2,level3,level4};
 
 	GridView gridView;
 	public String levelname; 
 	AnimeOpandEdDataSource dataSource;
-	
+	Levels levels;
+	public static String shareLevelnum;
 	 
 	public  String[] numbers;
  
@@ -35,20 +37,23 @@ public class MusicSelection extends BaseActivity  {
 		 
             System.out.println("here is the level the user clicked " + level);
 		  levelname = level;
-	      //  db = new DatabaseHandler(getApplicationContext())  ;
+	    
 	     dataSource =  new AnimeOpandEdDataSource(this);
 	 	 dataSource.open();
-         insertLevel(level);
-         // List<AnimeOpAndEdData> animeOPandEd =  dataSource.getAllAnimeOpAndEd();
-       // Log.i("MUISCSELECTION",animeOPandEd.toString());
+	 	 
+	 	String[] parts = level.split("_");
+	 //	String levelString = parts[0]; // level
+	 	String levelNum = parts[1]; // 1
+	 	int levelInt = Integer.parseInt(levelNum);
+        insertLevel(levelInt);
+	 	
+  
           
          
 	     GridView gridView = (GridView) findViewById(R.id.gridView1);
-	    /// final ArrayList<String>  gridItems = new ArrayList<String>();
 	        
 	        // Instance of ImageAdapter Class and  Send Level 
-	        gridView.setAdapter(new  ImageGridAdapter(this,level));
-	    // ImageView view = (ImageView)findViewById(R.id.gridView1);
+	        gridView.setAdapter(new  ImageGridAdapter(this,levelInt));
 	        
 	
 		        
@@ -69,45 +74,88 @@ public class MusicSelection extends BaseActivity  {
 		}
   
   
-  public void insertLevel(String level){
-	    	// System.out.println("ABOUT TO COMPARE " + level + " with level1" );
-	  AnimeOpAndEdData naruto ;
-      naruto = dataSource.addAnimeOPandED(new AnimeOpAndEdData("naruto", "go", "artist", "music", "youtube", "answer", "s", "sd","sd", "sd", "imagefun", 1));
-      Log.i("InsertLevel", "aNIME added id " + naruto.getID());
-     
-
-
-      AnimeOpAndEdData naruto2 ;
-      naruto2 = dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
-              , "question1", "question2", "question3", "question4", "naruto",1));
-      Log.i("InsertLevel", "aNIME added id " + naruto2.getID());
-
-      
-      
-      AnimeOpAndEdData naruto3 ;
-      naruto3 = dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
-              , "question1", "question2", "question3", "question4", "imagefun3",1));
-      Log.i("InsertLevel", "aNIME added id " + naruto3.getID());
-      
-      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
-              , "question1", "question2", "question3", "question4", "imagefun3",1));
-      
-      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
-              , "question1", "question2", "question3", "question4", "imagefun3",1));
-      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
-              , "question1", "question2", "question3", "question4", "imagefun3",1));
-      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
-              , "question1", "question2", "question3", "question4", "imagefun3",1));
-      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
-              , "question1", "question2", "question3", "question4", "naruto",1));
-      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
-              , "question1", "question2", "question3", "question4", "imagefun",1));
-      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
-              , "question1", "question2", "question3", "question4", "imagefun3",1));
-      dataSource.addAnimeOPandED(new AnimeOpAndEdData("name", "song", "artist", "music", "youtube", "answer", "question1", "question2", "question3", "question4", "image", 3) );
-      dataSource.addAnimeOPandED(new AnimeOpAndEdData("THANK GOD", "BESTEVER", "GOBI", "LIFE", "youtube", "answer", "question1", "question2", "question3", "question4", "image", 5) );
-
+  public void insertLevel(int level){
+	//  Log.e("insertLevel", "LEVEL CHOOSEN: " + level);
 	
+	  switch (level) {
+	case 1:
+		Log.e("insertLevel", "LEVEL 1!!!!");
+		String[] bylevel = {Integer.toString(level)};
+				 shareLevelnum = bylevel.toString();
+				 
+				  if(dataSource.getCountByLevel(bylevel) == 0){
+					  Log.e("getCountByLevel", "ADDING LEVEL 1");
+					  AnimeOpAndEdData naruto ;
+				      naruto = dataSource.addAnimeOPandED(new AnimeOpAndEdData("naruto", "go", "artist", "music", "youtube", "answer", "s", "sd","sd", "sd", "imagefun", 1));
+				      Log.i("InsertLevel", "aNIME added id " + naruto.getID());
+				     
+
+
+				      AnimeOpAndEdData naruto2 ;
+				      naruto2 = dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "naruto",1));
+				      Log.i("InsertLevel", "aNIME added id " + naruto2.getID());
+
+				      
+				      
+				      AnimeOpAndEdData naruto3 ;
+				      naruto3 = dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "imagefun",1));
+				      Log.i("InsertLevel", "aNIME added id " + naruto3.getID());
+				      
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "imagefun",1));
+				      
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "imagefun",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "naruto",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "imagefun",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "naruto",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "imagefun",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "level4",1));
+					  
+				  }else{
+				      Log.e("InsertLevel", "LEVEL ALREADY INSERTED");
+
+					  
+				  }
+		
+				 
+				  
+
+	break;
+	
+	case 2:
+	    Log.e("insertLevel", "LEVEL 2!!!!");
+
+    break;
+			
+    case 3:
+		
+    	Log.e("insertLevel", "LEVEL 3!!!!");
+
+	break;
+	
+    case 4:
+	   
+    	Log.e("insertLevel", "LEVEL 4!!!!");
+
+	break;
+	
+	default:
+		break;
+	}
+	  
+	  
+	  
+	  
+	 
+	 
 	    	
 	    	
 	    }

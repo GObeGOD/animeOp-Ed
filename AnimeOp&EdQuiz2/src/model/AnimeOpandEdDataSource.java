@@ -8,7 +8,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.widget.Toast;
 
 public class AnimeOpandEdDataSource {
 	
@@ -56,15 +55,9 @@ public class AnimeOpandEdDataSource {
 
      
      
-     
-     
-     
-     
-     
-     
 
- 	// Adding new Anime music
- 	public AnimeOpAndEdData addAnimeOPandED(AnimeOpAndEdData opandEd) {
+// Adding new Anime music
+public AnimeOpAndEdData addAnimeOPandED(AnimeOpAndEdData opandEd) {
  		//SQLiteDatabase db = this.getWritableDatabase();
 
  		ContentValues values = new ContentValues();
@@ -93,32 +86,50 @@ public class AnimeOpandEdDataSource {
  return opandEd;
  	}
  	
+ 	
+ 	
+public List<AnimeOpAndEdData> getAllAnimeOpAndEd() {
+
+	 
+	// Toast.makeText(mContext,"list animeOP WORKING", Toast.LENGTH_LONG).show();
+
+	
+	
+	Cursor cursor = dataBase.query(DatabaseHandler.TABLE_AnimeOPandEd, allcolumns, null, null, null, null, null);
+	Log.i("getAllAnimeOpandEd", "Found" + cursor.getCount() + "Songs");
+
+	List<AnimeOpAndEdData> animeOpandEdList = cursorToList(cursor);
+	
+	// return contact list
+	return animeOpandEdList;
+
+}
+ 	
+ 	
  // Getting All anime
- 	public List<AnimeOpAndEdData> getAllAnimeOpAndEd() {
+ public int getCountByLevel(String[] levelSelection) {
 
  
-		 Toast.makeText(mContext,"list animeOP WORKING", Toast.LENGTH_LONG).show();
+	// Toast.makeText(mContext,"list animeOP WORKING", Toast.LENGTH_LONG).show();
 
  		
  		
- 		Cursor cursor = dataBase.query(DatabaseHandler.TABLE_AnimeOPandEd, allcolumns, null, null, null, null, null);
+ 		Cursor cursor = dataBase.query(DatabaseHandler.TABLE_AnimeOPandEd, allcolumns, "level = ?", levelSelection, null, null, null);
  		Log.i("getAllAnimeOpandEd", "Found" + cursor.getCount() + "Songs");
 
- 		List<AnimeOpAndEdData> animeOpandEdList = cursorToList(cursor);
+ 		
  		
  		// return contact list
- 		return animeOpandEdList;
+ 		return cursor.getCount();
 
- 	}
+}
  	
  	
- 	public List<AnimeOpAndEdData> listByLevel(String[] levelSelection) {
+ 	
+public List<AnimeOpAndEdData> listByLevel(String[] levelSelection) {
 
- 		 
-		 Toast.makeText(mContext,"listByLevel animeOP WORKING", Toast.LENGTH_LONG).show();
+ 		//Toast.makeText(mContext,"listByLevel animeOP WORKING", Toast.LENGTH_LONG).show();
 
-		
-		
 		Cursor cursor = dataBase.query(DatabaseHandler.TABLE_AnimeOPandEd, allcolumns, "level = ?", levelSelection, null, null, null);
 		Log.i("LISTBYLEVEL", "Found " + cursor.getCount() + " Songs");
 
@@ -127,8 +138,12 @@ public class AnimeOpandEdDataSource {
 		// return contact list
 		return animeOpandEdList;
 
-	}
+}
 
+ 	
+ 	
+ 	
+ 	
 public List<AnimeOpAndEdData> cursorToList(Cursor cursor) {
 	List<AnimeOpAndEdData> animeOpandEdList = new ArrayList<AnimeOpAndEdData>();
 	// looping through all rows and adding to list
@@ -155,6 +170,7 @@ public List<AnimeOpAndEdData> cursorToList(Cursor cursor) {
 		} while (cursor.moveToNext());
 	}
 	return animeOpandEdList;
+	
 }
  	
  	

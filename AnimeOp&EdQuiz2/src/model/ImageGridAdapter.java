@@ -20,73 +20,96 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 public  String[] numbers;
 	 Animation animFadein;
 	 int i = 0 ;
-	 public Integer[] mThumbIds = new Integer[1];
-	 public String[] cThumbIds = new String[1];
+	 public Integer[] animeImageArray ;
+	 public String[] animeNameArray ;;
+	  List<AnimeOpAndEdData>  animeOPandEd;
  	AnimeOpandEdDataSource dataSource;
 
 	   
-	   public ImageGridAdapter(Context c,String level){
-	        mContext = c;
-		     dataSource =  new AnimeOpandEdDataSource(c);
-		     dataSource.open();
-
-	       
-	       for (int i = 0; i < mThumbIds.length; i++) {
-	        System.out.println("loop that worked:" + i);
-	        }
+	   public ImageGridAdapter(Context c,int level){
+	         mContext = c;
 	        
+		     dataSource =  new AnimeOpandEdDataSource(c);
+		    Log.e("sadasd", "MUSIC LEVEL SELECT " + level);
+			String[] bylevel = {Integer.toString(level)};
+			
+		     if(animeOPandEd == null){
+			     dataSource.open();
+                 Log.e("ImageGridAdapter", "ANIME SONG LIST NULL ADDING!!");
 
-	   
-	      //   List<AnimeOpAndEdData> animeOPandEd = dataSource.getAllAnimeOpAndEd(); 
-	     String[] bylevel = {"1"};
-	      List<AnimeOpAndEdData> animeOPandEd = dataSource.listByLevel(bylevel);    
-       
+				   animeOPandEd = dataSource.listByLevel(bylevel);  
+		    	 
+		     }else{
+                 Log.e("ImageGridAdapter", "LIST EXCITES");
+
+
+		     }
+	       
+
 	        // Reading all Songs
-		        if (animeOPandEd.size() == 0) {
-			        Log.d("ImageGirdAdapter: ", "Found NOTHING" + level ); 
-
+		        if (animeOPandEd.isEmpty()) {
+			        Log.e("ImageGirdAdapter: ", "Found NOTHING at level: " + level ); 
+			       animeImageArray =  new Integer[1];
+				animeNameArray = new String[1];
+			//		animeImageArray[0] = R.drawable.imagefun;
+			//		animeNameArray[1] = "SAD"; 				
+			    
 				}else {
-				      
-				       for (AnimeOpAndEdData cn : animeOPandEd) {
-				        if(i < mThumbIds.length){
-				        	//String name = cn.getName().toString();
-				        //	int NameINT = Integer.parseInt(cn.getName());
-				       	    mThumbIds[i] = R.drawable.imagefun;
-				       	 System.out.println("putting on images!" + i);
-				       	    cThumbIds[i] = cn.getName();
-				       	
-				       	 System.out.println("LOOP STRING:"+ cThumbIds[i]);
-				        	 System.out.println("LOOP:"+ i);
-				        	    
-				       	 if ( animeOPandEd.get(i).getName().equals("naruto")){
-			 
-				       		 String imageUri = cn.getImage();
-				       		System.out.println("YEAH" + "getImage() = " + imageUri + cn.getName() + cn.id + cn.getMusic() +  cn.getYoutube());
-				       		
-				       		// find Image Resources 
-				       		int imagelink = mContext.getResources().getIdentifier(imageUri, "drawable", mContext.getPackageName());
+					
+					int numofSongs  =  animeOPandEd.size();
+					
 
-				       		System.out.println("my imageResource: "+ imagelink +" real imageResource"+ R.drawable.imagefun3 );
-				       		 mThumbIds[i] = imagelink;
-				       	 }
-				       		
+					Log.i("HEY the # of Songs FOUND" , "again FOUND - " + animeOPandEd.size());
+					
+					//set Num of Songs going to be displayed 
+					animeImageArray =  new Integer[numofSongs];
+					animeNameArray = new String[numofSongs];
+				    
+				    
+				       for (AnimeOpAndEdData aOP : animeOPandEd) {
+				        if(i < animeImageArray.length){
 				        
-			        	// Log.d("AnimeOpandEd list Loop: ", "listItem:" + cn.getID()); 
+				        	//if(animeImageArray == null & animeNameArray  == null){
+				        	//	animeImageArray[i] = R.drawable.imagefun;
+					       	    animeNameArray[i] = aOP.getName();
+					       	//    Log.i("animeImage and name array", "NULL values for IMAGE AND NAME ARRAY");
+					       	// log all songs in loop
+						       	String log1 = "Id: " + aOP.getID() + " LOOP: " + i+  " Name: "+ aOP.getName() + "\n"+ 
+						       	"Song:"  + aOP.getSong() +"\n"+
+						       	"Level: " + aOP.level + " Music: " + aOP.getMusic()+
+						        "youtube: " + aOP.getYoutube() ;
+						       	
+						       	
+						       	Log.i("FOR loop", log1);
+						        	   // looking for image Resources 
+						       	
+						       //	 if ( animeOPandEd.get(i).getName().equals("naruto")){
+					 
+						       		String imageUri = aOP.getImage();
+						       		System.out.println("YEAH" + "getImage() = " + imageUri + aOP.getName() + aOP.id + aOP.getMusic() +  aOP.getYoutube());
+						       		
+						       		int imagelink = mContext.getResources().getIdentifier(imageUri, "drawable", mContext.getPackageName());
+						       		
 
-				        i++;
-				        
-				        
-				        }
+						       		System.out.println("my imageResource: "+ imagelink +" real imageResource"+ R.drawable.imagefun3 );
+						       		animeImageArray[i] = imagelink;
+						     //  	 }
+					       	 
+				        		
+				        	//}
+				        	
+				         	
+					       		
+					        
+
+					        i++;
+				     
+   
+				      } //END of if # 1 
 				       
-				       
-				           String log = "Id: "+cn.getID()+" ,Name: " + cn.getName() + " ,Song: " + cn.getSong() + " Level: " + cn.level + " Music: " + cn.getMusic()+
-				        		   " youtube: " + cn.getYoutube() 
-				        		   ;
-				               
-				       Log.d("Name: ", log);
+			
 				        
-				      
-				        }
+			        }
 					
 				}
 
@@ -101,13 +124,13 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		 return mThumbIds.length;
+		 return animeImageArray.length;
 	}
 
 	@Override
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
-		 return mThumbIds[position];
+		 return animeImageArray[position];
 	}
 
 	@Override
@@ -122,13 +145,18 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 		// System.out.println("getView");
 
 		 ImageView imageView = new ImageView(mContext);
-		 imageView.setImageResource(mThumbIds[position]);
-		 imageView.setId(mThumbIds[position]);
+		 imageView.setImageResource(animeImageArray[position]);
+		 imageView.setId(animeImageArray[position]);
 	   //  imageView.setContentDescription(String.valueOf(cThumbIds[position]));
+		 
+		 ///ADD Animations 
 		  animFadein = AnimationUtils.loadAnimation(mContext,
 	                R.drawable.zoom_in);
-		   imageView.setContentDescription(cThumbIds[position]);
+		   imageView.setContentDescription(animeNameArray[position]);
 		   animFadein.setAnimationListener(this);
+		   
+		   
+		   
 		 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 		 imageView.setPadding(10, 10, 10, 10);
 		 imageView.startAnimation(animFadein);
@@ -159,5 +187,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 
 }
