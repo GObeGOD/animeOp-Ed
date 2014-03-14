@@ -92,10 +92,10 @@ public class MusicPlayActivity extends BaseActivity implements OnCompletionListe
        	
        	String fileName = "android.resource://" + getPackageName() + "/" + res;
 
-        	 Log.i("playsong", "path: " + fileName);
+        	 Log.i("playsong", "path: " + res);
 
         	 if(res != 0){
-        		 
+        		 Log.d("playsong", "song found.");
 				mediaPlayer.reset();
 				// / mediaPlayer.setDataSource(afd.getFileDescriptor(),
 				// afd.getStartOffset(), afd.getLength());
@@ -125,7 +125,7 @@ public class MusicPlayActivity extends BaseActivity implements OnCompletionListe
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
     }
 	
 	public void updateSeekBar() {
