@@ -2,7 +2,9 @@ package model;
 
 import java.util.List;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +23,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 Animation animFadein;
 	 int i = 0 ;
 	 public Integer[] animeImageArray ;
-	 public String[] animeNameArray ;;
+	 public String[] animeNameArray ;
 	  List<AnimeOpAndEdData>  animeOPandEd;
  	AnimeOpandEdDataSource dataSource;
 
@@ -38,7 +40,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
                  Log.e("ImageGridAdapter", "ANIME SONG LIST NULL ADDING!!");
 
 				   animeOPandEd = dataSource.listByLevel(bylevel);  
-		    	 
+
 		     }else{
                  Log.e("ImageGridAdapter", "LIST EXCITES");
 
@@ -49,10 +51,32 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	        // Reading all Songs
 		        if (animeOPandEd.isEmpty()) {
 			        Log.e("ImageGirdAdapter: ", "Found NOTHING at level: " + level ); 
-			       animeImageArray =  new Integer[1];
-				animeNameArray = new String[1];
-			//		animeImageArray[0] = R.drawable.imagefun;
-			//		animeNameArray[1] = "SAD"; 				
+			    	animeImageArray =  new Integer[0];
+					animeNameArray = new String[0];
+					
+					AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+					// Add the buttons
+					builder.setTitle("No Songs Found :(").setMessage("Click Okay to go back");
+					
+
+					builder.setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+					           public void onClick(DialogInterface dialog, int id) {
+					               // User clicked OK button
+					           }
+					       });
+					builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+					           public void onClick(DialogInterface dialog, int id) {
+					               // User cancelled the dialog
+					        	   
+					           }
+					       });
+					// Set other dialog properties
+					
+					// Create the AlertDialog
+					AlertDialog alertDialog = builder.create();
+					alertDialog.show();
+
+					
 			    
 				}else {
 					
@@ -124,44 +148,83 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		 return animeImageArray.length;
+		if(animeImageArray.length < 1){
+			return 0;
+
+			
+		}else {
+			return animeImageArray.length;
+			
+		}
+		 
 	}
 
 	@Override
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
-		 return animeImageArray[position];
+	//	 return animeImageArray[position];
+		if(animeImageArray.length < 1){
+			return 0;
+
+			
+		}else {
+			return animeImageArray[position];
+			
+		}
 	}
 
 	@Override
 	public long getItemId(int position) {
 		// TODO Auto-generated method stub
 		return 0;
+		
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		// TODO Auto-generated method stub
-		// System.out.println("getView");
+		Log.i("getView", "getView called IMAGEARRAY: " + animeImageArray.length);
+	
+				Log.i("getView", "position: " + position);
 
-		 ImageView imageView = new ImageView(mContext);
-		 imageView.setImageResource(animeImageArray[position]);
-		 imageView.setId(animeImageArray[position]);
-	   //  imageView.setContentDescription(String.valueOf(cThumbIds[position]));
 		 
-		 ///ADD Animations 
-		  animFadein = AnimationUtils.loadAnimation(mContext,
-	                R.drawable.zoom_in);
-		   imageView.setContentDescription(animeNameArray[position]);
-		   animFadein.setAnimationListener(this);
-		   
-		   
-		   
-		 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-		 imageView.setPadding(10, 10, 10, 10);
-		 imageView.startAnimation(animFadein);
-		 imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
-	        return imageView;
+
+			if(animeImageArray != null){
+				Log.i("GETVIEW ", "image and name not NUll");
+				 ImageView imageView = new ImageView(mContext);
+
+					 imageView.setImageResource(animeImageArray[position]);
+					 imageView.setId(animeImageArray[position]);
+				   //  imageView.setContentDescription(String.valueOf(cThumbIds[position]));
+					 
+					 ///ADD Animations 
+					  animFadein = AnimationUtils.loadAnimation(mContext,
+				                R.drawable.zoom_in);
+					   imageView.setContentDescription(animeNameArray[position]);
+					   animFadein.setAnimationListener(this);
+					   
+					   
+					   
+					 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+					 imageView.setPadding(10, 5, 10, 5);
+					 imageView.startAnimation(animFadein);
+					 imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
+				     
+					 return imageView;
+
+	           }else{
+	        	   
+	        	   Log.i("GETVIEW ", "null image and name ");
+					 ImageView imageView2 = new ImageView(mContext);
+                     imageView2.setImageResource(R.drawable.imagefun);
+                     imageView2.setId(404);
+	        	  return imageView2;
+	           }
+		
+				
+		
+			
+			
+
 	}
 
 

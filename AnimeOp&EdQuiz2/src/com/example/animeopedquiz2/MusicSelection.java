@@ -23,7 +23,6 @@ public enum Levels {level1,level2,level3,level4};
 	public String levelname; 
 	AnimeOpandEdDataSource dataSource;
 	Levels levels;
-	public static String shareLevelnum;
 	 
 	public  String[] numbers;
  
@@ -48,7 +47,6 @@ public enum Levels {level1,level2,level3,level4};
         insertLevel(levelInt);
 	 	
   
-          
          
 	     GridView gridView = (GridView) findViewById(R.id.gridView1);
 	        
@@ -81,7 +79,6 @@ public enum Levels {level1,level2,level3,level4};
 	case 1:
 		Log.e("insertLevel", "LEVEL 1!!!!");
 		String[] bylevel = {Integer.toString(level)};
-				 shareLevelnum = bylevel.toString();
 				 
 				  if(dataSource.getCountByLevel(bylevel) == 0){
 					  Log.e("getCountByLevel", "ADDING LEVEL 1");
@@ -118,6 +115,23 @@ public enum Levels {level1,level2,level3,level4};
 				              , "question1", "question2", "question3", "question4", "imagefun",1));
 				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
 				              , "question1", "question2", "question3", "question4", "level4",1));
+				      
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "imagefun",1));
+				      
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "imagefun",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "naruto",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "imagefun",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "naruto",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "imagefun",1));
+				      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+				              , "question1", "question2", "question3", "question4", "level4",1));
+					  
 					  
 				  }else{
 				      Log.e("InsertLevel", "LEVEL ALREADY INSERTED");
@@ -132,12 +146,68 @@ public enum Levels {level1,level2,level3,level4};
 	
 	case 2:
 	    Log.e("insertLevel", "LEVEL 2!!!!");
+	    String[] bylevel2 = {Integer.toString(level)};
+		 
+		  if(dataSource.getCountByLevel(bylevel2) == 0){
+			  Log.e("getCountByLevel", "ADDING LEVEL 1");
+		
+		      
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "imagefun",2));
+		      
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "imagefun",2));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "naruto",2));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "imagefun",2));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "naruto",2));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "imagefun",2));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "level4",2));
+		      
+			  
+		  }else{
+		      Log.e("InsertLevel", "LEVEL ALREADY INSERTED");
+
+			  
+		  }
 
     break;
 			
     case 3:
 		
     	Log.e("insertLevel", "LEVEL 3!!!!");
+    	 String[] bylevel3 = {Integer.toString(level)};
+		 
+		  if(dataSource.getCountByLevel(bylevel3) == 0){
+			  Log.e("getCountByLevel", "ADDING LEVEL 1");
+		
+		      
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "imagefun",3));
+		      
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "imagefun",3));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "naruto",3));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "imagefun",3));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "naruto",3));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "imagefun",3));
+		      dataSource.addAnimeOPandED(new AnimeOpAndEdData( "naruto", "go", "artist", "music", "youtube", "answer"
+		              , "question1", "question2", "question3", "question4", "level4",3));
+			  
+		  }else{
+		      Log.e("InsertLevel", "LEVEL ALREADY INSERTED");
+
+			  
+		  }
+
 
 	break;
 	
