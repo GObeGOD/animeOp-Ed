@@ -12,6 +12,7 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -31,15 +32,18 @@ public class MusicPlayActivity extends BaseActivity implements OnCompletionListe
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.music_play);
-        
+        Intent intent = getIntent();
+	    String animeSongName = intent.getStringExtra("com.example.animeopedquiz2.MESSAGE");
+	    Log.i("intent", "animesongName: " + animeSongName);
+	    
+	    
         musicPlayButton = (ImageButton) findViewById(R.id.musicPlayButton);
         musicSeekBar  = (SeekBar) findViewById(R.id.musicSeekBar);
         
         // Creating a Mediaplayer
         mediaPlayer = new MediaPlayer();
-       
         utilities = new Utilities();
-        playSong("whatever");
+        playSong("beckophitintheusa");
         musicSeekBar.setOnSeekBarChangeListener(this); 
         musicPlayButton.setOnClickListener(new View.OnClickListener() {
         	 
@@ -67,15 +71,14 @@ public class MusicPlayActivity extends BaseActivity implements OnCompletionListe
 	}
 	
 	public void musicPlayClick(View view){
-
+		//int levelInt = Integer.parseInt(levelNum);
+        ///insertLevel(levelInt);
+        
 		 Intent intent = getIntent();
 	        String message = intent.getStringExtra(MusicSelection.EXTRA_MESSAGE);
 			Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
 			
 
-
-         
-			
 
 	}
 	public void  playSong(String path){
@@ -83,25 +86,34 @@ public class MusicPlayActivity extends BaseActivity implements OnCompletionListe
         try {
       ///  MediaPlayer.create(this, R.raw.beckophitintheusa);
         //	AssetFileDescriptor afd = getAssets().openFd("usa.mp3");
-        	 String fileName = "android.resource://" + getPackageName() + "/" + R.raw.beckophitintheusa;
+        	//String songname = path;
+        	
+       	int res	= getResources().getIdentifier( path , "raw" ,this.getPackageName() );
+       	
+       	String fileName = "android.resource://" + getPackageName() + "/" + res;
 
-        	mediaPlayer.reset();
-        ///  mediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-          mediaPlayer.setDataSource(this, Uri.parse(fileName));
-      	mediaPlayer.prepare();
-        	mediaPlayer.start();
-         
-          
- 
-            // Changing Button Image to pause image
-        	musicPlayButton.setImageResource(R.drawable.music_pausebutton);
- 
-            // Set Progress bar values
-        	musicSeekBar.setProgress(0);
-        	musicSeekBar.setMax(92);
- 
-            // Updating seek Bar
-        	updateSeekBar();
+        	 Log.i("playsong", "path: " + fileName);
+
+        	 if(res != 0){
+        		 
+				mediaPlayer.reset();
+				// / mediaPlayer.setDataSource(afd.getFileDescriptor(),
+				// afd.getStartOffset(), afd.getLength());
+				mediaPlayer.setDataSource(this, Uri.parse(fileName));
+				mediaPlayer.prepare();
+				mediaPlayer.start();
+				// Changing Button Image to pause image
+				musicPlayButton.setImageResource(R.drawable.music_pausebutton);
+
+				// Set Progress bar values
+				musicSeekBar.setProgress(0);
+				musicSeekBar.setMax(92);
+				// Updating seek Bar
+				updateSeekBar();
+			}else{
+				Log.i("playsong", "song not found!!");
+				
+			}
         	
         } catch (IllegalArgumentException e) {
             e.printStackTrace();

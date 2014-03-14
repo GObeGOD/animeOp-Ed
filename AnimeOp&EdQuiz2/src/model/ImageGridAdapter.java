@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +16,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.example.animeopedquiz2.LevelActivity;
 import com.example.animeopedquiz2.MusicSelection;
 import com.example.animeopedquiz2.R;
 
@@ -27,7 +25,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 Animation animFadein;
 	 int i = 0 ;
 	 public Integer[] animeImageArray ;
-	 public String[] animeNameArray ;
+	 public String[] animeSongNameArray ;
 	  List<AnimeOpAndEdData>  animeOPandEd;
  	AnimeOpandEdDataSource dataSource;
  	MusicSelection musicSelec; 
@@ -57,7 +55,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 		        if (animeOPandEd.isEmpty()) {
 			        Log.e("ImageGirdAdapter: ", "Found NOTHING at level: " + level ); 
 			    	animeImageArray =  new Integer[0];
-					animeNameArray = new String[0];
+			    	animeSongNameArray = new String[0];
 					
 					AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
 					// Add the buttons
@@ -95,7 +93,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 					
 					//set Num of Songs going to be displayed 
 					animeImageArray =  new Integer[numofSongs];
-					animeNameArray = new String[numofSongs];
+					animeSongNameArray = new String[numofSongs];
 				    
 				    
 				       for (AnimeOpAndEdData aOP : animeOPandEd) {
@@ -103,7 +101,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 				        
 				        	//if(animeImageArray == null & animeNameArray  == null){
 				        	//	animeImageArray[i] = R.drawable.imagefun;
-					       	    animeNameArray[i] = aOP.getName();
+					       	    animeSongNameArray[i] = aOP.getSong();
 					       	//    Log.i("animeImage and name array", "NULL values for IMAGE AND NAME ARRAY");
 					       	// log all songs in loop
 						       	String log1 = "Id: " + aOP.getID() + " LOOP: " + i+  " Name: "+ aOP.getName() + "\n"+ 
@@ -207,7 +205,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 					 ///ADD Animations 
 					  animFadein = AnimationUtils.loadAnimation(mContext,
 				                R.drawable.zoom_in);
-					   imageView.setContentDescription(animeNameArray[position]);
+					   imageView.setContentDescription(animeSongNameArray[position]);
 					   animFadein.setAnimationListener(this);
 					   
 					   
