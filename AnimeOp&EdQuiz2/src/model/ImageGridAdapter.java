@@ -2,9 +2,11 @@ package model;
 
 import java.util.List;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,8 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.example.animeopedquiz2.LevelActivity;
+import com.example.animeopedquiz2.MusicSelection;
 import com.example.animeopedquiz2.R;
 
 public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
@@ -26,13 +30,13 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 public String[] animeNameArray ;
 	  List<AnimeOpAndEdData>  animeOPandEd;
  	AnimeOpandEdDataSource dataSource;
-
+ 	MusicSelection musicSelec; 
 	   
 	   public ImageGridAdapter(Context c,int level){
 	         mContext = c;
 	        
 		     dataSource =  new AnimeOpandEdDataSource(c);
-		    Log.e("sadasd", "MUSIC LEVEL SELECT " + level);
+		     musicSelec = new MusicSelection();
 			String[] bylevel = {Integer.toString(level)};
 			
 		     if(animeOPandEd == null){
@@ -47,6 +51,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 
 		     }
 	       
+		     
 
 	        // Reading all Songs
 		        if (animeOPandEd.isEmpty()) {
@@ -62,12 +67,15 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 					builder.setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
 					           public void onClick(DialogInterface dialog, int id) {
 					               // User clicked OK button
+					        	   Log.i("alertDialog", "OKAY cLICKED");
+					        	backActivity();
 					           }
 					       });
 					builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
 					           public void onClick(DialogInterface dialog, int id) {
 					               // User cancelled the dialog
-					        	   
+					        	   Log.i("alertDialog", "CANCEL cLICKED");
+                      
 					           }
 					       });
 					// Set other dialog properties
@@ -203,7 +211,6 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 					   animFadein.setAnimationListener(this);
 					   
 					   
-					   
 					 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 					 imageView.setPadding(10, 5, 10, 5);
 					 imageView.startAnimation(animFadein);
@@ -227,12 +234,17 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 
 	}
 
+public void backActivity(){
+	   //Intent intent = new Intent(mContext, LevelActivity.class);
+		//  ((Object) mContext).finishActivity();
+	Activity activity = (Activity) mContext;
+	activity.finish();
 
+}
 
 	@Override
 	public void onAnimationEnd(Animation arg0) {
 		// TODO Auto-generated method stub
-		
 	}
 
 
