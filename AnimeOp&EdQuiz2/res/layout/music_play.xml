@@ -21,9 +21,9 @@
         android:layout_centerHorizontal="true"
 	    android:contentDescription="@string/contentDescriptionMusicPlay"
         android:src="@drawable/music_playbutton" />
-
+ 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/question1_Button"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
              android:padding="10dp"
@@ -36,33 +36,34 @@
     
     
       <Button
-        android:id="@+id/button2"
+        android:id="@+id/question2_Button"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/question1_Button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
                      android:padding="10dp"
         
         android:text="Button" />
   <Button
-        android:id="@+id/button3"
+        android:id="@+id/question3_Button"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         
-        android:layout_alignLeft="@+id/button2"
+        android:layout_alignLeft="@+id/question2_Button" 
         android:layout_marginTop="20dp"
              android:padding="10dp"
         
-        android:layout_below="@+id/button2"
+        android:layout_below="@+id/question2_Button"
+        
         android:text="oiewrowerjw wio jrweiojr woijer iwoj rj ddddd   wre oirj" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/question4_Button"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_below="@+id/button3"
+        android:layout_alignLeft="@+id/question3_Button"
+        android:layout_below="@+id/question3_Button" 
                      android:padding="10dp"
         
         android:layout_marginTop="20dp"

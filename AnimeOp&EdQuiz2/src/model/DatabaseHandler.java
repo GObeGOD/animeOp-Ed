@@ -10,6 +10,7 @@ import android.util.Log;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 	// Database Version
+	//upgrade  DATABASE_VERSION  to drop old table and recreate using new data
 	private static final int DATABASE_VERSION = 1;
 
 	// Database Name
@@ -84,7 +85,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		// TODO Auto-generated method stub
 		// Drop older table if existed
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_AnimeOPandEd);
-
+Log.i("onUpgrade", "DROPED TABLE!!");
 		// Create tables again
 		onCreate(db);
 	}

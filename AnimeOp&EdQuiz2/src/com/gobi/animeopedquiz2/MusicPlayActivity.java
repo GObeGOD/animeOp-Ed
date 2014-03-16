@@ -3,8 +3,10 @@ package com.gobi.animeopedquiz2;
 
 
 import java.io.IOException;
-
-import com.gobi.animeopedquiz2.R;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 import model.AnimeOpAndEdData;
 import model.AnimeOpandEdDataSource;
@@ -19,6 +21,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -26,12 +29,19 @@ import android.widget.Toast;
 
 public class MusicPlayActivity extends BaseActivity implements OnCompletionListener,SeekBar.OnSeekBarChangeListener  {
 	
-	 private ImageButton musicPlayButton;
-	 private  MediaPlayer mediaPlayer;
-	 private Utilities utilities;
-	 private SeekBar musicSeekBar;
-	 AnimeOpandEdDataSource dataSource;
-	 AnimeOpAndEdData currentAnime; 
+	private ImageButton musicPlayButton;
+	private MediaPlayer mediaPlayer;
+	private Utilities utilities;
+	private SeekBar musicSeekBar;
+	AnimeOpandEdDataSource dataSource;
+	AnimeOpAndEdData currentAnime;
+	Button question1_Button;
+	Button question2_Button;
+	Button question3_Button;
+	Button question4_Button;
+
+
+
 
 	 private Handler mHandler = new Handler();
 	
@@ -53,6 +63,36 @@ public class MusicPlayActivity extends BaseActivity implements OnCompletionListe
 	    
         musicPlayButton = (ImageButton) findViewById(R.id.musicPlayButton);
         musicSeekBar  = (SeekBar) findViewById(R.id.musicSeekBar);
+   	   question1_Button = (Button) findViewById(R.id.question1_Button);
+   	   question2_Button = (Button) findViewById(R.id.question2_Button);
+   	   question3_Button = (Button) findViewById(R.id.question3_Button);
+   	   question4_Button = (Button) findViewById(R.id.question4_Button);
+    
+   	  
+   	   
+     	String[] animeQuestions = new String[4];
+        animeQuestions[0] =currentAnime.getQuestion1().toString() ;
+        animeQuestions[1] =currentAnime.getQuestion2().toString() ;
+        animeQuestions[2] =currentAnime.getQuestion3().toString();
+        animeQuestions[3] =currentAnime.getQuestion4().toString() ;
+        //int idx = new Random().nextInt(animeQuestions.length);
+   
+
+
+  	List<String> ranQs = Arrays.asList(animeQuestions);
+
+     Collections.shuffle(ranQs);
+     
+
+       question1_Button.setText(animeQuestions[0].toString());
+ 	   question2_Button.setText(animeQuestions[1].toString());
+ 	   question3_Button.setText(animeQuestions[2].toString());
+ 	   question4_Button.setText(animeQuestions[3].toString());
+     
+        
+
+Log.i("Questionsz", " q1: " +animeQuestions[0].toString() + " q2: " + animeQuestions[1].toString() + " q3: " +  animeQuestions[2].toString()+" q4: " + animeQuestions[3].toString());
+
         
         // Creating a Mediaplayer
         mediaPlayer = new MediaPlayer();

@@ -199,10 +199,6 @@ public final class R {
     public static final class id {
         public static final int RelativeLayout1=0x7f0a0000;
         public static final int ScrollView1=0x7f0a0003;
-        public static final int button1=0x7f0a000e;
-        public static final int button2=0x7f0a000f;
-        public static final int button3=0x7f0a0010;
-        public static final int button4=0x7f0a0011;
         public static final int gridView1=0x7f0a0012;
         public static final int le2vel2=0x7f0a0009;
         public static final int lev23l2=0x7f0a000b;
@@ -216,6 +212,10 @@ public final class R {
         public static final int musicSeekBar=0x7f0a000c;
         public static final int picture=0x7f0a0002;
         public static final int playbutton=0x7f0a0001;
+        public static final int question1_Button=0x7f0a000e;
+        public static final int question2_Button=0x7f0a000f;
+        public static final int question3_Button=0x7f0a0010;
+        public static final int question4_Button=0x7f0a0011;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

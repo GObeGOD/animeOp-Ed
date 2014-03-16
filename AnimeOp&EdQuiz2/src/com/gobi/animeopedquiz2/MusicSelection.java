@@ -75,9 +75,9 @@ public enum Levels {level1,level2,level3,level4};
 				 
 				  if(dataSource.getCountByLevel(bylevel) == 0){
 					  
-					  dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto", "Haruka Kanata", "Asian Kung-Fu Generation", "naruto_op2_haruka_kanata", "naruto op 2 haruka kanata", "Naruto", "Shaman King", "Naruto", "Saint Seiya", "Ninku", "naruto", 1, "no"));
-					  dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto", "Haruka Kanata", "Asian Kung-Fu Generation", "naruto_op2_haruka_kanata", "naruto op 2 haruka kanata", "Naruto", "Shaman King", "Naruto", "Saint Seiya", "Ninku", "naruto", 1, "no"));
-					  dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto", "Haruka Kanata", "Asian Kung-Fu Generation", "naruto_op2_haruka_kanata", "naruto op 2 haruka kanata", "Naruto", "Shaman King", "Naruto", "Saint Seiya", "Ninku", "naruto", 1, "no"));
+					  dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto", "Haruka Kanata", "Asian Kung-Fu Generation", "naruto_op2_haruka_kanata", "naruto op 2 haruka kanata", "Naruto", "Shaman King", "Naruto", "Saint Seiya", "Ninku", "naruto", 1, "yes"));
+					  dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto", "Haruka Kanata", "Asian Kung-Fu Generation", "naruto_op2_haruka_kanata", "naruto op 2 haruka kanata", "Naruto", "Shaman King", "Naruto", "Saint Seiya", "Ninku", "naruto", 1, "yes"));
+					  dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto", "Haruka Kanata", "Asian Kung-Fu Generation", "naruto_op2_haruka_kanata", "naruto op 2 haruka kanata", "Naruto", "Shaman King", "Naruto", "Saint Seiya", "Ninku", "naruto", 1, "yes"));
 
 					  dataSource.addAnimeOPandED(new AnimeOpAndEdData("Berserk",
 							  "Tell Me Why", "PENPALS", "berserkop1tellmewhy",

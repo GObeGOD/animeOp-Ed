@@ -72,9 +72,9 @@ public AnimeOpAndEdData addAnimeOPandED(AnimeOpAndEdData opandEd) {
  		values.put(DatabaseHandler.KEY_ANSWER, opandEd.getAnswer());
 
  		values.put(DatabaseHandler.KEY_QUESTION1, opandEd.getQuestion1());
- 		values.put(DatabaseHandler.KEY_QUESTION2, opandEd.getQuestion1());
- 		values.put(DatabaseHandler.KEY_QUESTION3, opandEd.getQuestion1());
- 		values.put(DatabaseHandler.KEY_QUESTION4, opandEd.getQuestion1());
+ 		values.put(DatabaseHandler.KEY_QUESTION2, opandEd.getQuestion2());
+ 		values.put(DatabaseHandler.KEY_QUESTION3, opandEd.getQuestion3());
+ 		values.put(DatabaseHandler.KEY_QUESTION4, opandEd.getQuestion4());
 
  		values.put(DatabaseHandler.KEY_IMAGE, opandEd.getImage());
  		values.put(DatabaseHandler.KEY_LEVEL, opandEd.getLevel());
