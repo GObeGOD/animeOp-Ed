@@ -7,17 +7,17 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.example.animeopedquiz2.MusicSelection;
-import com.example.animeopedquiz2.R;
+import com.gobi.animeopedquiz2.MusicSelection;
+import com.gobi.animeopedquiz2.R;
 
 public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 private Context mContext;
@@ -28,9 +28,13 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 	 public String[] animeSongNameArray ;
 	  List<AnimeOpAndEdData>  animeOPandEd;
  	AnimeOpandEdDataSource dataSource;
+    private LayoutInflater inflater;
+
  	MusicSelection musicSelec; 
 	   
 	   public ImageGridAdapter(Context c,int level){
+	        inflater = LayoutInflater.from(c);
+
 	         mContext = c;
 	        
 		     dataSource =  new AnimeOpandEdDataSource(c);
@@ -100,7 +104,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 				        if(i < animeImageArray.length){
 				        
 				        	//if(animeImageArray == null & animeNameArray  == null){
-				        	//	animeImageArray[i] = R.drawable.imagefun;
+				        		animeImageArray[i] = R.drawable.imagefun;
 					       	    animeSongNameArray[i] = aOP.getSong();
 					       	//    Log.i("animeImage and name array", "NULL values for IMAGE AND NAME ARRAY");
 					       	// log all songs in loop
@@ -113,7 +117,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 						       	Log.i("FOR loop", log1);
 						        	   // looking for image Resources 
 						       	
-						       //	 if ( animeOPandEd.get(i).getName().equals("naruto")){
+						      	 if ( animeOPandEd.get(i).getComplete().equals("yes")){
 					 
 						       		String imageUri = aOP.getImage();
 						       		System.out.println("YEAH" + "getImage() = " + imageUri + aOP.getName() + aOP.id + aOP.getMusic() +  aOP.getYoutube());
@@ -123,7 +127,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 
 						       		System.out.println("my imageResource: "+ imagelink +" real imageResource"+ R.drawable.imagefun3 );
 						       		animeImageArray[i] = imagelink;
-						     //  	 }
+						       	 }
 					       	 
 				        		
 				        	//}
@@ -196,25 +200,47 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 
 			if(animeImageArray != null){
 				Log.i("GETVIEW ", "image and name not NUll");
-				 ImageView imageView = new ImageView(mContext);
+				// ImageView imageView = new ImageView(mContext);
+				View v = convertView;
+		        ImageView picture;  
+		        
+		        if(v == null) {
+		            v = inflater.inflate(R.layout.grid_item, parent, false);
+		            v.setTag(R.id.picture, v.findViewById(R.id.picture));
+		           
+		        }
+		        picture = (ImageView)v.getTag(R.id.picture);
 
-					 imageView.setImageResource(animeImageArray[position]);
-					 imageView.setId(animeImageArray[position]);
+		        
+		      //  Item item = (Item)getItem(position);
+
+				    int res	= mContext.getResources().getIdentifier( animeImageArray[position].toString() , "drawable" ,mContext.getPackageName() );
+                    
+                    if(res != 0 ){
+                        Log.i("IMAGEVIEW", "FOUND IMG RES: " + res);
+        		        picture.setImageResource(animeImageArray[position]);
+        		        picture.setId(animeImageArray[position]);
+
+   					
+        		        animFadein = AnimationUtils.loadAnimation(mContext,
+				                R.drawable.zoom_in);
+					   picture.setContentDescription(animeSongNameArray[position]);
+					   animFadein.setAnimationListener(this);
+					   
+                    	
+                    }
 				   //  imageView.setContentDescription(String.valueOf(cThumbIds[position]));
 					 
 					 ///ADD Animations 
-					  animFadein = AnimationUtils.loadAnimation(mContext,
-				                R.drawable.zoom_in);
-					   imageView.setContentDescription(animeSongNameArray[position]);
-					   animFadein.setAnimationListener(this);
+					
 					   
 					   
-					 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-					 imageView.setPadding(10, 5, 10, 5);
-					 imageView.startAnimation(animFadein);
-					 imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
+					// imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+					// imageView.setPadding(10, 5, 10, 5);
+					 v.startAnimation(animFadein);
+					// imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
 				     
-					 return imageView;
+					 return v;
 
 	           }else{
 	        	   

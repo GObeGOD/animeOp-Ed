@@ -32,6 +32,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	public static final String KEY_QUESTION4 = "Question4";
 	public static final String KEY_IMAGE = "image";
 	public static final String KEY_LEVEL = "level";
+	public static final String KEY_COMPLETE = "complete";
+
+	
 	private static final String CREAT_ANIMEOPANDED_TABLE = 
 			"CREATE TABLE " + TABLE_AnimeOPandEd + "(" + 
 	         KEY_ID + " INTEGER PRIMARY KEY," + 
@@ -46,7 +49,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		     KEY_QUESTION3 + " TEXT," + 
 	         KEY_QUESTION4 + " TEXT," + 
 		     KEY_IMAGE + " TEXT," + 
-	         KEY_LEVEL + " NUMERIC" + 
+	         KEY_LEVEL + " NUMERIC," + 
+		     KEY_COMPLETE + " TEXT"+
 		     ")";
 	
 	

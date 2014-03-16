@@ -46,7 +46,8 @@ public class AnimeOpandEdDataSource {
  		DatabaseHandler.KEY_QUESTION3,
  		DatabaseHandler.KEY_QUESTION4,
  		DatabaseHandler.KEY_IMAGE,
- 		DatabaseHandler.KEY_LEVEL
+ 		DatabaseHandler.KEY_LEVEL,
+ 		DatabaseHandler.KEY_COMPLETE
  		
      };
  		
@@ -77,6 +78,8 @@ public AnimeOpAndEdData addAnimeOPandED(AnimeOpAndEdData opandEd) {
 
  		values.put(DatabaseHandler.KEY_IMAGE, opandEd.getImage());
  		values.put(DatabaseHandler.KEY_LEVEL, opandEd.getLevel());
+ 		values.put(DatabaseHandler.KEY_COMPLETE, opandEd.getComplete());
+
 
  		// Inserting Row
  		long insertid = dataBase.insert(DatabaseHandler.TABLE_AnimeOPandEd, null, values);
@@ -140,6 +143,33 @@ public List<AnimeOpAndEdData> listByLevel(String[] levelSelection) {
 
 }
 
+public AnimeOpAndEdData getAnimeBYSongName(String[] songName){
+	
+	Cursor cursor = dataBase.query(DatabaseHandler.TABLE_AnimeOPandEd, allcolumns, "song = ?", songName, null, null, null);
+	if(cursor != null){
+		cursor.moveToFirst();
+	}
+	AnimeOpAndEdData animeOpandEd = new AnimeOpAndEdData();
+	
+	animeOpandEd.setID(cursor.getLong(cursor.getColumnIndex(DatabaseHandler.KEY_ID)));
+	animeOpandEd.setName(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_NAME)));
+	animeOpandEd.setSong(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_SONG)));
+	animeOpandEd.setArtist(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_ARTIST)));
+	animeOpandEd.setMusic(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_MUSIC)));
+	animeOpandEd.setYoutube(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_YOUTUBE)));
+	animeOpandEd.setAnswer(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_ANSWER)));
+	animeOpandEd.setQuestion1(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_QUESTION1)));
+	animeOpandEd.setQuestion2(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_QUESTION2)));
+	animeOpandEd.setQuestion3(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_QUESTION3)));
+	animeOpandEd.setQuestion4(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_QUESTION4)));
+	animeOpandEd.SetImage((cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_IMAGE))));
+	animeOpandEd.SetLevel(cursor.getInt(cursor.getColumnIndex(DatabaseHandler.KEY_LEVEL)));
+	animeOpandEd.SetComplete(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_COMPLETE)));
+	
+	return animeOpandEd;
+	
+}
+
  	
  	
  	
@@ -164,6 +194,8 @@ public List<AnimeOpAndEdData> cursorToList(Cursor cursor) {
 			animeOpandEd.setQuestion4(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_QUESTION4)));
 			animeOpandEd.SetImage((cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_IMAGE))));
 			animeOpandEd.SetLevel(cursor.getInt(cursor.getColumnIndex(DatabaseHandler.KEY_LEVEL)));
+			animeOpandEd.SetComplete(cursor.getString(cursor.getColumnIndex(DatabaseHandler.KEY_COMPLETE)));
+
 
 			// Adding contact to list
 			animeOpandEdList.add(animeOpandEd);

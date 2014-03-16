@@ -14,22 +14,20 @@ public class AnimeOpAndEdData {
     String question4;
     String image;
     int level;
+    String complete;
 
     
     public AnimeOpAndEdData(){
     	
     }
     
-    public AnimeOpAndEdData(String name, String song){
-        this.name = name;
-        this.song = song;
-    }
+    
     
    // making new animeOpandEd entry 
     //to0 much args 
     public AnimeOpAndEdData(String name, String song, String artist
     							, String music, String youtube, String answer, String question1
-    							, String question2,String question3,String question4,String image,int level){
+    							, String question2,String question3,String question4,String image,int level, String complete){
     	//this.id = id;
         this.name = name;
         this.song = song;
@@ -44,6 +42,7 @@ public class AnimeOpAndEdData {
         this.question4 = question4;
         this.image = image;
         this.level = level;
+        this.complete = complete;
         
     }
  
@@ -147,4 +146,13 @@ public class AnimeOpAndEdData {
     	 this.level = level;
     }
 
+    
+    public String getComplete(){
+    	return  this.complete;
+    }
+    
+    public void SetComplete(String complete){
+    	this.complete = complete;
+    }
+   
 }

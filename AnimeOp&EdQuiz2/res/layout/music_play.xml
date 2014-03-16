@@ -4,22 +4,66 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <ImageButton
-        android:id="@+id/musicPlayButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
-        android:background="@null"
-        android:src="@drawable/music_playbutton"
-        android:contentDescription="@string/contentDescriptionMusicPlay" />
-
     <SeekBar
         android:id="@+id/musicSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
+
+    <ImageButton
+        android:id="@+id/musicPlayButton"
+        android:layout_width="271dp"
+        android:background="@android:color/transparent"
+        
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/musicSeekBar"
+        android:layout_centerHorizontal="true"
+    
+       
+        
+        android:contentDescription="@string/contentDescriptionMusicPlay"
+        android:src="@drawable/music_playbutton" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignRight="@+id/button3"
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="21dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignRight="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="16dp"
+        android:text="oiewrowerjw wio jrweiojr woijer iwoj rjwre oirj" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/musicPlayButton"
+        android:layout_alignRight="@+id/musicPlayButton"
+        android:layout_below="@+id/musicPlayButton"
+        android:layout_marginTop="26dp"
+        android:minWidth="64dip"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignRight="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="14dp"
+        android:text="Button" />
 
 </RelativeLayout>
