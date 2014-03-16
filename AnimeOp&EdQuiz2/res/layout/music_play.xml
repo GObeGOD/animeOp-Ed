@@ -13,57 +13,61 @@
 
     <ImageButton
         android:id="@+id/musicPlayButton"
-        android:layout_width="271dp"
+        android:layout_width="200dp"
         android:background="@android:color/transparent"
         
         android:layout_height="wrap_content"
         android:layout_below="@+id/musicSeekBar"
         android:layout_centerHorizontal="true"
-    
-       
-        
-        android:contentDescription="@string/contentDescriptionMusicPlay"
+	    android:contentDescription="@string/contentDescriptionMusicPlay"
         android:src="@drawable/music_playbutton" />
 
     <Button
+        android:id="@+id/button1"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+             android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/musicPlayButton"
+        android:layout_marginTop="20dp"
+        
+        
+        android:text="Button" />
+    
+    
+      <Button
+        android:id="@+id/button2"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+                     android:padding="10dp"
+        
+        android:text="Button" />
+  <Button
+        android:id="@+id/button3"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignLeft="@+id/button2"
+        android:layout_marginTop="20dp"
+             android:padding="10dp"
+        
+        android:layout_below="@+id/button2"
+        android:text="oiewrowerjw wio jrweiojr woijer iwoj rj ddddd   wre oirj" />
+
+    <Button
         android:id="@+id/button4"
-        android:layout_width="271dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button3"
-        android:layout_alignRight="@+id/button3"
         android:layout_below="@+id/button3"
-        android:layout_marginTop="21dp"
+                     android:padding="10dp"
+        
+        android:layout_marginTop="20dp"
         android:text="Button" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="271dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignRight="@+id/button2"
-        android:layout_below="@+id/button2"
-        android:layout_marginTop="16dp"
-        android:text="oiewrowerjw wio jrweiojr woijer iwoj rjwre oirj" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="271dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/musicPlayButton"
-        android:layout_alignRight="@+id/musicPlayButton"
-        android:layout_below="@+id/musicPlayButton"
-        android:layout_marginTop="26dp"
-        android:minWidth="64dip"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="271dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="14dp"
-        android:text="Button" />
+  
 
 </RelativeLayout>

@@ -2,8 +2,6 @@ package com.gobi.animeopedquiz2;
 
 
 
-import com.gobi.animeopedquiz2.R;
-
 import model.AnimeOpAndEdData;
 import model.AnimeOpandEdDataSource;
 import model.BaseActivity;
@@ -12,8 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 
