@@ -14,61 +14,51 @@
     <ImageButton
         android:id="@+id/musicPlayButton"
         android:layout_width="200dp"
-        android:background="@android:color/transparent"
-        
         android:layout_height="wrap_content"
         android:layout_below="@+id/musicSeekBar"
         android:layout_centerHorizontal="true"
-	    android:contentDescription="@string/contentDescriptionMusicPlay"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/contentDescriptionMusicPlay"
         android:src="@drawable/music_playbutton" />
- 
+
     <Button
         android:id="@+id/question1_Button"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-             android:padding="10dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/musicPlayButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        
-        
-        android:text="Button" />
-    
-    
-      <Button
+        android:onClick="questionButtonTapped"
+        android:padding="10dp" />
+
+    <Button
         android:id="@+id/question2_Button"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/question1_Button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-                     android:padding="10dp"
-        
-        android:text="Button" />
-  <Button
+        android:onClick="questionButtonTapped"
+        android:padding="10dp" />
+
+    <Button
         android:id="@+id/question3_Button"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        
-        android:layout_alignLeft="@+id/question2_Button" 
-        android:layout_marginTop="20dp"
-             android:padding="10dp"
-        
+        android:layout_alignLeft="@+id/question2_Button"
         android:layout_below="@+id/question2_Button"
-        
-        android:text="oiewrowerjw wio jrweiojr woijer iwoj rj ddddd   wre oirj" />
+        android:layout_marginTop="20dp"
+        android:onClick="questionButtonTapped"
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/question4_Button"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/question3_Button"
-        android:layout_below="@+id/question3_Button" 
-                     android:padding="10dp"
-        
+        android:layout_below="@+id/question3_Button"
         android:layout_marginTop="20dp"
-        android:text="Button" />
-
-  
+        android:onClick="questionButtonTapped"
+        android:padding="10dp" />
 
 </RelativeLayout>
