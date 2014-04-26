@@ -100,7 +100,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 				if (i < animeImageArray.length) {
 
 					// if(animeImageArray == null & animeNameArray == null){
-					animeImageArray[i] = R.drawable.imagefun;
+					animeImageArray[i] = R.drawable.unknown_music;
 					animeSongNameArray[i] = aOP.getSong();
 					// Log.i("animeImage and name array",
 					// "NULL values for IMAGE AND NAME ARRAY");

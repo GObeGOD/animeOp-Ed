@@ -78,17 +78,17 @@ public class MusicSelection extends BaseActivity {
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "naruto", 1, "yes"));
+						"Naruto", "Saint Seiya", "Ninku", "beck_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "naruto", 1, "yes"));
+						"Naruto", "Saint Seiya", "Ninku", "beck_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "naruto", 1, "yes"));
+						"Naruto", "Saint Seiya", "Ninku", "major_s2_img", 1, "no"));
 
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Berserk",
 						"Tell Me Why", "PENPALS", "berserkop1tellmewhy",
@@ -120,7 +120,7 @@ public class MusicSelection extends BaseActivity {
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "naruto", 1, "no"));
+						"Naruto", "Saint Seiya", "Ninku", "hajimenoippo_img", 1, "no"));
 
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Berserk",
 						"Tell Me Why", "PENPALS", "berserkop1tellmewhy",
@@ -130,7 +130,7 @@ public class MusicSelection extends BaseActivity {
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Btooom!",
 						"No pain, No game", "Nano", "btooom_op1_nopainnogame",
 						"btooom opening 1", "Btooom!", "Mirai Nikki", "Gantz",
-						"Btooom!", "Rozen Maiden", "btooom_img", 1, "yes"));
+						"Btooom!", "Rozen Maiden", "btooom_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Black Lagoon",
 						"Red Fraction", "MELL", "blacklagoon_op1_redfraction",
 						" black lagoon opening 1", "Black Lagoon",
@@ -152,7 +152,7 @@ public class MusicSelection extends BaseActivity {
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "naruto", 1, "no"));
+						"Naruto", "Saint Seiya", "Ninku", "hajimenoippo_img", 1, "no"));
 
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Berserk",
 						"Tell Me Why", "PENPALS", "berserkop1tellmewhy",
@@ -162,7 +162,7 @@ public class MusicSelection extends BaseActivity {
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Btooom!",
 						"No pain, No game", "Nano", "btooom_op1_nopainnogame",
 						"btooom opening 1", "Btooom!", "Mirai Nikki", "Gantz",
-						"Btooom!", "Rozen Maiden", "btooom_img", 1, "no"));
+						"Btooom!", "Rozen Maiden", "fullmetalalchemist_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Black Lagoon",
 						"Red Fraction", "MELL", "blacklagoon_op1_redfraction",
 						" black lagoon opening 1", "Black Lagoon",
@@ -172,17 +172,46 @@ public class MusicSelection extends BaseActivity {
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "naruto", 1, "no"));
+						"Naruto", "Saint Seiya", "Ninku", "major_s2_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "naruto", 1, "no"));
+						"Naruto", "Saint Seiya", "Ninku", "naruto_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "naruto", 1, "no"));
+						"Naruto", "Saint Seiya", "Ninku", "fullmetalalchemist_img", 1, "no"));
+				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Berserk",
+						"Tell Me Why", "PENPALS", "berserkop1tellmewhy",
+						"berserk opening", "Berserk", "Gungrave", "Claymore",
+						"Fist of the North Star", "Berserk", "berserk_img", 1,
+						"no"));
+				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Btooom!",
+						"No pain, No game", "Nano", "btooom_op1_nopainnogame",
+						"btooom opening 1", "Btooom!", "Mirai Nikki", "Gantz",
+						"Btooom!", "Rozen Maiden", "fullmetalalchemist_img", 1, "no"));
+				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Black Lagoon",
+						"Red Fraction", "MELL", "blacklagoon_op1_redfraction",
+						" black lagoon opening 1", "Black Lagoon",
+						"Jormungand", "Michiko & Hatchin", "Canaan",
+						"Black Lagoon", "blacklagoon_img", 1, "no"));
+				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
+						"Haruka Kanata", "Asian Kung-Fu Generation",
+						"naruto_op2_haruka_kanata",
+						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
+						"Naruto", "Saint Seiya", "Ninku", "naruto_img", 1, "no"));
+				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
+						"Haruka Kanata", "Asian Kung-Fu Generation",
+						"naruto_op2_haruka_kanata",
+						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
+						"Naruto", "Saint Seiya", "Ninku", "major_s2_img", 1, "no"));
+				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
+						"Haruka Kanata", "Asian Kung-Fu Generation",
+						"naruto_op2_haruka_kanata",
+						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
+						"Naruto", "Saint Seiya", "Ninku", "fullmetalalchemist_img", 1, "no"));
 
 			} else {
 				Log.e("InsertLevel", "LEVEL ALREADY INSERTED");
