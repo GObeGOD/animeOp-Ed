@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -34,112 +35,15 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 
 	public ImageGridAdapter(Context c, int level) {
 		inflater = LayoutInflater.from(c);
-
+		Log.i("iGAC", ""+level);
 		mContext = c;
-
 		dataSource = new AnimeOpandEdDataSource(c);
 		musicSelec = new MusicSelection();
-		String[] bylevel = { Integer.toString(level) };
+		animeOPandEd = new ArrayList<AnimeOpAndEdData>(); 
 
-		if (animeOPandEd == null) {
-			dataSource.open();
-			Log.e("ImageGridAdapter", "ANIME SONG LIST NULL ADDING!!");
-
-			animeOPandEd = dataSource.listByLevel(bylevel);
-
-		} else {
-			Log.e("ImageGridAdapter", "LIST EXCITES");
-
-		}
-
-		// Reading all Songs
-		if (animeOPandEd.isEmpty()) {
-			Log.e("ImageGirdAdapter: ", "Found NOTHING at level: " + level);
-			animeImageArray = new Integer[0];
-			animeSongNameArray = new String[0];
-
-			AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-			// Add the buttons
-			builder.setTitle("No Songs Found :(").setMessage(
-					"Click Okay to go back");
-
-			builder.setPositiveButton("OKAY",
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int id) {
-							// User clicked OK button
-							Log.i("alertDialog", "OKAY cLICKED");
-							backActivity();
-						}
-					});
-			builder.setNegativeButton("CANCEL",
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int id) {
-							// User cancelled the dialog
-							Log.i("alertDialog", "CANCEL cLICKED");
-
-						}
-					});
-			// Set other dialog properties
-
-			// Create the AlertDialog
-			AlertDialog alertDialog = builder.create();
-			alertDialog.show();
-
-		} else {
-
-			int numofSongs = animeOPandEd.size();
-
-			Log.i("HEY the # of Songs FOUND",
-					"again FOUND - " + animeOPandEd.size());
-
-			// set Num of Songs going to be displayed
-			animeImageArray = new Integer[numofSongs];
-			animeSongNameArray = new String[numofSongs];
-
-			for (AnimeOpAndEdData aOP : animeOPandEd) {
-				if (i < animeImageArray.length) {
-
-					// if(animeImageArray == null & animeNameArray == null){
-					animeImageArray[i] = R.drawable.unknown_music;
-					animeSongNameArray[i] = aOP.getSong();
-					// Log.i("animeImage and name array",
-					// "NULL values for IMAGE AND NAME ARRAY");
-					// log all songs in loop
-					String log1 = "Id: " + aOP.getID() + " LOOP: " + i
-							+ " Name: " + aOP.getName() + "\n" + "Song:"
-							+ aOP.getSong() + "\n" + "Level: " + aOP.level
-							+ " Music: " + aOP.getMusic() + "youtube: "
-							+ aOP.getYoutube();
-
-					Log.i("FOR loop", log1);
-					// looking for image Resources
-
-					if (animeOPandEd.get(i).getComplete().equals("yes")) {
-
-						String imageUri = aOP.getImage();
-						System.out.println("YEAH" + "getImage() = " + imageUri
-								+ aOP.getName() + aOP.id + aOP.getMusic()
-								+ aOP.getYoutube());
-
-						int imagelink = mContext.getResources()
-								.getIdentifier(imageUri, "drawable",
-										mContext.getPackageName());
-
-						System.out.println("my imageResource: " + imagelink
-								+ " real imageResource" + R.drawable.imagefun3);
-						animeImageArray[i] = imagelink;
-					}
-
-					// }
-
-					i++;
-
-				} // END of if # 1
-
-			}
-
-		}
-
+	//	dataSource.open();
+		loadData(mContext, level);
+		
 	}
 
 	@Override
@@ -177,12 +81,12 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		Log.i("getView", "getView called IMAGEARRAY: " + animeImageArray.length);
+   //Log.i("getView", "getView called IMAGEARRAY: " + animeImageArray.length);
 
-		Log.i("getView", "position: " + position);
+	//	Log.i("getView", "position: " + position);
 
 		if (animeImageArray != null) {
-			Log.i("GETVIEW ", "image and name not NUll");
+		//	Log.i("GETVIEW ", "image and name not NUll");
 			// ImageView imageView = new ImageView(mContext);
 			View v = convertView;
 			ImageView picture;
@@ -201,7 +105,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 					mContext.getPackageName());
 
 			if (res != 0) {
-				Log.i("IMAGEVIEW", "FOUND IMG RES: " + res);
+			//	Log.i("IMAGEVIEW", "FOUND IMG RES: " + res);
 				picture.setImageResource(animeImageArray[position]);
 				picture.setId(animeImageArray[position]);
 
@@ -224,7 +128,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 
 		} else {
 
-			Log.i("GETVIEW ", "null image and name ");
+		//	Log.i("GETVIEW ", "null image and name ");
 			ImageView imageView2 = new ImageView(mContext);
 			imageView2.setImageResource(R.drawable.imagefun);
 			imageView2.setId(404);
@@ -232,7 +136,143 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 		}
 
 	}
+	public void updateAnimeGrid() {
+		// reloadData();  // will refresh the data
+		  //  notifyDataSetChanged();
+	    ///this.notifyDataSetChanged();
+	}
 
+	
+	public void loadData(Context c, int level) {
+		mContext = c;
+		String[] bylevel = { Integer.toString(level) };
+		 i = 0;
+		 Log.i("dfsf", "loadData");
+if (animeOPandEd.size() != 0) {
+	Log.i("sas", "NOT NUL NULLNULL NULL");
+	animeOPandEd.clear();
+
+
+
+
+}
+		if (animeOPandEd.isEmpty()) {
+			Log.i("dsds", "its the datasource");
+
+			dataSource.open();
+			Log.i("dsds", "not the datasource");
+			Log.e("ImageGridAdapter", "ANIME SONG LIST NULL ADDING!!");
+			//MAKE LIST
+			animeOPandEd = dataSource.listByLevel(bylevel);
+			//Log.i("datasource",  String.valueOf(animeOPandEd.size()));
+			
+			// Reading all Songs
+			if (animeOPandEd.isEmpty()) {
+				Log.e("ImageGirdAdapter: ", "Found NOTHING at level: " + level);
+				animeImageArray = new Integer[0];
+				animeSongNameArray = new String[0];
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+				// Add the buttons
+				builder.setTitle("No Songs Found :(").setMessage(
+						"Click Okay to go back");
+
+				builder.setPositiveButton("OKAY",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								// User clicked OK button
+								Log.i("alertDialog", "OKAY cLICKED");
+								backActivity();
+							}
+						});
+				builder.setNegativeButton("CANCEL",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								// User cancelled the dialog
+							//	Log.i("alertDialog", "CANCEL cLICKED");
+
+							}
+						});
+				// Set other dialog properties
+
+				// Create the AlertDialog
+				AlertDialog alertDialog = builder.create();
+				alertDialog.show();
+
+			} else {
+
+				int numofSongs = animeOPandEd.size();
+
+				Log.i("HEY the # of Songs FOUND",
+						"again FOUND - " + animeOPandEd.size());
+
+				// set Num of Songs going to be displayed
+				if (animeImageArray == null) {
+					Log.i("sdds", "animeImage null");
+					animeImageArray = new Integer[numofSongs];
+					animeSongNameArray = new String[numofSongs];
+				//	Arrays.fill(animeImageArray, null);
+				//	Arrays.fill(animeSongNameArray, null);
+
+
+				}
+			
+
+				for (AnimeOpAndEdData aOP : animeOPandEd) {
+					if (i < animeImageArray.length) {
+
+						// if(animeImageArray == null & animeNameArray == null){
+						animeImageArray[i] = R.drawable.unknown_music;
+						animeSongNameArray[i] = aOP.getSong();
+						// Log.i("animeImage and name array",
+						// "NULL values for IMAGE AND NAME ARRAY");
+						// log all songs in loop
+				/*	String log1 = "Id: " + aOP.getID() + " LOOP: " + i
+								+ " Name: " + aOP.getName() + "\n" + "Song:"
+								+ aOP.getSong() + "\n" + "Level: " + aOP.level
+								+ " Music: " + aOP.getMusic() + "youtube: "
+								+ aOP.getYoutube();
+	
+						Log.i("FOR loop", log1);*/
+						// looking for image Resources
+
+						if (animeOPandEd.get(i).getComplete().equals("yes")) {
+							Log.i("rightsongs", "found YES");
+							String imageUri = aOP.getImage();
+							/*System.out.println("YEAH" + "getImage() = " + imageUri
+									+ aOP.getName() + aOP.id + aOP.getMusic()
+									+ aOP.getYoutube());*/
+
+							int imagelink = mContext.getResources()
+									.getIdentifier(imageUri, "drawable",
+											mContext.getPackageName());
+
+						/*	System.out.println("my imageResource: " + imagelink
+									+ " real imageResource" + R.drawable.imagefun3);*/
+							
+							animeImageArray[i] = imagelink;
+						}
+
+						// }
+
+						i++;
+
+					} // END of if # 1
+
+				}
+
+			}
+
+
+		} else {
+			Log.e("ImageGridAdapter", "LIST EXCITES");
+			animeOPandEd.clear();
+
+		}
+
+		
+
+	}
 	public void backActivity() {
 		// Intent intent = new Intent(mContext, LevelActivity.class);
 		// ((Object) mContext).finishActivity();

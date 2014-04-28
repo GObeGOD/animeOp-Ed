@@ -22,6 +22,7 @@ public class MusicSelection extends BaseActivity {
 	AnimeOpandEdDataSource dataSource;
 	Levels levels;
 	ImageGridAdapter adapter;
+	int levelInt;
 
 	public String[] numbers;
 
@@ -43,11 +44,11 @@ public class MusicSelection extends BaseActivity {
 		String[] parts = level.split("_");
 		// String levelString = parts[0]; // level
 		String levelNum = parts[1]; // 1
-		int levelInt = Integer.parseInt(levelNum);
+		levelInt = Integer.parseInt(levelNum);
 		insertLevel(levelInt);
 
 		 gridView = (GridView) findViewById(R.id.gridView1);
- adapter = new ImageGridAdapter(this, levelInt);
+		 adapter = new ImageGridAdapter(this, levelInt);
 		// Instance of ImageAdapter Class and Send Level
 		gridView.setAdapter(adapter);
 
@@ -320,10 +321,18 @@ public class MusicSelection extends BaseActivity {
 		}
 
 	}
+	
+	
+	
+	
+	
 
 	private void changeAct(String message) {
 		Intent intent = new Intent(this, MusicPlayActivity.class);
 		intent.putExtra(EXTRA_MESSAGE, message);
+		String levelintstring =String.valueOf(levelInt);
+		intent.putExtra("levelNum", levelintstring);
+
 	   // finish();
 
 		startActivity(intent);
@@ -334,20 +343,36 @@ public class MusicSelection extends BaseActivity {
 	protected void onResume() {
 		super.onResume();
 		dataSource.open();
+		 Log.i("onResume", "onResume!!");
+
 	//	onCreate(null);
-		//adapter.notifyDataChanged();
+	//adapter.notifyDataChanged();
 		//gridView.setAdapter(adapter);
-//	adapter.notifyDataSetChanged();
-//	gridView.refreshDrawableState();
+ 
+//gridView.setAdapter(adapter);
+//	insertLevel(levelInt);
+//gridView
+//grid.setAdapter(adapter);
+	// gridView = (GridView) findViewById(R.id.gridView1);
+	 //adapter = new ImageGridAdapter(this, levelInt);
+	//	adapter.notifyDataSetChanged();
+	//	   gridView.refreshDrawableState();
+	//	   gridView.invalidateViews();
+    adapter.loadData(this,levelInt);
+	adapter.notifyDataSetChanged();
+	//  gridView.refreshDrawableState();
+	  // gridView.invalidateViews();
+
+	//	gridView.setAdapter(adapter);
 
 	 
-	 Log.i("onResume", "IM CALLED!!");
+	 
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
-		dataSource.close();
+	//	dataSource.close();
 	}
 
 }

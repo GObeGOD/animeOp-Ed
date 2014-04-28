@@ -1,7 +1,5 @@
 package com.gobi.animeopedquiz2;
 
-import com.gobi.animeopedquiz2.R;
-
 import model.BaseActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +7,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
 
@@ -37,8 +34,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
 		if (v == playButton) {
 
-			Toast.makeText(getApplicationContext(), "You clicked Play!",
-					Toast.LENGTH_LONG).show();
+			
 			Intent intent = new Intent(this, LevelActivity.class);
 			// EditText editText = (EditText) findViewById(R.id.edit_message);
 			// String message = editText.getText().toString();

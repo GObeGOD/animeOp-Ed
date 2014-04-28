@@ -16,7 +16,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -255,25 +254,23 @@ public class MusicPlayActivity extends BaseActivity implements
 
 		} else {
 			Toast.makeText(this, "WRONG", Toast.LENGTH_SHORT).show();
+			dataSource.updateAnime(currentAnime, "no");
 
 		}
 
 	}
 
-	@Override
-	public void onBackPressed() {
-		System.out.println("HELP!!!!!!");
-		this.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN,
-				KeyEvent.KEYCODE_BACK));
 
-		finish();
-	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
 		mHandler.removeCallbacks(mUpdateTimeTask);
 		mediaPlayer.release();
+		dataSource.close();
 	}
+
+	
+	
 
 }
