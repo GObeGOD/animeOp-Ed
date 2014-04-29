@@ -203,11 +203,11 @@ public class MusicSelection extends BaseActivity {
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
 						"Naruto", "Saint Seiya", "Ninku", "naruto_img", 1, "no"));
-				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
+				dataSource.addAnimeOPandED(new AnimeOpAndEdData("NaASruto",
 						"Haruka Kanata", "Asian Kung-Fu Generation",
-						"naruto_op2_haruka_kanata",
-						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "major_s2_img", 1, "no"));
+						"narutASo_op2_haruka_kanata",
+						"naruto op 2 haruka kanata", "NaruSAto", "Shaman King",
+						"NaruSAto", "Saint Seiya", "Ninku", "major_s2_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",

@@ -270,9 +270,33 @@ makequizQ(currentAnime);
 
 public void gotItRight(){
 	
-	long nextAnime = currentAnime.getID() + 1;
-	Log.i("nextAnime", "NEXT: " + nextAnime);
-	makequizQ(animeOPandEd.get(6));
+	//long nextAnime = currentAnime.getID() ;
+	//Integer presentanime = (int) (long)  currentAnime.getID() -1;
+	
+	int nextAnime = (int) (long) currentAnime.getID();
+	
+	Log.i("nextAnime", "NOW IN ARRAY: " + (nextAnime -1));
+
+	Log.i("nextAnime", "NEXT IN ARRAY : " + nextAnime);
+	
+	Log.i("nextAnime", "NOW NON ARRAY: " + nextAnime);
+
+	Log.i("nextAnime", "NEXT NON ARRAY : " + (nextAnime +1));
+	
+	int limit = animeOPandEd.size() - 1;
+
+	if (nextAnime <  limit) {
+		Log.i("nextAnime", "NEXT IN ARRAY : " + nextAnime);
+
+		makequizQ(animeOPandEd.get(nextAnime));
+		Log.i("nextAnime", "ARRAY SIZE :" + animeOPandEd.size());
+
+	}else{
+		Log.i("nextAnime", "TOO LARGE level complete  : " + (nextAnime));
+
+		
+		
+	}
 	
 	
 	
