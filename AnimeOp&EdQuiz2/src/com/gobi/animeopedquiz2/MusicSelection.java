@@ -80,11 +80,11 @@ public class MusicSelection extends BaseActivity {
 						"naruto_op2_haruka_kanata",
 						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
 						"Naruto", "Saint Seiya", "Ninku", "beck_img", 1, "no"));
-				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
-						"Haruka Kanata", "Asian Kung-Fu Generation",
+				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Narutso",
+						"Hardauka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
-						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
-						"Naruto", "Saint Seiya", "Ninku", "beck_img", 1, "no"));
+						"naruadto op 2 haruka kanata", "Narutso", "Shaadman King",
+						"Narutso", "Saintad Seiya", "Nindaku", "beck_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
@@ -330,8 +330,9 @@ public class MusicSelection extends BaseActivity {
 	private void changeAct(String message) {
 		Intent intent = new Intent(this, MusicPlayActivity.class);
 		intent.putExtra(EXTRA_MESSAGE, message);
-		String levelintstring =String.valueOf(levelInt);
-		intent.putExtra("levelNum", levelintstring);
+		//String levelintstring =String.valueOf(levelInt);
+
+		intent.putExtra("levelNum", levelInt);
 
 	   // finish();
 

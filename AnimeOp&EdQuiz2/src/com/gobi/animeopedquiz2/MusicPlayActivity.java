@@ -10,6 +10,7 @@ import model.AnimeOpandEdDataSource;
 import model.BaseActivity;
 import model.Utilities;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.net.Uri;
@@ -29,8 +30,11 @@ public class MusicPlayActivity extends BaseActivity implements
 	private MediaPlayer mediaPlayer;
 	private Utilities utilities;
 	private SeekBar musicSeekBar;
+	List<AnimeOpAndEdData> animeOPandEd;
+
 	AnimeOpandEdDataSource dataSource;
 	AnimeOpAndEdData currentAnime;
+	
 	Button question1_Button;
 	Button question2_Button;
 	Button question3_Button;
@@ -41,17 +45,41 @@ public class MusicPlayActivity extends BaseActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.music_play);
+	    View view = this.getWindow().getDecorView();
+	    view.setBackgroundColor(Color.LTGRAY);
 		Intent intent = getIntent();
 		String animeSongName = intent
 				.getStringExtra("com.example.animeopedquiz2.MESSAGE");
 		Log.i("intent", "animesongName: " + animeSongName);
+		
+		int levelnum = intent.getIntExtra("levelNum", 0);
+		String[] bylevel = { Integer.toString(levelnum) };
+
+		
 		dataSource = new AnimeOpandEdDataSource(this);
 		dataSource.open();
+	Log.i("sdf", "level level velv e" + levelnum);
+		
+	if (animeOPandEd== null) {
+		String[] bysongname = { animeSongName };
+
+		animeOPandEd = dataSource.listByLevel(bylevel);
+		
+		AnimeOpAndEdData ani = dataSource.getAnimeBYSongName(bysongname);
+		//int index = animeOPandEd.indexOf(animeOPandEd.get(1));
+		//int index2 = animeOPandEd.indexOf(ani);
+
+		
+		//Log.i("index ", "index of " +  animeOPandEd.);
+		Log.i("index ", "index of " +  ani.getName());
+		
+		}
+	
 		String[] songName = { animeSongName };
 
 		currentAnime = dataSource.getAnimeBYSongName(songName);
 		Log.i("ANIME CHOOSEN", "NAME: " + currentAnime.getName() + "song: "
-				+ currentAnime.getSong() + "MUSIC: " + currentAnime.getMusic());
+				+ currentAnime.getSong() + "MUSIC: " + currentAnime.getMusic() + currentAnime.getID());
 
 		musicPlayButton = (ImageButton) findViewById(R.id.musicPlayButton);
 		musicSeekBar = (SeekBar) findViewById(R.id.musicSeekBar);
@@ -60,32 +88,11 @@ public class MusicPlayActivity extends BaseActivity implements
 		question3_Button = (Button) findViewById(R.id.question3_Button);
 		question4_Button = (Button) findViewById(R.id.question4_Button);
 
-		String[] animeQuestions = new String[4];
-		animeQuestions[0] = currentAnime.getQuestion1().toString();
-		animeQuestions[1] = currentAnime.getQuestion2().toString();
-		animeQuestions[2] = currentAnime.getQuestion3().toString();
-		animeQuestions[3] = currentAnime.getQuestion4().toString();
-		// int idx = new Random().nextInt(animeQuestions.length);
-
-		List<String> ranQs = Arrays.asList(animeQuestions);
-
-		Collections.shuffle(ranQs);
-
-		question1_Button.setText(animeQuestions[0].toString());
-		question2_Button.setText(animeQuestions[1].toString());
-		question3_Button.setText(animeQuestions[2].toString());
-		question4_Button.setText(animeQuestions[3].toString());
-
-		Log.i("Questionsz",
-				" q1: " + animeQuestions[0].toString() + " q2: "
-						+ animeQuestions[1].toString() + " q3: "
-						+ animeQuestions[2].toString() + " q4: "
-						+ animeQuestions[3].toString());
+	
 
 		// Creating a Mediaplayer
 		mediaPlayer = new MediaPlayer();
 		utilities = new Utilities();
-		playSong(currentAnime.getMusic());
 		musicSeekBar.setOnSeekBarChangeListener(this);
 
 		musicPlayButton.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +119,7 @@ public class MusicPlayActivity extends BaseActivity implements
 				}
 			}
 		});
-
+makequizQ(currentAnime);
 	}
 
 	public void musicPlayClick(View view) {
@@ -251,6 +258,7 @@ public class MusicPlayActivity extends BaseActivity implements
 			Toast.makeText(this, "RIGHT!", Toast.LENGTH_SHORT).show();
 			
 			dataSource.updateAnime(currentAnime, "yes");
+			gotItRight();
 
 		} else {
 			Toast.makeText(this, "WRONG", Toast.LENGTH_SHORT).show();
@@ -260,7 +268,46 @@ public class MusicPlayActivity extends BaseActivity implements
 
 	}
 
+public void gotItRight(){
+	
+	long nextAnime = currentAnime.getID() + 1;
+	Log.i("nextAnime", "NEXT: " + nextAnime);
+	makequizQ(animeOPandEd.get(6));
+	
+	
+	
+	
+	
+	
+}
 
+public void makequizQ(AnimeOpAndEdData currentAnimeQ){
+	playSong(currentAnimeQ.getMusic());
+currentAnime = currentAnimeQ;
+	String[] animeQuestions = new String[4];
+	animeQuestions[0] = currentAnimeQ.getQuestion1().toString();
+	animeQuestions[1] = currentAnimeQ.getQuestion2().toString();
+	animeQuestions[2] = currentAnimeQ.getQuestion3().toString();
+	animeQuestions[3] = currentAnime.getQuestion4().toString();
+	// int idx = new Random().nextInt(animeQuestions.length);
+
+	List<String> ranQs = Arrays.asList(animeQuestions);
+
+	Collections.shuffle(ranQs);
+
+	question1_Button.setText(animeQuestions[0].toString());
+	question2_Button.setText(animeQuestions[1].toString());
+	question3_Button.setText(animeQuestions[2].toString());
+	question4_Button.setText(animeQuestions[3].toString());
+
+	Log.i("Questionsz",
+			" q1: " + animeQuestions[0].toString() + " q2: "
+					+ animeQuestions[1].toString() + " q3: "
+					+ animeQuestions[2].toString() + " q4: "
+					+ animeQuestions[3].toString());
+
+	
+}
 
 	@Override
 	public void onDestroy() {
