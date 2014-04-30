@@ -19,8 +19,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Animation.AnimationListener;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
@@ -28,7 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MusicPlayActivity extends BaseActivity implements
-		OnCompletionListener, SeekBar.OnSeekBarChangeListener {
+		OnCompletionListener, SeekBar.OnSeekBarChangeListener, AnimationListener {
 
 	private ImageButton musicPlayButton;
 	private MediaPlayer mediaPlayer;
@@ -51,6 +55,10 @@ public class MusicPlayActivity extends BaseActivity implements
 	TextView animeSongTextv;
 	TextView animeAnswerTextv;
 	LinearLayout animeAnswersgroup;
+	ImageView animeimageView;
+	Animation animFlipin;
+	Animation animCrossFade;
+
 
 
 
@@ -121,13 +129,18 @@ public class MusicPlayActivity extends BaseActivity implements
 		animeAnswerTextv  =  (TextView) findViewById(R.id.animeAnswerTextv);
 		animeAnswersgroup = (LinearLayout) findViewById(R.id.animeAnswersgroup);
 		
+		animeimageView = (ImageView) findViewById(R.id.animeimageView);
+
+		animFlipin = AnimationUtils.loadAnimation(this,
+				R.drawable.zoom_in);
+
+		animFlipin.setAnimationListener(this);
 		
+		animCrossFade = AnimationUtils.loadAnimation(this,
+				R.drawable.cross_fade);
 
 		
-
-		
-
-
+		animCrossFade.setAnimationListener(this);
 	
 
 		// Creating a Mediaplayer
@@ -318,10 +331,12 @@ makequizQ(currentAnime);
 	}
 
 	public void questionButtonTapped(View v) {
-		
+
 		Log.i("qbtn", "complete: " + currentAnime.getComplete().toString() );
 
 		Button qbutton = (Button) v;
+		//qbutton.setTextColor(R);
+
 		String qbtnText = qbutton.getText().toString();
 		Log.i("qbtn", "btn: " + qbtnText + " answer:  "
 				+ currentAnime.getAnswer().toString());
@@ -330,6 +345,9 @@ makequizQ(currentAnime);
 			Toast.makeText(this, "RIGHT!", Toast.LENGTH_SHORT).show();
 			
 			dataSource.updateAnime(currentAnime, "yes");
+			animeimageView.startAnimation(animFlipin);
+
+
 			
 		gotItRight();
 			
@@ -337,6 +355,8 @@ makequizQ(currentAnime);
 		} else {
 			Toast.makeText(this, "WRONG", Toast.LENGTH_SHORT).show();
 			dataSource.updateAnime(currentAnime, "no");
+			finish();
+			qbutton.setTextColor(Color.RED);
 
 		}
 
@@ -354,7 +374,7 @@ public void gotItRight(){
 
 	animeAnswersgroup.setVisibility(View.VISIBLE);
 	scrollview_animeAnswersView.setVisibility(View.VISIBLE);
-	scrollview_animeAnswersView.scrollTo(0, 10);
+	scrollview_animeAnswersView.scrollTo(0, 100);
 
 	
 
@@ -386,14 +406,18 @@ public void nextbtnpressed(View v){
 
 	if (nextAnime <  limit) {
 		Log.i("nextAnime", "NEXT IN ARRAY : " + nextAnime);
-		scrollview_animeAnswersView.scrollTo(0, scrollview_animeAnswersView.getBottom());
+		scrollview_animeAnswersView.scrollTo(0, 200);
 
 		makequizQ(animeOPandEd.get(nextAnime));
+		//scrollview_animeAnswersView.startAnimation(animCrossFade);
+		animeimageView.startAnimation(animFlipin);
+
 		Log.i("nextAnime", "ARRAY SIZE :" + animeOPandEd.size());
 
 	}else{
 		Log.i("nextAnime", "TOO LARGE level complete  : " + (nextAnime));
 		nextAnimebtn.setVisibility(View.GONE);
+
 
 
 		
@@ -419,7 +443,8 @@ if (currentAnime.getComplete().toString().equals("yes"))
 
 	animeAnswersgroup.setVisibility(View.VISIBLE);
 	scrollview_animeAnswersView.setVisibility(View.VISIBLE);
-	
+//scrollview_animeAnswersView.startAnimation(animCrossFade);
+
 
 }else{
 	Log.i("32", "NOT  COMPLETE");
@@ -453,9 +478,14 @@ if (currentAnime.getComplete().toString().equals("yes"))
 	question3_Button.setText(animeQuestions[2].toString());
 	question4_Button.setText(animeQuestions[3].toString());
 
+	// mContext.getResources().getIdentifier(
+	//			animeImageArray[position].toString(), "drawable",
+		//		mContext.getPackageName()
+	animeimageView.setBackgroundResource(this.getResources().getIdentifier(currentAnimeQ.getImage(), "drawable", this.getPackageName()));
+	//animeimageView
 	  animeNameTextv.setText(" Anime   :   " + currentAnimeQ.getName().toString());
-	animeArtistTextv.setText(" Artist     :    " + currentAnimeQ.getArtist().toString());
-	  animeSongTextv.setText(" Song     :    " + currentAnimeQ.getSong().toString());
+	animeArtistTextv.setText(" Artist     :   " + currentAnimeQ.getArtist().toString());
+	  animeSongTextv.setText(" Song     :   " + currentAnimeQ.getSong().toString());
 	animeAnswerTextv.setText(" Answer :  " + currentAnimeQ.getAnswer().toString());
 	
 	animeNameTextv.setTextColor(Color.BLACK);
@@ -473,8 +503,12 @@ if (currentAnime.getComplete().toString().equals("yes"))
 	animeArtistTextv.setTypeface(null, Typeface.BOLD);
 	animeSongTextv.setTypeface(null, Typeface.BOLD);
 	animeAnswerTextv.setTypeface(null, Typeface.BOLD);
-
-
+	
+	
+//animeAnswerTextv.setAnimation(animCrossFade);
+//animeArtistTextv.setAnimation(animCrossFade);
+//animeSongTextv.setAnimation(animCrossFade);
+//animeNameTextv.setAnimation(animCrossFade);
 	Log.i("Questionsz",
 			" q1: " + animeQuestions[0].toString() + " q2: "
 					+ animeQuestions[1].toString() + " q3: "
@@ -495,6 +529,8 @@ public void youtubebtnclick(View v){
 
     } else{
         System.out.println("NO youtube link");
+		Toast.makeText(this, "No youtube link", Toast.LENGTH_SHORT).show();
+
 
         
     }
@@ -507,6 +543,24 @@ public void youtubebtnclick(View v){
 		mHandler.removeCallbacks(mUpdateTimeTask);
 		mediaPlayer.release();
 		dataSource.close();
+	}
+
+	@Override
+	public void onAnimationStart(Animation animation) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onAnimationEnd(Animation animation) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onAnimationRepeat(Animation animation) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

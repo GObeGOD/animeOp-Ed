@@ -38,6 +38,7 @@ public class MusicSelection extends BaseActivity {
 
 		System.out.println("here is the level the user clicked " + level);
 		levelname = level;
+		//setTitle("My new title");
 
 		dataSource = new AnimeOpandEdDataSource(this);
 		dataSource.open();
@@ -47,6 +48,8 @@ public class MusicSelection extends BaseActivity {
 		String levelNum = parts[1]; // 1
 		levelInt = Integer.parseInt(levelNum);
 		insertLevel(levelInt);
+		setTitle("Level "+ levelInt);
+		
 
 		 gridView = (GridView) findViewById(R.id.gridView1);
 		 adapter = new ImageGridAdapter(this, levelInt);

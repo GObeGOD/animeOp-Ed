@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@color/darkcolorbg"
+    >
 
     <SeekBar
         android:id="@+id/musicSeekBar"
@@ -85,13 +87,13 @@
     <ScrollView
         android:id="@+id/Scrollview_animeAnswersView"
         android:layout_width="fill_parent"
+        android:background="@color/darkcolorbg2"
         android:layout_height="180dp"
         android:layout_below="@+id/musicPlayButton"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
-        android:background="@color/Snow"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="7dp" >
@@ -107,10 +109,11 @@
               >
 
             <ImageView
+                android:id="@+id/animeimageView"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:contentDescription="@string/contentDescriptionMusicPlay"
-                android:src="@drawable/beck_img"
+                
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY" />
 
