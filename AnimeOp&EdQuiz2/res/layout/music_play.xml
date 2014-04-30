@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-     >
+    android:orientation="vertical" >
 
     <SeekBar
         android:id="@+id/musicSeekBar"
@@ -22,60 +21,143 @@
         android:contentDescription="@string/contentDescriptionMusicPlay"
         android:src="@drawable/music_playbutton" />
 
-  <ScrollView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/musicPlayButton"
-      android:layout_centerHorizontal="true" >
+    <ScrollView
+        android:id="@+id/Scrollview_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/musicPlayButton"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" >
 
-      <RelativeLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-          <Button
-              android:id="@+id/question1_Button"
-              android:layout_width="280dp"
-              android:layout_height="wrap_content"
-              android:layout_centerHorizontal="true"
-              android:layout_marginTop="15dp"
-              
-              android:onClick="questionButtonTapped"
-              android:background="@drawable/btn_answers"
-              android:padding="10dp" />
+            <Button
+                android:id="@+id/question1_Button"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_answers"
+                android:onClick="questionButtonTapped"
+                android:padding="10dp" />
 
-          <Button
-              android:id="@+id/question2_Button"
-              android:layout_width="280dp"
-              android:layout_height="wrap_content"
-              android:layout_below="@+id/question1_Button"
-              android:layout_centerHorizontal="true"
-              android:layout_marginTop="10dp"
-               android:background="@drawable/btn_answers"
-              android:onClick="questionButtonTapped"
-              android:padding="10dp" />
+            <Button
+                android:id="@+id/question2_Button"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question1_Button"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_answers"
+                android:onClick="questionButtonTapped"
+                android:padding="10dp" />
 
-          <Button
-              android:id="@+id/question3_Button"
-              android:layout_width="280dp"
-              android:layout_height="wrap_content"
-              android:layout_alignLeft="@+id/question2_Button"
-              android:layout_below="@+id/question2_Button"
-              android:layout_marginTop="10dp"
-               android:background="@drawable/btn_answers"
-              android:onClick="questionButtonTapped"
-              android:padding="10dp" />
+            <Button
+                android:id="@+id/question3_Button"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/question2_Button"
+                android:layout_below="@+id/question2_Button"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_answers"
+                android:onClick="questionButtonTapped"
+                android:padding="10dp" />
 
-          <Button
-              android:id="@+id/question4_Button"
-              android:layout_width="280dp"
-              android:layout_height="wrap_content"
-              android:layout_alignLeft="@+id/question3_Button"
-              android:layout_below="@+id/question3_Button"
-              android:layout_marginTop="10dp"
-               android:background="@drawable/btn_answers"
-              android:onClick="questionButtonTapped"
-              android:padding="10dp" />
-      </RelativeLayout>
-  </ScrollView>
+            <Button
+                android:id="@+id/question4_Button"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/question3_Button"
+                android:layout_below="@+id/question3_Button"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_answers"
+                android:onClick="questionButtonTapped"
+                android:padding="10dp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/Scrollview_animeAnswersView"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:paddingTop="7dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:layout_below="@+id/musicPlayButton"
+        android:background="@color/Snow"
+      
+        android:layout_centerHorizontal="true" >
+
+        <LinearLayout
+            android:id="@+id/animeAnswersgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:paddingTop="7dp"
+            android:orientation="vertical" 
+              >
+
+            <TextView
+                android:id="@+id/animeNameTextv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:textIsSelectable="true" 
+               />
+
+            <TextView
+                android:id="@+id/animeSongTextv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:textIsSelectable="true"
+                 />
+
+            <TextView
+                android:id="@+id/animeArtistTextv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:textIsSelectable="true"
+                />
+
+            <TextView
+                android:id="@+id/animeAnswerTextv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:textIsSelectable="true"
+                 />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/backtolistbtn"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Scrollview_animeAnswersView"
+        android:background="@drawable/level2button" />
+
+    <Button
+        android:id="@+id/nextAnimebtn"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/youtubebtn"
+        android:background="@drawable/level2button" />
+
+    <Button
+        android:id="@+id/youtubebtn"
+        android:layout_width="100dp"
+        android:layout_height="64dp"
+        android:layout_alignBaseline="@+id/backtolistbtn"
+        android:layout_alignBottom="@+id/backtolistbtn"
+        android:layout_alignLeft="@+id/musicPlayButton"
+        android:background="@drawable/music_youtubebtn" 
+        android:onClick="youtubebtnclick"/>
 
 </RelativeLayout>

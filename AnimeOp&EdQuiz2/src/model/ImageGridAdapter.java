@@ -112,6 +112,7 @@ public class ImageGridAdapter extends BaseAdapter implements AnimationListener {
 				animFadein = AnimationUtils.loadAnimation(mContext,
 						R.drawable.zoom_in);
 				picture.setContentDescription(animeSongNameArray[position]);
+				picture.setId(position);
 				animFadein.setAnimationListener(this);
 
 			}

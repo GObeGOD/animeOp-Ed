@@ -11,6 +11,7 @@ import model.BaseActivity;
 import model.Utilities;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.net.Uri;
@@ -20,7 +21,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MusicPlayActivity extends BaseActivity implements
@@ -39,15 +43,33 @@ public class MusicPlayActivity extends BaseActivity implements
 	Button question2_Button;
 	Button question3_Button;
 	Button question4_Button;
+	Button youtubebtn;
+	Button nextAnimebtn;
+	Button backtolistbtn;
+	TextView animeArtistTextv;
+	TextView animeNameTextv;
+	TextView animeSongTextv;
+	TextView animeAnswerTextv;
+	LinearLayout animeAnswersgroup;
+
+
+
+
+	ScrollView scrollview_buttons;
+	ScrollView scrollview_animeAnswersView;
+
+	
 
 	private Handler mHandler = new Handler();
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.music_play);
+
 	    View view = this.getWindow().getDecorView();
 	    view.setBackgroundColor(Color.LTGRAY);
 		Intent intent = getIntent();
+		
 		String animeSongName = intent
 				.getStringExtra("com.example.animeopedquiz2.MESSAGE");
 		Log.i("intent", "animesongName: " + animeSongName);
@@ -74,7 +96,7 @@ public class MusicPlayActivity extends BaseActivity implements
 		Log.i("index ", "index of " +  ani.getName());
 		
 		}
-	
+
 		String[] songName = { animeSongName };
 
 		currentAnime = dataSource.getAnimeBYSongName(songName);
@@ -83,10 +105,28 @@ public class MusicPlayActivity extends BaseActivity implements
 
 		musicPlayButton = (ImageButton) findViewById(R.id.musicPlayButton);
 		musicSeekBar = (SeekBar) findViewById(R.id.musicSeekBar);
+		scrollview_buttons = (ScrollView) findViewById(R.id.Scrollview_buttons);
+		scrollview_animeAnswersView = (ScrollView) findViewById(R.id.Scrollview_animeAnswersView);
+
 		question1_Button = (Button) findViewById(R.id.question1_Button);
 		question2_Button = (Button) findViewById(R.id.question2_Button);
 		question3_Button = (Button) findViewById(R.id.question3_Button);
 		question4_Button = (Button) findViewById(R.id.question4_Button);
+		youtubebtn    =  (Button) findViewById(R.id.youtubebtn);
+		nextAnimebtn    =  (Button) findViewById(R.id.nextAnimebtn);
+		backtolistbtn    =  (Button) findViewById(R.id.backtolistbtn);
+		animeNameTextv    =  (TextView) findViewById(R.id.animeNameTextv);
+		animeArtistTextv  =  (TextView) findViewById(R.id.animeArtistTextv);
+		animeSongTextv  =  (TextView) findViewById(R.id.animeSongTextv);
+		animeAnswerTextv  =  (TextView) findViewById(R.id.animeAnswerTextv);
+		animeAnswersgroup = (LinearLayout) findViewById(R.id.animeAnswersgroup);
+		
+		
+
+		
+
+		
+
 
 	
 
@@ -120,6 +160,36 @@ public class MusicPlayActivity extends BaseActivity implements
 			}
 		});
 makequizQ(currentAnime);
+			
+			if (currentAnime.getComplete().toString().equals("yes")) 
+			{
+				Log.i("32", "YES CURRENT COMPLETE");
+				scrollview_buttons.setVisibility(View.GONE);
+				//question12_Button.setVisibility(View.VISIBLE);
+				youtubebtn.setVisibility(View.VISIBLE);
+				nextAnimebtn.setVisibility(View.VISIBLE);
+				backtolistbtn.setVisibility(View.VISIBLE);
+
+				animeAnswersgroup.setVisibility(View.VISIBLE);
+				scrollview_animeAnswersView.setVisibility(View.VISIBLE);
+				
+
+			}else{
+				Log.i("32", "NOT  COMPLETE");
+				scrollview_buttons.setVisibility(View.VISIBLE);
+
+				youtubebtn.setVisibility(View.GONE);
+				nextAnimebtn.setVisibility(View.GONE);
+				backtolistbtn.setVisibility(View.GONE);
+				animeAnswersgroup.setVisibility(View.GONE);
+				scrollview_animeAnswersView.setVisibility(View.GONE);
+
+
+
+
+				
+			
+			}
 	}
 
 	public void musicPlayClick(View view) {
@@ -258,7 +328,9 @@ makequizQ(currentAnime);
 			Toast.makeText(this, "RIGHT!", Toast.LENGTH_SHORT).show();
 			
 			dataSource.updateAnime(currentAnime, "yes");
-			gotItRight();
+			
+		gotItRight();
+			
 
 		} else {
 			Toast.makeText(this, "WRONG", Toast.LENGTH_SHORT).show();
@@ -272,6 +344,15 @@ public void gotItRight(){
 	
 	//long nextAnime = currentAnime.getID() ;
 	//Integer presentanime = (int) (long)  currentAnime.getID() -1;
+	scrollview_buttons.setVisibility(View.GONE);
+	youtubebtn.setVisibility(View.VISIBLE);
+	nextAnimebtn.setVisibility(View.VISIBLE);
+	backtolistbtn.setVisibility(View.VISIBLE);
+
+	animeAnswersgroup.setVisibility(View.VISIBLE);
+	scrollview_animeAnswersView.setVisibility(View.VISIBLE);
+
+	
 	
 	int nextAnime = (int) (long) currentAnime.getID();
 	
@@ -283,12 +364,12 @@ public void gotItRight(){
 
 	Log.i("nextAnime", "NEXT NON ARRAY : " + (nextAnime +1));
 	
-	int limit = animeOPandEd.size() - 1;
+	int limit = animeOPandEd.size();
 
 	if (nextAnime <  limit) {
 		Log.i("nextAnime", "NEXT IN ARRAY : " + nextAnime);
 
-		makequizQ(animeOPandEd.get(nextAnime));
+	//	makequizQ(animeOPandEd.get(nextAnime));
 		Log.i("nextAnime", "ARRAY SIZE :" + animeOPandEd.size());
 
 	}else{
@@ -324,6 +405,28 @@ currentAnime = currentAnimeQ;
 	question3_Button.setText(animeQuestions[2].toString());
 	question4_Button.setText(animeQuestions[3].toString());
 
+	  animeNameTextv.setText(" Anime   :   " + currentAnimeQ.getName().toString());
+	animeArtistTextv.setText(" Artist     :    " + currentAnimeQ.getArtist().toString());
+	  animeSongTextv.setText(" Song     :    " + currentAnimeQ.getSong().toString());
+	animeAnswerTextv.setText(" Answer :  " + currentAnimeQ.getAnswer().toString());
+	
+	animeNameTextv.setTextColor(Color.BLACK);
+	animeArtistTextv.setTextColor(Color.BLACK);
+	animeSongTextv.setTextColor(Color.BLACK);
+	animeAnswerTextv.setTextColor(Color.BLACK);
+	
+	animeNameTextv.setTextSize(17);
+	animeArtistTextv.setTextSize(17);
+	animeSongTextv.setTextSize(17);
+	animeAnswerTextv.setTextSize(17);
+	
+	
+	animeNameTextv.setTypeface(null, Typeface.BOLD);
+	animeArtistTextv.setTypeface(null, Typeface.BOLD);
+	animeSongTextv.setTypeface(null, Typeface.BOLD);
+	animeAnswerTextv.setTypeface(null, Typeface.BOLD);
+
+
 	Log.i("Questionsz",
 			" q1: " + animeQuestions[0].toString() + " q2: "
 					+ animeQuestions[1].toString() + " q3: "
@@ -333,6 +436,22 @@ currentAnime = currentAnimeQ;
 	
 }
 
+
+public void youtubebtnclick(View v){
+    startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(currentAnime.getYoutube())));
+
+  if (currentAnime.getYoutube().matches("https://www.")){
+
+    	System.out.println("YES");
+    	
+    	
+    } else{
+        System.out.println("NO youtube link");
+        
+    }
+
+	
+}
 	@Override
 	public void onDestroy() {
 		super.onDestroy();

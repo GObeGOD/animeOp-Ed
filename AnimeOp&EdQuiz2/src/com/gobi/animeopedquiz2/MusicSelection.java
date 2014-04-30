@@ -24,6 +24,7 @@ public class MusicSelection extends BaseActivity {
 	ImageGridAdapter adapter;
 	int levelInt;
 
+
 	public String[] numbers;
 
 	@Override
@@ -51,6 +52,7 @@ public class MusicSelection extends BaseActivity {
 		 adapter = new ImageGridAdapter(this, levelInt);
 		// Instance of ImageAdapter Class and Send Level
 		gridView.setAdapter(adapter);
+		
 
 
 	}
@@ -60,8 +62,9 @@ public class MusicSelection extends BaseActivity {
 		// Toast.makeText(getApplicationContext(),v.getId(),
 		// Toast.LENGTH_SHORT).show();
 		String name = (String) v.getContentDescription();
+		
 		changeAct(name);
-		Log.i("ridItemtapped", "GRID ITEM TAPPED");
+		Log.i("ridItemtapped", "GRID ITEM TAPPED ID: "+ v.getId() );
 
 	}
 
@@ -78,37 +81,38 @@ public class MusicSelection extends BaseActivity {
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
 						"Haruka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
-						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
+						"https://www.youtube.com/watch?v=EQLUCc2cH04", "Naruto", "Shaman King",
 						"Naruto", "Saint Seiya", "Ninku", "beck_img", 1, "no"));
+				
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Narutso",
 						"Hardauka Kanata", "Asian Kung-Fu Generation",
 						"naruto_op2_haruka_kanata",
-						"naruadto op 2 haruka kanata", "Narutso", "Shaadman King",
+						"https://www.youtube.com/watch?v=EQLUCc2cH04", "Narutso", "Shaadman King",
 						"Narutso", "Saintad Seiya", "Nindaku", "beck_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto",
 						"Haruka Kanata", "Asian Kung-Fu Generation",
-						"naruto_op2_haruka_kanata",
-						"naruto op 2 haruka kanata", "Naruto", "Shaman King",
+						"n1aruto_op2_haruka_kanata",
+						"https://www.youtube.com/watch?v=EQLUCc2cH04", "Naruto", "Shaman King",
 						"Naruto", "Saint Seiya", "Ninku", "major_s2_img", 1, "no"));
 
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Berserk",
 						"Tell Me Why", "PENPALS", "berserkop1tellmewhy",
-						"berserk opening", "Berserk", "Gungrave", "Claymore",
-						"Fist of the North Star", "Berserk", "berserk_img", 1,
+						"https://www.youtube.com/watch?v=ocQ6PDiP014", "Berserk", "Gungrave", "Claymore",
+						"Fist 213of the North Star", "Berserk", "berserk_img", 1,
 						"no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Btooom!",
 						"No pain, No game", "Nano", "btooom_op1_nopainnogame",
-						"btooom opening 1", "Btooom!", "Mirai Nikki", "Gantz",
+						"https://www.youtube.com/watch?v=kPRmY907sJw", "Btooom!", "Mirai Nikki", "Gantz",
 						"Btooom!", "Rozen Maiden", "btooom_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Black Lagoon",
 						"Red Fraction", "MELL", "blacklagoon_op1_redfraction",
-						" black lagoon opening 1", "Black Lagoon",
+						"https://www.youtube.com/watch?v=kPRmY907sJw", "Black Lagoon",
 						"Jormungand", "Michiko & Hatchin", "Canaan",
 						"Black Lagoon", "blacklagoon_img", 1, "no"));
 
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Planetes",
 						"Dive in the Sky", "Mikio Sakai",
-						"planetes_op1_diveinthesky", "planetes opening",
+						"planetes_op1_diveinthesky", "https://www.youtube.com/watch?v=CZ-OyT4ivkM",
 						"Planetes", "Rocket Girls", "Planetes",
 						"Space Brothers", "Freedom", "planetes_img", 1, "no"));
 				dataSource.addAnimeOPandED(new AnimeOpAndEdData("Gankutsuou",

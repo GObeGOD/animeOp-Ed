@@ -67,6 +67,7 @@ public class AnimeOpandEdDataSource {
 		values.put(DatabaseHandler.KEY_LEVEL, opandEd.getLevel());
 		values.put(DatabaseHandler.KEY_COMPLETE, opandEd.getComplete());
 
+		Log.i("you you ", "art :" + opandEd.getArtist() );
 		// Inserting Row
 		long insertid = dataBase.insert(DatabaseHandler.TABLE_AnimeOPandEd,
 				null, values);
@@ -121,11 +122,56 @@ public class AnimeOpandEdDataSource {
 		return animeOpandEdList;
 
 	}
+	
+	
 
 	public AnimeOpAndEdData getAnimeBYSongName(String[] songName) {
 
 		Cursor cursor = dataBase.query(DatabaseHandler.TABLE_AnimeOPandEd,
 				allcolumns, "song = ?", songName, null, null, null);
+		if (cursor != null) {
+			cursor.moveToFirst();
+		}
+		AnimeOpAndEdData animeOpandEd = new AnimeOpAndEdData();
+
+		animeOpandEd.setID(cursor.getLong(cursor
+				.getColumnIndex(DatabaseHandler.KEY_ID)));
+		animeOpandEd.setName(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_NAME)));
+		animeOpandEd.setSong(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_SONG)));
+		animeOpandEd.setArtist(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_ARTIST)));
+		animeOpandEd.setMusic(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_MUSIC)));
+		animeOpandEd.setYoutube(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_YOUTUBE)));
+		animeOpandEd.setAnswer(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_ANSWER)));
+		animeOpandEd.setQuestion1(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_QUESTION1)));
+		animeOpandEd.setQuestion2(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_QUESTION2)));
+		animeOpandEd.setQuestion3(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_QUESTION3)));
+		animeOpandEd.setQuestion4(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_QUESTION4)));
+		animeOpandEd.SetImage((cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_IMAGE))));
+		animeOpandEd.SetLevel(cursor.getInt(cursor
+				.getColumnIndex(DatabaseHandler.KEY_LEVEL)));
+		animeOpandEd.SetComplete(cursor.getString(cursor
+				.getColumnIndex(DatabaseHandler.KEY_COMPLETE)));
+
+		Log.i("anime datasource", "aritist yo" + animeOpandEd.getArtist() );
+		return animeOpandEd;
+
+	}
+	
+	public AnimeOpAndEdData getAnimeBYID(int id) {
+
+		Cursor cursor = dataBase.query(DatabaseHandler.TABLE_AnimeOPandEd,
+				allcolumns, "id = ?", new String[] { String.valueOf(id) } , null, null, null);
 		if (cursor != null) {
 			cursor.moveToFirst();
 		}

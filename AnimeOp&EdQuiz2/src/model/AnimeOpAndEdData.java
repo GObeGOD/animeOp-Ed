@@ -69,7 +69,7 @@ public class AnimeOpAndEdData {
 	}
 
 	public String getArtist() {
-		return this.answer;
+		return this.artist;
 	}
 
 	public void setArtist(String artist) {

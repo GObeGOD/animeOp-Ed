@@ -163,67 +163,115 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int beck_img=0x7f020000;
-        public static final int berserk_img=0x7f020001;
-        public static final int blacklagoon_img=0x7f020002;
-        public static final int btn_answer=0x7f020003;
-        public static final int btn_answer_pressed=0x7f020004;
-        public static final int btn_answers=0x7f020005;
-        public static final int btooom_img=0x7f020006;
-        public static final int fullmetalalchemist_img=0x7f020007;
-        public static final int gankutsuou_img=0x7f020008;
-        public static final int hajimenoippo_img=0x7f020009;
-        public static final int ic_launcher=0x7f02000a;
-        public static final int imagefun=0x7f02000b;
-        public static final int imagefun2=0x7f02000c;
-        public static final int imagefun3=0x7f02000d;
-        public static final int level1=0x7f02000e;
-        public static final int level1button=0x7f02000f;
-        public static final int level1down=0x7f020010;
-        public static final int level2=0x7f020011;
-        public static final int level2button=0x7f020012;
-        public static final int level2down=0x7f020013;
-        public static final int level3=0x7f020014;
-        public static final int level3button=0x7f020015;
-        public static final int level3down=0x7f020016;
-        public static final int level4=0x7f020017;
-        public static final int level4button=0x7f020018;
-        public static final int level4down=0x7f020019;
-        public static final int level5=0x7f02001a;
-        public static final int level5button=0x7f02001b;
-        public static final int level5down=0x7f02001c;
-        public static final int major_s2_img=0x7f02001d;
-        public static final int music_pausebutton=0x7f02001e;
-        public static final int music_playbutton=0x7f02001f;
-        public static final int naruto_img=0x7f020020;
-        public static final int pausebutton=0x7f020021;
-        public static final int pausebuttonpressed=0x7f020022;
-        public static final int planetes_img=0x7f020023;
-        public static final int playbutton=0x7f020024;
-        public static final int playbuttonpressed=0x7f020025;
-        public static final int unknown_music=0x7f020026;
-        public static final int zoom_in=0x7f020027;
+        public static final int ab_background_textured_anime_app_style=0x7f020000;
+        public static final int ab_bottom_solid_anime_app_style=0x7f020001;
+        public static final int ab_solid_anime_app_style=0x7f020002;
+        public static final int ab_stacked_solid_anime_app_style=0x7f020003;
+        public static final int ab_texture_tile_anime_app_style=0x7f020004;
+        public static final int ab_transparent_anime_app_style=0x7f020005;
+        public static final int beck_img=0x7f020006;
+        public static final int berserk_img=0x7f020007;
+        public static final int blacklagoon_img=0x7f020008;
+        public static final int btn_answer=0x7f020009;
+        public static final int btn_answer_pressed=0x7f02000a;
+        public static final int btn_answers=0x7f02000b;
+        public static final int btn_cab_done_anime_app_style=0x7f02000c;
+        public static final int btn_cab_done_default_anime_app_style=0x7f02000d;
+        public static final int btn_cab_done_focused_anime_app_style=0x7f02000e;
+        public static final int btn_cab_done_pressed_anime_app_style=0x7f02000f;
+        public static final int btooom_img=0x7f020010;
+        public static final int cab_background_bottom_anime_app_style=0x7f020011;
+        public static final int cab_background_top_anime_app_style=0x7f020012;
+        public static final int fullmetalalchemist_img=0x7f020013;
+        public static final int gankutsuou_img=0x7f020014;
+        public static final int hajimenoippo_img=0x7f020015;
+        public static final int ic_launcher=0x7f020016;
+        public static final int imagefun=0x7f020017;
+        public static final int imagefun2=0x7f020018;
+        public static final int imagefun3=0x7f020019;
+        public static final int level1=0x7f02001a;
+        public static final int level1button=0x7f02001b;
+        public static final int level1down=0x7f02001c;
+        public static final int level2=0x7f02001d;
+        public static final int level2button=0x7f02001e;
+        public static final int level2down=0x7f02001f;
+        public static final int level3=0x7f020020;
+        public static final int level3button=0x7f020021;
+        public static final int level3down=0x7f020022;
+        public static final int level4=0x7f020023;
+        public static final int level4button=0x7f020024;
+        public static final int level4down=0x7f020025;
+        public static final int level5=0x7f020026;
+        public static final int level5button=0x7f020027;
+        public static final int level5down=0x7f020028;
+        public static final int list_focused_anime_app_style=0x7f020029;
+        public static final int list_pressed_anime_app_style=0x7f02002a;
+        public static final int major_s2_img=0x7f02002b;
+        public static final int menu_dropdown_panel_anime_app_style=0x7f02002c;
+        public static final int music_musicinfo=0x7f02002d;
+        public static final int music_pausebutton=0x7f02002e;
+        public static final int music_playbutton=0x7f02002f;
+        public static final int music_youtubebtn=0x7f020030;
+        public static final int musicinfo=0x7f020031;
+        public static final int musicinfopressed=0x7f020032;
+        public static final int naruto_img=0x7f020033;
+        public static final int pausebutton=0x7f020034;
+        public static final int pausebuttonpressed=0x7f020035;
+        public static final int planetes_img=0x7f020036;
+        public static final int playbutton=0x7f020037;
+        public static final int playbuttonpressed=0x7f020038;
+        public static final int progress_bg_anime_app_style=0x7f020039;
+        public static final int progress_horizontal_anime_app_style=0x7f02003a;
+        public static final int progress_primary_anime_app_style=0x7f02003b;
+        public static final int progress_secondary_anime_app_style=0x7f02003c;
+        public static final int selectable_background_anime_app_style=0x7f02003d;
+        public static final int spinner_ab_default_anime_app_style=0x7f02003e;
+        public static final int spinner_ab_disabled_anime_app_style=0x7f02003f;
+        public static final int spinner_ab_focused_anime_app_style=0x7f020040;
+        public static final int spinner_ab_pressed_anime_app_style=0x7f020041;
+        public static final int spinner_background_ab_anime_app_style=0x7f020042;
+        public static final int tab_indicator_ab_anime_app_style=0x7f020043;
+        public static final int tab_selected_anime_app_style=0x7f020044;
+        public static final int tab_selected_focused_anime_app_style=0x7f020045;
+        public static final int tab_selected_pressed_anime_app_style=0x7f020046;
+        public static final int tab_unselected_anime_app_style=0x7f020047;
+        public static final int tab_unselected_focused_anime_app_style=0x7f020048;
+        public static final int tab_unselected_pressed_anime_app_style=0x7f020049;
+        public static final int unknown_music=0x7f02004a;
+        public static final int youtubebtn=0x7f02004b;
+        public static final int youtubebtnpressed=0x7f02004c;
+        public static final int zoom_in=0x7f02004d;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f0a0000;
         public static final int ScrollView1=0x7f0a0003;
-        public static final int gridView1=0x7f0a0012;
-        public static final int le2vel2=0x7f0a0009;
-        public static final int lev23l2=0x7f0a000b;
+        public static final int Scrollview_animeAnswersView=0x7f0a0013;
+        public static final int Scrollview_buttons=0x7f0a000e;
+        public static final int animeAnswerTextv=0x7f0a0018;
+        public static final int animeAnswersgroup=0x7f0a0014;
+        public static final int animeArtistTextv=0x7f0a0017;
+        public static final int animeNameTextv=0x7f0a0015;
+        public static final int animeSongTextv=0x7f0a0016;
+        public static final int backtolistbtn=0x7f0a0019;
+        public static final int gridView1=0x7f0a001c;
         public static final int level_1=0x7f0a0004;
         public static final int level_2=0x7f0a0005;
         public static final int level_3=0x7f0a0006;
         public static final int level_4=0x7f0a0007;
         public static final int level_5=0x7f0a0008;
-        public static final int lewevel1=0x7f0a000a;
+        public static final int level_6=0x7f0a0009;
+        public static final int level_7=0x7f0a000a;
+        public static final int level_8=0x7f0a000b;
         public static final int musicPlayButton=0x7f0a000d;
         public static final int musicSeekBar=0x7f0a000c;
+        public static final int nextAnimebtn=0x7f0a001a;
         public static final int picture=0x7f0a0002;
         public static final int playbutton=0x7f0a0001;
-        public static final int question1_Button=0x7f0a000e;
-        public static final int question2_Button=0x7f0a000f;
-        public static final int question3_Button=0x7f0a0010;
-        public static final int question4_Button=0x7f0a0011;
+        public static final int question1_Button=0x7f0a000f;
+        public static final int question2_Button=0x7f0a0010;
+        public static final int question3_Button=0x7f0a0011;
+        public static final int question4_Button=0x7f0a0012;
+        public static final int youtubebtn=0x7f0a001b;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -243,6 +291,7 @@ public final class R {
         public static final int gankutsuou_ed1_youwontseemecoming=0x7f040004;
         public static final int naruto_op2_haruka_kanata=0x7f040005;
         public static final int planetes_op1_diveinthesky=0x7f040006;
+        public static final int sound_click=0x7f040007;
     }
     public static final class string {
         public static final int action_settings=0x7f070001;
@@ -259,6 +308,10 @@ public final class R {
         public static final int play=0x7f070007;
     }
     public static final class style {
+        public static final int ActionBar_Solid_Anime_app_style=0x7f080003;
+        public static final int ActionBar_Transparent_Anime_app_style=0x7f080004;
+        public static final int ActionBarTabStyle_Anime_app_style=0x7f080007;
+        public static final int ActionButton_CloseMode_Anime_app_style=0x7f08000a;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -285,5 +338,13 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
+        public static final int DropDownListView_Anime_app_style=0x7f080006;
+        public static final int DropDownNav_Anime_app_style=0x7f080008;
+        public static final int PopupMenu_Anime_app_style=0x7f080005;
+        public static final int ProgressBar_Anime_app_style=0x7f080009;
+        public static final int Theme_Anime_app_style=0x7f080002;
+        /**  this style is only referenced in a Light.DarkActionBar based theme 
+         */
+        public static final int Theme_Anime_app_style_Widget=0x7f08000b;
     }
 }
