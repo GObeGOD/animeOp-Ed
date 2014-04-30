@@ -6,10 +6,14 @@
 
     <SeekBar
         android:id="@+id/musicSeekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true" 
+        android:thumb="@drawable/seeker_thumb"
+
+
+       android:progressDrawable="@drawable/seekbar_progress"/>
 
     <ImageButton
         android:id="@+id/musicPlayButton"
@@ -80,30 +84,41 @@
 
     <ScrollView
         android:id="@+id/Scrollview_animeAnswersView"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:paddingTop="7dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="7dp"
-        android:paddingRight="7dp"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
         android:layout_below="@+id/musicPlayButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
         android:background="@color/Snow"
-      
-        android:layout_centerHorizontal="true" >
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="7dp" >
 
         <LinearLayout
             android:id="@+id/animeAnswersgroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             android:paddingTop="7dp"
+             android:paddingTop="3dp"
             android:orientation="vertical" 
+                            android:layout_gravity="center_horizontal"
+            
               >
+
+            <ImageView
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:contentDescription="@string/contentDescriptionMusicPlay"
+                android:src="@drawable/beck_img"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@+id/animeNameTextv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="3dp"
                 android:textIsSelectable="true" 
                />
 
@@ -140,7 +155,8 @@
         android:layout_height="65dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/Scrollview_animeAnswersView"
-        android:background="@drawable/level2button" />
+        android:background="@drawable/music_backtogrid"
+        android:onClick="backtolistbtnpressed" />
 
     <Button
         android:id="@+id/nextAnimebtn"
@@ -148,7 +164,8 @@
         android:layout_height="65dp"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/youtubebtn"
-        android:background="@drawable/level2button" />
+        android:onClick="nextbtnpressed"
+        android:background="@drawable/music_nextbtn" />
 
     <Button
         android:id="@+id/youtubebtn"

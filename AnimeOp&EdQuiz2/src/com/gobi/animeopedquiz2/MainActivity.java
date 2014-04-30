@@ -9,17 +9,21 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
 
 	private Button playButton;
 	MediaPlayer mp;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+
 		setContentView(R.layout.activity_main);
+		
          mp = MediaPlayer.create(this, R.raw.sound_click);
 
 		playButton = (Button) findViewById(R.id.playbutton);

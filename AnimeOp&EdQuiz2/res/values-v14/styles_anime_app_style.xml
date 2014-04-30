@@ -30,6 +30,11 @@
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_anime_app_style</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Anime_app_style</item>
         
+        
+        <item name="android:homeAsUpIndicator">@drawable/backbtnaction</item>
+<item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
+<item name="android:icon">@android:color/transparent</item> <!-- This does the magic! -->        
+       
                 <!-- Light.DarkActionBar specific -->
         <item name="android:actionBarWidgetTheme">@style/Theme.Anime_app_style.Widget</item>
 

@@ -66,8 +66,8 @@ public class MusicPlayActivity extends BaseActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.music_play);
 
-	    View view = this.getWindow().getDecorView();
-	    view.setBackgroundColor(Color.LTGRAY);
+	   // View view = this.getWindow().getDecorView();
+	    //view.setBackgroundColor(Color.);
 		Intent intent = getIntent();
 		
 		String animeSongName = intent
@@ -134,6 +134,7 @@ public class MusicPlayActivity extends BaseActivity implements
 		mediaPlayer = new MediaPlayer();
 		utilities = new Utilities();
 		musicSeekBar.setOnSeekBarChangeListener(this);
+		mediaPlayer.setOnCompletionListener(this);
 
 		musicPlayButton.setOnClickListener(new View.OnClickListener() {
 
@@ -231,7 +232,7 @@ makequizQ(currentAnime);
 
 				// Set Progress bar values
 				musicSeekBar.setProgress(0);
-				musicSeekBar.setMax(92);
+				musicSeekBar.setMax(93);
 				// Updating seek Bar
 				updateSeekBar();
 			} else {
@@ -280,6 +281,7 @@ makequizQ(currentAnime);
 	@Override
 	public void onCompletion(MediaPlayer arg0) {
 		// TODO Auto-generated method stub
+		Log.i("asd", "SONG DONE YOOUOO");
 		musicPlayButton.setImageResource(R.drawable.music_playbutton);
 		// playSong("whatever");
 	}
@@ -340,6 +342,7 @@ makequizQ(currentAnime);
 
 	}
 
+	
 public void gotItRight(){
 	
 	//long nextAnime = currentAnime.getID() ;
@@ -351,9 +354,24 @@ public void gotItRight(){
 
 	animeAnswersgroup.setVisibility(View.VISIBLE);
 	scrollview_animeAnswersView.setVisibility(View.VISIBLE);
+	scrollview_animeAnswersView.scrollTo(0, 10);
 
 	
+
+
 	
+}
+
+public void backtolistbtnpressed(View v){
+ finish();
+	
+}
+
+public void nextbtnpressed(View v){
+	
+
+
+	Log.i("sdds", "next clicked yo");
 	int nextAnime = (int) (long) currentAnime.getID();
 	
 	Log.i("nextAnime", "NOW IN ARRAY: " + (nextAnime -1));
@@ -368,27 +386,57 @@ public void gotItRight(){
 
 	if (nextAnime <  limit) {
 		Log.i("nextAnime", "NEXT IN ARRAY : " + nextAnime);
+		scrollview_animeAnswersView.scrollTo(0, scrollview_animeAnswersView.getBottom());
 
-	//	makequizQ(animeOPandEd.get(nextAnime));
+		makequizQ(animeOPandEd.get(nextAnime));
 		Log.i("nextAnime", "ARRAY SIZE :" + animeOPandEd.size());
 
 	}else{
 		Log.i("nextAnime", "TOO LARGE level complete  : " + (nextAnime));
+		nextAnimebtn.setVisibility(View.GONE);
+
 
 		
 		
 	}
 	
 	
-	
-	
-	
-	
 }
 
 public void makequizQ(AnimeOpAndEdData currentAnimeQ){
+	
 	playSong(currentAnimeQ.getMusic());
 currentAnime = currentAnimeQ;
+
+if (currentAnime.getComplete().toString().equals("yes")) 
+{
+	Log.i("32", "YES CURRENT COMPLETE");
+	scrollview_buttons.setVisibility(View.GONE);
+	//question12_Button.setVisibility(View.VISIBLE);
+	youtubebtn.setVisibility(View.VISIBLE);
+	nextAnimebtn.setVisibility(View.VISIBLE);
+	backtolistbtn.setVisibility(View.VISIBLE);
+
+	animeAnswersgroup.setVisibility(View.VISIBLE);
+	scrollview_animeAnswersView.setVisibility(View.VISIBLE);
+	
+
+}else{
+	Log.i("32", "NOT  COMPLETE");
+	scrollview_buttons.setVisibility(View.VISIBLE);
+
+	youtubebtn.setVisibility(View.GONE);
+	nextAnimebtn.setVisibility(View.GONE);
+	backtolistbtn.setVisibility(View.GONE);
+	animeAnswersgroup.setVisibility(View.GONE);
+	scrollview_animeAnswersView.setVisibility(View.GONE);
+
+
+
+
+	
+
+}
 	String[] animeQuestions = new String[4];
 	animeQuestions[0] = currentAnimeQ.getQuestion1().toString();
 	animeQuestions[1] = currentAnimeQ.getQuestion2().toString();
@@ -438,15 +486,16 @@ currentAnime = currentAnimeQ;
 
 
 public void youtubebtnclick(View v){
-    startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(currentAnime.getYoutube())));
 
-  if (currentAnime.getYoutube().matches("https://www.")){
+  if (currentAnime.getYoutube().contains("https://www.youtube.com/watch?v")){
 
-    	System.out.println("YES");
+    	System.out.println("HASS WWWW");
     	
-    	
+        startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(currentAnime.getYoutube())));
+
     } else{
         System.out.println("NO youtube link");
+
         
     }
 
