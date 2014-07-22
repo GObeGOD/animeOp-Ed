@@ -58,6 +58,7 @@ public class MusicPlayActivity extends BaseActivity implements
 	ImageView animeimageView;
 	Animation animFlipin;
 	Animation animCrossFade;
+	
 
 
 
@@ -89,12 +90,27 @@ public class MusicPlayActivity extends BaseActivity implements
 		dataSource = new AnimeOpandEdDataSource(this);
 		dataSource.open();
 	Log.i("sdf", "level level velv e" + levelnum);
-		
-	if (animeOPandEd== null) {
+	
+	//	animeOPandEd.clear();
+/*	if (!animeOPandEd.isEmpty()) {
+		Log.i("animeOPandEd ",  " animeOPandEd NOT EMPTY ");
+
+	}*/
+	
+
+	
+ 	if (animeOPandEd == null) {
 		String[] bysongname = { animeSongName };
 
 		animeOPandEd = dataSource.listByLevel(bylevel);
-		
+		Log.i("index ",  "animeOPandEd  assigned ");
+		for (int i = 0; i < animeOPandEd.size(); i++){
+			Log.i("index ", "index of " +  animeOPandEd.get(i).getAnswer());
+
+			Log.i("index ", "index of " +  animeOPandEd.get(i).getID());
+
+			
+		}
 		AnimeOpAndEdData ani = dataSource.getAnimeBYSongName(bysongname);
 		//int index = animeOPandEd.indexOf(animeOPandEd.get(1));
 		//int index2 = animeOPandEd.indexOf(ani);
@@ -103,6 +119,10 @@ public class MusicPlayActivity extends BaseActivity implements
 		//Log.i("index ", "index of " +  animeOPandEd.);
 		Log.i("index ", "index of " +  ani.getName());
 		
+		}else{
+			//animeOPandEd.clear();
+			Log.i("index ",  "animeOPandEd cleared");
+
 		}
 
 		String[] songName = { animeSongName };
@@ -173,7 +193,8 @@ public class MusicPlayActivity extends BaseActivity implements
 				}
 			}
 		});
-makequizQ(currentAnime);
+		
+		makequizQ(currentAnime);
 			
 			if (currentAnime.getComplete().toString().equals("yes")) 
 			{
@@ -389,10 +410,30 @@ public void backtolistbtnpressed(View v){
 
 public void nextbtnpressed(View v){
 	
-
+int nextAnime;
+nextAnime = 0;
 
 	Log.i("sdds", "next clicked yo");
-	int nextAnime = (int) (long) currentAnime.getID();
+	//int nextAnime = (int) (long) currentAnime.getID();
+	
+	nextAnime = 0;
+	
+	 for (int i = 0; i < animeOPandEd.size(); i++)
+	    {
+	        if (animeOPandEd.get(i).getID() ==  currentAnime.getID() )
+	        {
+	        	Log.i("99999", "NEXT = " + i);
+	        	nextAnime = i + 1;
+
+	        }
+	    } 
+
+	  
+
+	 
+	
+	Log.i("sajkksa",  ""+ nextAnime );
+
 	
 	Log.i("nextAnime", "NOW IN ARRAY: " + (nextAnime -1));
 
@@ -403,6 +444,8 @@ public void nextbtnpressed(View v){
 	Log.i("nextAnime", "NEXT NON ARRAY : " + (nextAnime +1));
 	
 	int limit = animeOPandEd.size();
+	//int limit = 50;
+
 
 	if (nextAnime <  limit) {
 		Log.i("nextAnime", "NEXT IN ARRAY : " + nextAnime);
@@ -428,7 +471,7 @@ public void nextbtnpressed(View v){
 }
 
 public void makequizQ(AnimeOpAndEdData currentAnimeQ){
-	
+	currentAnime = null;
 	playSong(currentAnimeQ.getMusic());
 currentAnime = currentAnimeQ;
 
@@ -483,10 +526,10 @@ if (currentAnime.getComplete().toString().equals("yes"))
 		//		mContext.getPackageName()
 	animeimageView.setBackgroundResource(this.getResources().getIdentifier(currentAnimeQ.getImage(), "drawable", this.getPackageName()));
 	//animeimageView
-	  animeNameTextv.setText(" Anime   :   " + currentAnimeQ.getName().toString());
-	animeArtistTextv.setText(" Artist     :   " + currentAnimeQ.getArtist().toString());
-	  animeSongTextv.setText(" Song     :   " + currentAnimeQ.getSong().toString());
-	animeAnswerTextv.setText(" Answer :  " + currentAnimeQ.getAnswer().toString());
+	  animeNameTextv.setText(" Anime:   " + currentAnimeQ.getName().toString());
+	  animeSongTextv.setText(" Song:     " + currentAnimeQ.getSong().toString());
+	animeArtistTextv.setText(" Artist:    " + currentAnimeQ.getArtist().toString());
+	animeAnswerTextv.setText(" Answer: " + currentAnimeQ.getAnswer().toString());
 	
 	animeNameTextv.setTextColor(Color.BLACK);
 	animeArtistTextv.setTextColor(Color.BLACK);
