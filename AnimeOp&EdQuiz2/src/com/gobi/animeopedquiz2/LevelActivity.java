@@ -104,7 +104,7 @@ public class LevelActivity extends BaseActivity {
 		
 		changerankIcon(1);
 
-		rankView1.setImageResource(R.drawable.rank_a);
+		rankView1.setBackgroundResource(R.drawable.rank_a);
 
 		
 		
