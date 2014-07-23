@@ -13,6 +13,11 @@
     <string name="musicSelect">Select Muisc</string>
     <string name="musicPlayActivity">Music Quiz </string>
      <string name="musicPlay">Play</string>
+     <string name="settingsActivity">Settings</string>
+          <string name="reset_btn">Reset Quiz!</string>
+     
+     
+     
    
 
 </resources>

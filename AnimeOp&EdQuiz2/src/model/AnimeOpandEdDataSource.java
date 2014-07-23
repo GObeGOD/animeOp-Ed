@@ -14,6 +14,7 @@ public class AnimeOpandEdDataSource {
 	DatabaseHandler dbHelper;
 	SQLiteDatabase dataBase;
 	Context mContext;
+	String userGrade;
 
 	public AnimeOpandEdDataSource(Context context) {
 		mContext = context;
@@ -40,7 +41,7 @@ public class AnimeOpandEdDataSource {
 			DatabaseHandler.KEY_QUESTION1, DatabaseHandler.KEY_QUESTION2,
 			DatabaseHandler.KEY_QUESTION3, DatabaseHandler.KEY_QUESTION4,
 			DatabaseHandler.KEY_IMAGE, DatabaseHandler.KEY_LEVEL,
-			DatabaseHandler.KEY_COMPLETE
+			DatabaseHandler.KEY_COMPLETE,DatabaseHandler.KEY_ATTEMPTS
 
 	};
 
@@ -66,6 +67,8 @@ public class AnimeOpandEdDataSource {
 		values.put(DatabaseHandler.KEY_IMAGE, opandEd.getImage());
 		values.put(DatabaseHandler.KEY_LEVEL, opandEd.getLevel());
 		values.put(DatabaseHandler.KEY_COMPLETE, opandEd.getComplete());
+		values.put(DatabaseHandler.KEY_ATTEMPTS, opandEd.getAttempts());
+
 
 		Log.i("you you ", "art :" + opandEd.getArtist() );
 		// Inserting Row
@@ -162,6 +165,9 @@ public class AnimeOpandEdDataSource {
 				.getColumnIndex(DatabaseHandler.KEY_LEVEL)));
 		animeOpandEd.SetComplete(cursor.getString(cursor
 				.getColumnIndex(DatabaseHandler.KEY_COMPLETE)));
+		animeOpandEd.SetAttempts(cursor.getInt(cursor
+				.getColumnIndex(DatabaseHandler.KEY_ATTEMPTS)));
+		
 
 		Log.i("anime datasource", "aritist yo" + animeOpandEd.getArtist() );
 		return animeOpandEd;
@@ -205,6 +211,8 @@ public class AnimeOpandEdDataSource {
 				.getColumnIndex(DatabaseHandler.KEY_LEVEL)));
 		animeOpandEd.SetComplete(cursor.getString(cursor
 				.getColumnIndex(DatabaseHandler.KEY_COMPLETE)));
+		animeOpandEd.SetAttempts(cursor.getInt(cursor
+				.getColumnIndex(DatabaseHandler.KEY_ATTEMPTS)));
 
 		return animeOpandEd;
 
@@ -245,6 +253,8 @@ public class AnimeOpandEdDataSource {
 						.getColumnIndex(DatabaseHandler.KEY_LEVEL)));
 				animeOpandEd.SetComplete(cursor.getString(cursor
 						.getColumnIndex(DatabaseHandler.KEY_COMPLETE)));
+				animeOpandEd.SetAttempts(cursor.getInt(cursor
+						.getColumnIndex(DatabaseHandler.KEY_ATTEMPTS)));
 
 				// Adding contact to list
 				animeOpandEdList.add(animeOpandEd);
@@ -278,5 +288,42 @@ public class AnimeOpandEdDataSource {
 
 	}
 
+	public void updateAnimeAttempts(AnimeOpAndEdData opandEd, int attempts) {
+		long id = opandEd.getID();
+		ContentValues contentVal = new ContentValues();
+		contentVal.put("attempts", attempts);
+
+		
+		
+		dataBase.update(DatabaseHandler.TABLE_AnimeOPandEd, contentVal, DatabaseHandler.KEY_ID + " = " + id, null);
+		
+		Log.i("updateTodo", "Updated Todo");
+
+	}
+
+	public String userGrade(int Attempts) {
+	
+		if (Attempts == 0)
+			userGrade = "S";
+
+		else if (Attempts <= 4)
+			userGrade = "A";
+
+		else if (Attempts <= 8)
+			userGrade = "B";
+		
+		else if (Attempts <= 12)
+			userGrade = "C";
+		
+		else if (Attempts <= 16)
+			userGrade = "D";
+		
+		else
+			userGrade = "F";
+
+		return userGrade;
+		
+		
+	}
 
 }

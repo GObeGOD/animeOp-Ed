@@ -45,6 +45,12 @@
             android:parentActivityName="com.gobi.animeopedquiz2.MusicSelection"
             android:screenOrientation="portrait" >
         </activity>
+         <activity
+            android:name="com.gobi.animeopedquiz2.SettingsActivity"
+            android:label="@string/settingsActivity"
+            android:parentActivityName="com.gobi.animeopedquiz2.LevelActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

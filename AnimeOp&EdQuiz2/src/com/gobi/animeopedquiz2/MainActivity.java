@@ -15,6 +15,8 @@ import android.widget.Button;
 public class MainActivity extends BaseActivity implements OnClickListener {
 
 	private Button playButton;
+	private Button settings_btn;
+
 	MediaPlayer mp;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,11 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		
          mp = MediaPlayer.create(this, R.raw.sound_click);
+         settings_btn = (Button) findViewById(R.id.settings_btn);
+         settings_btn.setOnClickListener(this);
+         settings_btn.setTextColor(Color.WHITE);
+         settings_btn.setTextSize(25);
+         settings_btn.setTypeface(null, Typeface.NORMAL);
 
 		playButton = (Button) findViewById(R.id.playbutton);
 		playButton.setOnClickListener(this);
@@ -53,6 +60,18 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
 			
 			Intent intent = new Intent(this, LevelActivity.class);
+			// EditText editText = (EditText) findViewById(R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent);
+
+		}
+		
+		if (v == settings_btn) {
+            mp.start();
+
+			
+			Intent intent = new Intent(this, SettingsActivity.class);
 			// EditText editText = (EditText) findViewById(R.id.edit_message);
 			// String message = editText.getText().toString();
 			// intent.putExtra(EXTRA_MESSAGE, message);

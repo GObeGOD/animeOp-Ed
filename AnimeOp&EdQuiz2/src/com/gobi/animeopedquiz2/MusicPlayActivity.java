@@ -104,13 +104,13 @@ public class MusicPlayActivity extends BaseActivity implements
 
 		animeOPandEd = dataSource.listByLevel(bylevel);
 		Log.i("index ",  "animeOPandEd  assigned ");
-		for (int i = 0; i < animeOPandEd.size(); i++){
+	/*	for (int i = 0; i < animeOPandEd.size(); i++){
 			Log.i("index ", "index of " +  animeOPandEd.get(i).getAnswer());
 
 			Log.i("index ", "index of " +  animeOPandEd.get(i).getID());
 
 			
-		}
+		}*/
 		AnimeOpAndEdData ani = dataSource.getAnimeBYSongName(bysongname);
 		//int index = animeOPandEd.indexOf(animeOPandEd.get(1));
 		//int index2 = animeOPandEd.indexOf(ani);
@@ -129,7 +129,7 @@ public class MusicPlayActivity extends BaseActivity implements
 
 		currentAnime = dataSource.getAnimeBYSongName(songName);
 		Log.i("ANIME CHOOSEN", "NAME: " + currentAnime.getName() + "song: "
-				+ currentAnime.getSong() + "MUSIC: " + currentAnime.getMusic() + currentAnime.getID());
+				+ currentAnime.getSong() + "MUSIC: " + currentAnime.getMusic() + "ATTEMPTS:" +currentAnime.getAttempts());
 
 		musicPlayButton = (ImageButton) findViewById(R.id.musicPlayButton);
 		musicSeekBar = (SeekBar) findViewById(R.id.musicSeekBar);
@@ -374,10 +374,17 @@ public class MusicPlayActivity extends BaseActivity implements
 			
 
 		} else {
+			Log.i("attempts", "before: " + currentAnime.getAttempts());
 			Toast.makeText(this, "WRONG", Toast.LENGTH_SHORT).show();
 			dataSource.updateAnime(currentAnime, "no");
+			
+			dataSource.updateAnimeAttempts(currentAnime, currentAnime.getAttempts() + 1);
+			Log.i("attempts", "after: " + currentAnime.getAttempts());
+
+			
 			finish();
 			qbutton.setTextColor(Color.RED);
+			
 
 		}
 

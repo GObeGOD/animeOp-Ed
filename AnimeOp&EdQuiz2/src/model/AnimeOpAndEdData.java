@@ -15,6 +15,8 @@ public class AnimeOpAndEdData {
 	String image;
 	int level;
 	String complete;
+	int attempts;
+
 
 	public AnimeOpAndEdData() {
 
@@ -25,7 +27,7 @@ public class AnimeOpAndEdData {
 	public AnimeOpAndEdData(String name, String song, String artist,
 			String music, String youtube, String answer, String question1,
 			String question2, String question3, String question4, String image,
-			int level, String complete) {
+			int level, String complete, int attempts) {
 		// this.id = id;
 		this.name = name;
 		this.song = song;
@@ -41,7 +43,8 @@ public class AnimeOpAndEdData {
 		this.image = image;
 		this.level = level;
 		this.complete = complete;
-
+		this.attempts =  attempts;
+ 
 	}
 
 	public long getID() {
@@ -154,6 +157,13 @@ public class AnimeOpAndEdData {
 
 	public void SetComplete(String complete) {
 		this.complete = complete;
+	}
+	public int getAttempts() {
+		return this.attempts;
+	}
+
+	public void SetAttempts(int attempts) {
+		this.attempts = attempts;
 	}
 
 }

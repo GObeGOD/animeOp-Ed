@@ -96,6 +96,7 @@
             android:contentDescription="@string/contentDescriptionLevel1"
             android:onClick="handleButton"
             android:scaleType="fitXY" />
+
     </LinearLayout>
 
 </ScrollView>

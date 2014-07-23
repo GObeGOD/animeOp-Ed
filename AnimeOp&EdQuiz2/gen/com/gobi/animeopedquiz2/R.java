@@ -307,35 +307,37 @@ public final class R {
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f0a0000;
-        public static final int ScrollView1=0x7f0a0003;
-        public static final int Scrollview_animeAnswersView=0x7f0a0013;
-        public static final int Scrollview_buttons=0x7f0a000e;
-        public static final int animeAnswerTextv=0x7f0a0019;
-        public static final int animeAnswersgroup=0x7f0a0014;
-        public static final int animeArtistTextv=0x7f0a0018;
-        public static final int animeNameTextv=0x7f0a0016;
-        public static final int animeSongTextv=0x7f0a0017;
-        public static final int animeimageView=0x7f0a0015;
-        public static final int backtolistbtn=0x7f0a001a;
-        public static final int gridView1=0x7f0a001d;
-        public static final int level_1=0x7f0a0004;
-        public static final int level_2=0x7f0a0005;
-        public static final int level_3=0x7f0a0006;
-        public static final int level_4=0x7f0a0007;
-        public static final int level_5=0x7f0a0008;
-        public static final int level_6=0x7f0a0009;
-        public static final int level_7=0x7f0a000a;
-        public static final int level_8=0x7f0a000b;
-        public static final int musicPlayButton=0x7f0a000d;
-        public static final int musicSeekBar=0x7f0a000c;
-        public static final int nextAnimebtn=0x7f0a001b;
-        public static final int picture=0x7f0a0002;
+        public static final int ScrollView1=0x7f0a0004;
+        public static final int Scrollview_animeAnswersView=0x7f0a0014;
+        public static final int Scrollview_buttons=0x7f0a000f;
+        public static final int animeAnswerTextv=0x7f0a001a;
+        public static final int animeAnswersgroup=0x7f0a0015;
+        public static final int animeArtistTextv=0x7f0a0019;
+        public static final int animeNameTextv=0x7f0a0017;
+        public static final int animeSongTextv=0x7f0a0018;
+        public static final int animeimageView=0x7f0a0016;
+        public static final int backtolistbtn=0x7f0a001b;
+        public static final int gridView1=0x7f0a001e;
+        public static final int level_1=0x7f0a0005;
+        public static final int level_2=0x7f0a0006;
+        public static final int level_3=0x7f0a0007;
+        public static final int level_4=0x7f0a0008;
+        public static final int level_5=0x7f0a0009;
+        public static final int level_6=0x7f0a000a;
+        public static final int level_7=0x7f0a000b;
+        public static final int level_8=0x7f0a000c;
+        public static final int musicPlayButton=0x7f0a000e;
+        public static final int musicSeekBar=0x7f0a000d;
+        public static final int nextAnimebtn=0x7f0a001c;
+        public static final int picture=0x7f0a0003;
         public static final int playbutton=0x7f0a0001;
-        public static final int question1_Button=0x7f0a000f;
-        public static final int question2_Button=0x7f0a0010;
-        public static final int question3_Button=0x7f0a0011;
-        public static final int question4_Button=0x7f0a0012;
-        public static final int youtubebtn=0x7f0a001c;
+        public static final int question1_Button=0x7f0a0010;
+        public static final int question2_Button=0x7f0a0011;
+        public static final int question3_Button=0x7f0a0012;
+        public static final int question4_Button=0x7f0a0013;
+        public static final int reset_btn=0x7f0a001f;
+        public static final int settings_btn=0x7f0a0002;
+        public static final int youtubebtn=0x7f0a001d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -343,6 +345,7 @@ public final class R {
         public static final int levels=0x7f030002;
         public static final int music_play=0x7f030003;
         public static final int music_selection=0x7f030004;
+        public static final int settings=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -423,6 +426,8 @@ public final class R {
         public static final int musicPlayActivity=0x7f07000a;
         public static final int musicSelect=0x7f070009;
         public static final int play=0x7f070007;
+        public static final int reset_btn=0x7f07000d;
+        public static final int settingsActivity=0x7f07000c;
     }
     public static final class style {
         public static final int ActionBar_Solid_Anime_app_style=0x7f080003;
