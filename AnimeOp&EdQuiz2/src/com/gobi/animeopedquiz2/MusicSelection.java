@@ -7,10 +7,7 @@ import model.AnimeOpandEdDataSource;
 import model.BaseActivity;
 import model.ImageGridAdapter;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -104,10 +101,9 @@ public class MusicSelection extends BaseActivity {
 	
 	
 	@Override
+	//menu item  for user grade
 	public boolean onCreateOptionsMenu(Menu menu) {
 		
-		// TODO Auto-generated method stub   setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
-	  //  menu.add(0, 2, 0, userGrade).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		MenuInflater menuInflater = getMenuInflater();
 		menuInflater.inflate(R.menu.main, menu);
 		
@@ -115,30 +111,53 @@ public class MusicSelection extends BaseActivity {
 
 		 
 		   MenuItem item = menu.getItem(positionOfMenuItem);
-		   SpannableString s = new SpannableString(userGrade);
-		    s.setSpan(new ForegroundColorSpan(Color.RED), 0, s.length(), 0);
-		   item.setTitle(s);
-		   // item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-
-
-		//menu.add("Title").getMenuIn;
+	
+		   if (userGrade == "S")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_s));
+			else if (userGrade == "A")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_a));
+			else if (userGrade == "B")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_b));
+			else if (userGrade == "C")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_c));
+			else if (userGrade == "D")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_d));
+			else if (userGrade == "F")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_f));
+		
 		return super.onCreateOptionsMenu(menu);
 		
 	}
+	
+	
+	
 	@Override
+	//menu item  for user grade refresh 
 	public boolean onPrepareOptionsMenu(Menu menu) {
 	    menu.clear();
 	 //   menu.add(0, 2, 0, userGrade).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 	    int positionOfMenuItem = 0; 
 
-	    MenuInflater menuInflater = getMenuInflater();
+    MenuInflater menuInflater = getMenuInflater();
 		menuInflater.inflate(R.menu.main, menu);
 	    MenuItem item = menu.getItem(positionOfMenuItem);
-	    SpannableString s = new SpannableString(userGrade);
-	    s.setSpan(new ForegroundColorSpan(Color.RED), 0, s.length(), 0);
-	    item.setTitle(s);
-	   
-	   // item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+		   item.setIcon(getResources().getDrawable(R.drawable.rank_a));
+
+		   if (userGrade == "S")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_s));
+			else if (userGrade == "A")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_a));
+			else if (userGrade == "B")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_b));
+			else if (userGrade == "C")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_c));
+			else if (userGrade == "D")
+				item.setIcon(getResources().getDrawable(R.drawable.rank_d));
+			else if (userGrade == "F")
+			item.setIcon(getResources().getDrawable(R.drawable.rank_f));
+			
+			
 	    return super.onPrepareOptionsMenu(menu);
 	}
 	
@@ -389,7 +408,7 @@ public class MusicSelection extends BaseActivity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		//dataSource.close();
+		dataSource.close();
 	}
 
 	

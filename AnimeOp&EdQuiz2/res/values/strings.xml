@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="app_name">AnimeOp&amp;EdQuiz</string>
+<resources><string name="app_name">AnimeOp&amp;EdQuiz</string>
+    
     <string name="action_settings">Settings</string>
     <string name="contentDescriptionLevel1">Level 1</string>
     <string name="contentDescriptionLevel2">Level 2</string>
     <string name="contentDescriptionLevel3">Level 3</string>
     <string name="contentDescriptionLevel4">Level 4</string>
-     <string name="contentDescriptionMusicPlay">Play Music</string>
+    <string name="contentDescriptionMusicPlay">Play Music</string>
     <string name="play">Play</string>
     <string name="levelTitle">Levels</string>
     <string name="musicSelect">Select Muisc</string>
     <string name="musicPlayActivity">Music Quiz </string>
-     <string name="musicPlay">Play</string>
-     <string name="settingsActivity">Settings</string>
-          <string name="reset_btn">Reset Quiz!</string>
-                    <string name="userGradetext">S</string>
-          
-     
-     
-     
-   
+    <string name="musicPlay">Play</string>
+    <string name="settingsActivity">Settings</string>
+    <string name="reset_btn">Reset Quiz!</string>
+    <string name="userGradetext">S</string>
+    <string name="userRank">Your Rank</string>
 
 </resources>
