@@ -7,8 +7,14 @@ import model.AnimeOpandEdDataSource;
 import model.BaseActivity;
 import model.ImageGridAdapter;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
 
@@ -82,7 +88,7 @@ public class MusicSelection extends BaseActivity {
 	Log.i("YOOOOOOOO",  "totalLevelAttempts: " + totalLevelAttempts);
 
 	userGrade = dataSource.userGrade(totalLevelAttempts);
-	setTitle("Level "+ levelInt +"     "+ userGrade);
+	setTitle("Level "+ levelInt + userGrade);
 		//Log.i("LLLLLL ", "index of " +  animeOPandEd.get(1).getAnswer());
 
 	Log.i("USERGRADE",  "userGrade: " + userGrade );
@@ -95,6 +101,61 @@ public class MusicSelection extends BaseActivity {
 
 
 	}
+	
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		
+		// TODO Auto-generated method stub   setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+	  //  menu.add(0, 2, 0, userGrade).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.main, menu);
+		
+		  int positionOfMenuItem = 0; 
+
+		 
+		   MenuItem item = menu.getItem(positionOfMenuItem);
+		   SpannableString s = new SpannableString(userGrade);
+		    s.setSpan(new ForegroundColorSpan(Color.RED), 0, s.length(), 0);
+		   item.setTitle(s);
+		   // item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+
+		//menu.add("Title").getMenuIn;
+		return super.onCreateOptionsMenu(menu);
+		
+	}
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+	    menu.clear();
+	 //   menu.add(0, 2, 0, userGrade).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+	    int positionOfMenuItem = 0; 
+
+	    MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.main, menu);
+	    MenuItem item = menu.getItem(positionOfMenuItem);
+	    SpannableString s = new SpannableString(userGrade);
+	    s.setSpan(new ForegroundColorSpan(Color.RED), 0, s.length(), 0);
+	    item.setTitle(s);
+	   
+	   // item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+	    return super.onPrepareOptionsMenu(menu);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 
@@ -103,12 +164,30 @@ public class MusicSelection extends BaseActivity {
 		// Toast.makeText(getApplicationContext(),v.getId(),
 		// Toast.LENGTH_SHORT).show();
 		String name = (String) v.getContentDescription();
-		
+		invalidateOptionsMenu();
+
 		changeAct(name);
 		Log.i("ridItemtapped", "GRID ITEM TAPPED ID: "+ v.getId() );
 
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void insertLevel(int level) {
 		// Log.e("insertLevel", "LEVEL CHOOSEN: " + level);
 
@@ -282,29 +361,29 @@ public class MusicSelection extends BaseActivity {
 	protected void onResume() {
 		super.onResume();
 		dataSource.open();
-		 Log.i("onResume", "onResume!!");
+		Log.i("onResume", "onResume!!");
 
+		adapter.loadData(this, levelInt);
+		adapter.notifyDataSetChanged();
+		String[] bylevel = { Integer.toString(levelInt) };
+		animeOPandEd = dataSource.listByLevel(bylevel);
+		// Log.i("LLLLLL ", "index of " + animeOPandEd.get(1).getAnswer());
+		totalLevelAttempts = 0;
 
-    adapter.loadData(this,levelInt);
-	adapter.notifyDataSetChanged();
-	String[] bylevel = { Integer.toString(levelInt) };
-	animeOPandEd = dataSource.listByLevel(bylevel);
-	//Log.i("LLLLLL ", "index of " +  animeOPandEd.get(1).getAnswer());
-	 totalLevelAttempts = 0;
+		for (int i = 0; i < animeOPandEd.size(); i++) {
+			totalLevelAttempts += animeOPandEd.get(i).getAttempts();
+			Log.i("LLLLLL ", "index of " + animeOPandEd.get(i).getAnswer());
 
-for (int i = 0; i < animeOPandEd.size(); i++){
-	totalLevelAttempts += animeOPandEd.get(i).getAttempts();
-	Log.i("LLLLLL ", "index of " +  animeOPandEd.get(i).getAnswer());
+			Log.i("LLLLLLL", "" + animeOPandEd.get(i).getAttempts());
 
-	Log.i("LLLLLLL",""+ animeOPandEd.get(i).getAttempts());
-	
-}
-Log.i("YOOOOOOOO",  "totalLevelAttempts: " + totalLevelAttempts);
-userGrade = dataSource.userGrade(totalLevelAttempts);
-Log.i("USERGRADE",  "userGrade: " + userGrade );
-setTitle("Level "+ levelInt +"     "+ userGrade);
+		}
+		Log.i("YOOOOOOOO", "totalLevelAttempts: " + totalLevelAttempts);
+		userGrade = dataSource.userGrade(totalLevelAttempts);
+		Log.i("USERGRADE", "userGrade: " + userGrade);
+		setTitle("Level " + levelInt  + userGrade);
 
-	 
+		invalidateOptionsMenu();
+
 	}
 
 	@Override
@@ -313,4 +392,5 @@ setTitle("Level "+ levelInt +"     "+ userGrade);
 		//dataSource.close();
 	}
 
+	
 }

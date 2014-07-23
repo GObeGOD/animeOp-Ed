@@ -15,6 +15,8 @@
      <string name="musicPlay">Play</string>
      <string name="settingsActivity">Settings</string>
           <string name="reset_btn">Reset Quiz!</string>
+                    <string name="userGradetext">S</string>
+          
      
      
      

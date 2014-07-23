@@ -326,6 +326,7 @@ public final class R {
         public static final int level_6=0x7f0a000a;
         public static final int level_7=0x7f0a000b;
         public static final int level_8=0x7f0a000c;
+        public static final int menu_userGrade=0x7f0a0020;
         public static final int musicPlayButton=0x7f0a000e;
         public static final int musicSeekBar=0x7f0a000d;
         public static final int nextAnimebtn=0x7f0a001c;
@@ -428,6 +429,7 @@ public final class R {
         public static final int play=0x7f070007;
         public static final int reset_btn=0x7f07000d;
         public static final int settingsActivity=0x7f07000c;
+        public static final int userGradetext=0x7f07000e;
     }
     public static final class style {
         public static final int ActionBar_Solid_Anime_app_style=0x7f080003;
