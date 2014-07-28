@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity" >
 
     <Button
@@ -30,5 +31,15 @@
         android:background="@drawable/level2button"
         android:scaleType="fitXY"
         android:text="@string/settingsActivity" />
+
+     <com.google.android.gms.ads.AdView
+         android:id="@+id/adView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         ads:adSize="BANNER"
+         ads:adUnitId="ca-app-pub-2035686375672240/2220282012" >
+     </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

@@ -54,10 +54,12 @@ public class MusicPlayActivity extends BaseActivity implements
 	TextView animeNameTextv;
 	TextView animeSongTextv;
 	TextView animeAnswerTextv;
+	TextView attemptView;
 	LinearLayout animeAnswersgroup;
 	ImageView animeimageView;
 	Animation animFlipin;
 	Animation animCrossFade;
+	int totalAttempts;
 	
 
 
@@ -131,6 +133,9 @@ public class MusicPlayActivity extends BaseActivity implements
 		Log.i("ANIME CHOOSEN", "NAME: " + currentAnime.getName() + "song: "
 				+ currentAnime.getSong() + "MUSIC: " + currentAnime.getMusic() + "ATTEMPTS:" +currentAnime.getAttempts());
 
+		
+
+		
 		musicPlayButton = (ImageButton) findViewById(R.id.musicPlayButton);
 		musicSeekBar = (SeekBar) findViewById(R.id.musicSeekBar);
 		scrollview_buttons = (ScrollView) findViewById(R.id.Scrollview_buttons);
@@ -147,6 +152,7 @@ public class MusicPlayActivity extends BaseActivity implements
 		animeArtistTextv  =  (TextView) findViewById(R.id.animeArtistTextv);
 		animeSongTextv  =  (TextView) findViewById(R.id.animeSongTextv);
 		animeAnswerTextv  =  (TextView) findViewById(R.id.animeAnswerTextv);
+		attemptView = (TextView) findViewById(R.id.attemptsView);
 		animeAnswersgroup = (LinearLayout) findViewById(R.id.animeAnswersgroup);
 		
 		animeimageView = (ImageView) findViewById(R.id.animeimageView);
@@ -161,7 +167,9 @@ public class MusicPlayActivity extends BaseActivity implements
 
 		
 		animCrossFade.setAnimationListener(this);
-	
+		
+		attemptView.setText("Attempts:" + currentAnime.getAttempts());
+
 
 		// Creating a Mediaplayer
 		mediaPlayer = new MediaPlayer();
@@ -225,6 +233,7 @@ public class MusicPlayActivity extends BaseActivity implements
 				
 			
 			}
+			
 	}
 
 	public void musicPlayClick(View view) {
@@ -554,7 +563,7 @@ if (currentAnime.getComplete().toString().equals("yes"))
 	animeSongTextv.setTypeface(null, Typeface.BOLD);
 	animeAnswerTextv.setTypeface(null, Typeface.BOLD);
 	
-	
+	attemptView.setText("Attempts:" + currentAnime.getAttempts());
 //animeAnswerTextv.setAnimation(animCrossFade);
 //animeArtistTextv.setAnimation(animCrossFade);
 //animeSongTextv.setAnimation(animCrossFade);

@@ -85,7 +85,7 @@ public class MusicSelection extends BaseActivity {
 	Log.i("YOOOOOOOO",  "totalLevelAttempts: " + totalLevelAttempts);
 
 	userGrade = dataSource.userGrade(totalLevelAttempts);
-	setTitle("Level "+ levelInt + userGrade);
+	setTitle("Level "+ levelInt );
 		//Log.i("LLLLLL ", "index of " +  animeOPandEd.get(1).getAnswer());
 
 	Log.i("USERGRADE",  "userGrade: " + userGrade );
@@ -399,7 +399,7 @@ public class MusicSelection extends BaseActivity {
 		Log.i("YOOOOOOOO", "totalLevelAttempts: " + totalLevelAttempts);
 		userGrade = dataSource.userGrade(totalLevelAttempts);
 		Log.i("USERGRADE", "userGrade: " + userGrade);
-		setTitle("Level " + levelInt  + userGrade);
+		setTitle("Level " + levelInt);
 
 		invalidateOptionsMenu();
 

@@ -179,6 +179,10 @@ public class LevelActivity extends BaseActivity {
 		Log.i("OKAY","totalLevel_5_complete!!!:"+ totalLevel_5_complete);
 		
 		progressBar1.setProgress(totalLevel_1_complete);
+		progressBar2.setProgress(totalLevel_2_complete);
+		progressBar3.setProgress(totalLevel_3_complete);
+		progressBar4.setProgress(totalLevel_4_complete);
+		progressBar5.setProgress(totalLevel_5_complete);
 
 
 		

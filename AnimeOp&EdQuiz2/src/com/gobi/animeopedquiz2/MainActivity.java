@@ -12,10 +12,15 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class MainActivity extends BaseActivity implements OnClickListener {
 
 	private Button playButton;
 	private Button settings_btn;
+	AdView adView;
+	 AdRequest adRequest;
 
 	MediaPlayer mp;
 	@Override
@@ -39,7 +44,26 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		playButton.setTextSize(40);
 		playButton.setTypeface(null, Typeface.BOLD);
 
+		 // Look up the AdView as a resource and load a request.
+	     adView = (AdView) this.findViewById(R.id.adView);
+	    AdRequest adRequest = new AdRequest.Builder().build();
+	  //  07-28 12:40:49.345: I/Ads(23418): Use AdRequest.Builder.addTestDevice("E6D9B7DA0AC372766C2C87BDAA680A3B") to get test ads on this device.
 
+	     
+	     // Create the interstitial.
+	   //  interstitial = new InterstitialAd(this);
+	    // interstitial.setAdUnitId("ca-app-pub-2035686375672240/2220282012");
+
+	     
+	     adRequest = new AdRequest.Builder()
+        .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+        .addTestDevice("E6D9B7DA0AC372766C2C87BDAA680A3B")
+        .build();
+	    
+	   
+	  //  interstitial.loadAd(adRequest);
+	    
+	   adView.loadAd(adRequest);
 
 
 	}
@@ -70,14 +94,42 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		if (v == settings_btn) {
             mp.start();
 
-			
-			Intent intent = new Intent(this, SettingsActivity.class);
-			// EditText editText = (EditText) findViewById(R.id.edit_message);
-			// String message = editText.getText().toString();
-			// intent.putExtra(EXTRA_MESSAGE, message);
+            Intent intent = new Intent(this, SettingsActivity.class);
 			startActivity(intent);
-
+		
 		}
 	}
+	
+
+	
+	
+	
+	
+	  @Override
+	  public void onResume() {
+	    super.onResume();
+	    if (adView != null) {
+	      adView.resume();
+	    }
+	  }
+
+	  @Override
+	  public void onPause() {
+	    if (adView != null) {
+	      adView.pause();
+
+	    }
+	    super.onPause();
+	  }
+
+	  /** Called before the activity is destroyed. */
+	  @Override
+	  public void onDestroy() {
+	    // Destroy the AdView.
+	    if (adView != null) {
+	      adView.destroy();
+	    }
+	    super.onDestroy();
+	  }
 
 }

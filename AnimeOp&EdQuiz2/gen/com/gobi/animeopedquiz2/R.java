@@ -9,150 +9,317 @@ package com.gobi.animeopedquiz2;
 
 public final class R {
     public static final class attr {
+        /** 
+    The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
+    MEDIUM_RECTANGLE, SMART_BANNER, WIDE_SKYSCRAPER, or
+    &lt;width&gt;x&lt;height&gt;.
+    
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int adSize=0x7f010000;
+        /** 
+    A comma-separated list of the supported ad sizes. The sizes must be one of
+    BANNER, FULL_BANNER, LEADERBOARD, MEDIUM_RECTANGLE, SMART_BANNER,
+    WIDE_SKYSCRAPER, or &lt;width&gt;x&lt;height&gt;.
+    
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int adSizes=0x7f010001;
+        /**  The ad unit ID. 
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int adUnitId=0x7f010002;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraBearing=0x7f010004;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraTargetLat=0x7f010005;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraTargetLng=0x7f010006;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraTilt=0x7f010007;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraZoom=0x7f010008;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>normal</code></td><td>1</td><td></td></tr>
+<tr><td><code>satellite</code></td><td>2</td><td></td></tr>
+<tr><td><code>terrain</code></td><td>3</td><td></td></tr>
+<tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
+</table>
+         */
+        public static final int mapType=0x7f010003;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiCompass=0x7f010009;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiRotateGestures=0x7f01000a;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiScrollGestures=0x7f01000b;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiTiltGestures=0x7f01000c;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiZoomControls=0x7f01000d;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiZoomGestures=0x7f01000e;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int useViewLifecycle=0x7f01000f;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int zOrderOnTop=0x7f010010;
     }
     public static final class color {
-        public static final int AliceBlue=0x7f05002c;
-        public static final int AntiqueWhite=0x7f050022;
-        public static final int Aqua=0x7f05007c;
-        public static final int Aquamarine=0x7f050061;
-        public static final int Azure=0x7f05002a;
-        public static final int Beige=0x7f050027;
-        public static final int Bisque=0x7f05000d;
-        public static final int Black=0x7f05008b;
-        public static final int BlanchedAlmond=0x7f05000b;
-        public static final int Blue=0x7f050087;
-        public static final int BlueViolet=0x7f05005a;
-        public static final int Brown=0x7f05004e;
-        public static final int BurlyWood=0x7f050034;
-        public static final int CadetBlue=0x7f05006c;
-        public static final int Chartreuse=0x7f050062;
-        public static final int Chocolate=0x7f05003e;
-        public static final int Coral=0x7f050017;
-        public static final int CornflowerBlue=0x7f05006b;
-        public static final int Cornsilk=0x7f050007;
-        public static final int Crimson=0x7f050037;
-        public static final int Cyan=0x7f05007d;
-        public static final int DarkCyan=0x7f050083;
-        public static final int DarkGoldenrod=0x7f050046;
-        public static final int DarkGray=0x7f05004d;
-        public static final int DarkGreen=0x7f050086;
-        public static final int DarkKhaki=0x7f050043;
-        public static final int DarkMagenta=0x7f050058;
-        public static final int DarkOliveGreen=0x7f05006d;
-        public static final int DarkOrange=0x7f050016;
-        public static final int DarkOrchid=0x7f050051;
-        public static final int DarkRed=0x7f050059;
-        public static final int DarkSalmon=0x7f050031;
-        public static final int DarkSeaGreen=0x7f050056;
-        public static final int DarkSlateBlue=0x7f050070;
-        public static final int DarkSlateGray=0x7f050076;
-        public static final int DarkTurquoise=0x7f050081;
-        public static final int DarkViolet=0x7f050053;
-        public static final int DeepPink=0x7f05001b;
-        public static final int DeepSkyBlue=0x7f050082;
-        public static final int DimGray=0x7f050069;
-        public static final int DodgerBlue=0x7f05007a;
-        public static final int FireBrick=0x7f050047;
-        public static final int FloralWhite=0x7f050005;
-        public static final int ForestGreen=0x7f050078;
-        public static final int Fuchsia=0x7f05001c;
-        public static final int Gainsboro=0x7f050036;
-        public static final int GhostWhite=0x7f050024;
-        public static final int Gold=0x7f050011;
-        public static final int Goldenrod=0x7f050039;
-        public static final int Gray=0x7f05005d;
-        public static final int Green=0x7f050085;
-        public static final int GreenYellow=0x7f05004b;
-        public static final int Honeydew=0x7f05002b;
-        public static final int HotPink=0x7f050018;
-        public static final int IndianRed=0x7f050040;
-        public static final int Indigo=0x7f05006e;
-        public static final int Ivory=0x7f050001;
-        public static final int Khaki=0x7f05002d;
-        public static final int Lavender=0x7f050032;
-        public static final int LavenderBlush=0x7f050009;
-        public static final int LawnGreen=0x7f050063;
-        public static final int LemonChiffon=0x7f050006;
-        public static final int LightBlue=0x7f05004c;
-        public static final int LightCoral=0x7f05002e;
-        public static final int LightCyan=0x7f050033;
-        public static final int LightGoldenrodYellow=0x7f050020;
-        public static final int LightGreen=0x7f050055;
-        public static final int LightGrey=0x7f05003c;
-        public static final int LightPink=0x7f050013;
-        public static final int LightSalmon=0x7f050015;
-        public static final int LightSeaGreen=0x7f050079;
-        public static final int LightSkyBlue=0x7f05005b;
-        public static final int LightSlateGray=0x7f050065;
-        public static final int LightSteelBlue=0x7f050049;
-        public static final int LightYellow=0x7f050002;
-        public static final int Lime=0x7f05007f;
-        public static final int LimeGreen=0x7f050075;
-        public static final int Linen=0x7f050021;
-        public static final int Magenta=0x7f05001d;
-        public static final int Maroon=0x7f050060;
-        public static final int MediumAquamarine=0x7f05006a;
-        public static final int MediumBlue=0x7f050088;
-        public static final int MediumOrchid=0x7f050045;
-        public static final int MediumPurple=0x7f050054;
-        public static final int MediumSeaGreen=0x7f050074;
-        public static final int MediumSlateBlue=0x7f050064;
-        public static final int MediumSpringGreen=0x7f050080;
-        public static final int MediumTurquoise=0x7f05006f;
-        public static final int MediumVioletRed=0x7f050041;
-        public static final int MidnightBlue=0x7f05007b;
-        public static final int MintCream=0x7f050025;
-        public static final int MistyRose=0x7f05000c;
-        public static final int Moccasin=0x7f05000e;
-        public static final int NavajoWhite=0x7f05000f;
-        public static final int Navy=0x7f05008a;
-        public static final int OldLace=0x7f05001f;
-        public static final int Olive=0x7f05005e;
-        public static final int OliveDrab=0x7f050067;
-        public static final int Orange=0x7f050014;
-        public static final int OrangeRed=0x7f05001a;
-        public static final int Orchid=0x7f05003a;
-        public static final int PaleGoldenrod=0x7f05002f;
-        public static final int PaleGreen=0x7f050052;
-        public static final int PaleTurquoise=0x7f05004a;
-        public static final int PaleVioletRed=0x7f050038;
-        public static final int PapayaWhip=0x7f05000a;
-        public static final int PeachPuff=0x7f050010;
-        public static final int Peru=0x7f05003f;
-        public static final int Pink=0x7f050012;
-        public static final int Plum=0x7f050035;
-        public static final int PowderBlue=0x7f050048;
-        public static final int Purple=0x7f05005f;
-        public static final int Red=0x7f05001e;
-        public static final int RosyBrown=0x7f050044;
-        public static final int RoyalBlue=0x7f050072;
-        public static final int SaddleBrown=0x7f050057;
-        public static final int Salmon=0x7f050023;
-        public static final int SandyBrown=0x7f050029;
-        public static final int SeaGreen=0x7f050077;
-        public static final int Seashell=0x7f050008;
-        public static final int Sienna=0x7f05004f;
-        public static final int Silver=0x7f050042;
-        public static final int SkyBlue=0x7f05005c;
-        public static final int SlateBlue=0x7f050068;
-        public static final int SlateGray=0x7f050066;
-        public static final int Snow=0x7f050004;
-        public static final int SpringGreen=0x7f05007e;
-        public static final int SteelBlue=0x7f050071;
-        public static final int Tan=0x7f05003d;
-        public static final int Teal=0x7f050084;
-        public static final int Thistle=0x7f05003b;
-        public static final int Tomato=0x7f050019;
-        public static final int Turquoise=0x7f050073;
-        public static final int Violet=0x7f050030;
-        public static final int Wheat=0x7f050028;
-        public static final int White=0x7f050000;
-        public static final int WhiteSmoke=0x7f050026;
-        public static final int Yellow=0x7f050003;
-        public static final int YellowGreen=0x7f050050;
-        public static final int darkcolorbg=0x7f05008c;
-        public static final int darkcolorbg2=0x7f05008d;
-        public static final int lightgray=0x7f050089;
+        public static final int AliceBlue=0x7f050036;
+        public static final int AntiqueWhite=0x7f05002c;
+        public static final int Aqua=0x7f050086;
+        public static final int Aquamarine=0x7f05006b;
+        public static final int Azure=0x7f050034;
+        public static final int Beige=0x7f050031;
+        public static final int Bisque=0x7f050017;
+        public static final int Black=0x7f050095;
+        public static final int BlanchedAlmond=0x7f050015;
+        public static final int Blue=0x7f050091;
+        public static final int BlueViolet=0x7f050064;
+        public static final int Brown=0x7f050058;
+        public static final int BurlyWood=0x7f05003e;
+        public static final int CadetBlue=0x7f050076;
+        public static final int Chartreuse=0x7f05006c;
+        public static final int Chocolate=0x7f050048;
+        public static final int Coral=0x7f050021;
+        public static final int CornflowerBlue=0x7f050075;
+        public static final int Cornsilk=0x7f050011;
+        public static final int Crimson=0x7f050041;
+        public static final int Cyan=0x7f050087;
+        public static final int DarkCyan=0x7f05008d;
+        public static final int DarkGoldenrod=0x7f050050;
+        public static final int DarkGray=0x7f050057;
+        public static final int DarkGreen=0x7f050090;
+        public static final int DarkKhaki=0x7f05004d;
+        public static final int DarkMagenta=0x7f050062;
+        public static final int DarkOliveGreen=0x7f050077;
+        public static final int DarkOrange=0x7f050020;
+        public static final int DarkOrchid=0x7f05005b;
+        public static final int DarkRed=0x7f050063;
+        public static final int DarkSalmon=0x7f05003b;
+        public static final int DarkSeaGreen=0x7f050060;
+        public static final int DarkSlateBlue=0x7f05007a;
+        public static final int DarkSlateGray=0x7f050080;
+        public static final int DarkTurquoise=0x7f05008b;
+        public static final int DarkViolet=0x7f05005d;
+        public static final int DeepPink=0x7f050025;
+        public static final int DeepSkyBlue=0x7f05008c;
+        public static final int DimGray=0x7f050073;
+        public static final int DodgerBlue=0x7f050084;
+        public static final int FireBrick=0x7f050051;
+        public static final int FloralWhite=0x7f05000f;
+        public static final int ForestGreen=0x7f050082;
+        public static final int Fuchsia=0x7f050026;
+        public static final int Gainsboro=0x7f050040;
+        public static final int GhostWhite=0x7f05002e;
+        public static final int Gold=0x7f05001b;
+        public static final int Goldenrod=0x7f050043;
+        public static final int Gray=0x7f050067;
+        public static final int Green=0x7f05008f;
+        public static final int GreenYellow=0x7f050055;
+        public static final int Honeydew=0x7f050035;
+        public static final int HotPink=0x7f050022;
+        public static final int IndianRed=0x7f05004a;
+        public static final int Indigo=0x7f050078;
+        public static final int Ivory=0x7f05000b;
+        public static final int Khaki=0x7f050037;
+        public static final int Lavender=0x7f05003c;
+        public static final int LavenderBlush=0x7f050013;
+        public static final int LawnGreen=0x7f05006d;
+        public static final int LemonChiffon=0x7f050010;
+        public static final int LightBlue=0x7f050056;
+        public static final int LightCoral=0x7f050038;
+        public static final int LightCyan=0x7f05003d;
+        public static final int LightGoldenrodYellow=0x7f05002a;
+        public static final int LightGreen=0x7f05005f;
+        public static final int LightGrey=0x7f050046;
+        public static final int LightPink=0x7f05001d;
+        public static final int LightSalmon=0x7f05001f;
+        public static final int LightSeaGreen=0x7f050083;
+        public static final int LightSkyBlue=0x7f050065;
+        public static final int LightSlateGray=0x7f05006f;
+        public static final int LightSteelBlue=0x7f050053;
+        public static final int LightYellow=0x7f05000c;
+        public static final int Lime=0x7f050089;
+        public static final int LimeGreen=0x7f05007f;
+        public static final int Linen=0x7f05002b;
+        public static final int Magenta=0x7f050027;
+        public static final int Maroon=0x7f05006a;
+        public static final int MediumAquamarine=0x7f050074;
+        public static final int MediumBlue=0x7f050092;
+        public static final int MediumOrchid=0x7f05004f;
+        public static final int MediumPurple=0x7f05005e;
+        public static final int MediumSeaGreen=0x7f05007e;
+        public static final int MediumSlateBlue=0x7f05006e;
+        public static final int MediumSpringGreen=0x7f05008a;
+        public static final int MediumTurquoise=0x7f050079;
+        public static final int MediumVioletRed=0x7f05004b;
+        public static final int MidnightBlue=0x7f050085;
+        public static final int MintCream=0x7f05002f;
+        public static final int MistyRose=0x7f050016;
+        public static final int Moccasin=0x7f050018;
+        public static final int NavajoWhite=0x7f050019;
+        public static final int Navy=0x7f050094;
+        public static final int OldLace=0x7f050029;
+        public static final int Olive=0x7f050068;
+        public static final int OliveDrab=0x7f050071;
+        public static final int Orange=0x7f05001e;
+        public static final int OrangeRed=0x7f050024;
+        public static final int Orchid=0x7f050044;
+        public static final int PaleGoldenrod=0x7f050039;
+        public static final int PaleGreen=0x7f05005c;
+        public static final int PaleTurquoise=0x7f050054;
+        public static final int PaleVioletRed=0x7f050042;
+        public static final int PapayaWhip=0x7f050014;
+        public static final int PeachPuff=0x7f05001a;
+        public static final int Peru=0x7f050049;
+        public static final int Pink=0x7f05001c;
+        public static final int Plum=0x7f05003f;
+        public static final int PowderBlue=0x7f050052;
+        public static final int Purple=0x7f050069;
+        public static final int Red=0x7f050028;
+        public static final int RosyBrown=0x7f05004e;
+        public static final int RoyalBlue=0x7f05007c;
+        public static final int SaddleBrown=0x7f050061;
+        public static final int Salmon=0x7f05002d;
+        public static final int SandyBrown=0x7f050033;
+        public static final int SeaGreen=0x7f050081;
+        public static final int Seashell=0x7f050012;
+        public static final int Sienna=0x7f050059;
+        public static final int Silver=0x7f05004c;
+        public static final int SkyBlue=0x7f050066;
+        public static final int SlateBlue=0x7f050072;
+        public static final int SlateGray=0x7f050070;
+        public static final int Snow=0x7f05000e;
+        public static final int SpringGreen=0x7f050088;
+        public static final int SteelBlue=0x7f05007b;
+        public static final int Tan=0x7f050047;
+        public static final int Teal=0x7f05008e;
+        public static final int Thistle=0x7f050045;
+        public static final int Tomato=0x7f050023;
+        public static final int Turquoise=0x7f05007d;
+        public static final int Violet=0x7f05003a;
+        public static final int Wheat=0x7f050032;
+        public static final int White=0x7f05000a;
+        public static final int WhiteSmoke=0x7f050030;
+        public static final int Yellow=0x7f05000d;
+        public static final int YellowGreen=0x7f05005a;
+        public static final int common_action_bar_splitter=0x7f050009;
+        /**  Sign-in Button Colors 
+         */
+        public static final int common_signin_btn_dark_text_default=0x7f050000;
+        public static final int common_signin_btn_dark_text_disabled=0x7f050002;
+        public static final int common_signin_btn_dark_text_focused=0x7f050003;
+        public static final int common_signin_btn_dark_text_pressed=0x7f050001;
+        public static final int common_signin_btn_default_background=0x7f050008;
+        public static final int common_signin_btn_light_text_default=0x7f050004;
+        public static final int common_signin_btn_light_text_disabled=0x7f050006;
+        public static final int common_signin_btn_light_text_focused=0x7f050007;
+        public static final int common_signin_btn_light_text_pressed=0x7f050005;
+        public static final int common_signin_btn_text_dark=0x7f050098;
+        public static final int common_signin_btn_text_light=0x7f050099;
+        public static final int darkcolorbg=0x7f050096;
+        public static final int darkcolorbg2=0x7f050097;
+        public static final int lightgray=0x7f050093;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -161,8 +328,8 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
+        public static final int activity_horizontal_margin=0x7f090000;
+        public static final int activity_vertical_margin=0x7f090001;
     }
     public static final class drawable {
         public static final int ab_background_textured_anime_app_style=0x7f020000;
@@ -171,193 +338,257 @@ public final class R {
         public static final int ab_stacked_solid_anime_app_style=0x7f020003;
         public static final int ab_texture_tile_anime_app_style=0x7f020004;
         public static final int ab_transparent_anime_app_style=0x7f020005;
-        public static final int angelbeats_img=0x7f020006;
-        public static final int attackontitan_img=0x7f020007;
-        public static final int baccano_img=0x7f020008;
-        public static final int backbtnaction=0x7f020009;
-        public static final int backtogrid=0x7f02000a;
-        public static final int backtogridpressed=0x7f02000b;
-        public static final int beck_img=0x7f02000c;
-        public static final int berserk_img=0x7f02000d;
-        public static final int blackbutler_img=0x7f02000e;
-        public static final int blacklagoon_img=0x7f02000f;
-        public static final int bleach_img=0x7f020010;
-        public static final int btn_answer=0x7f020011;
-        public static final int btn_answer_pressed=0x7f020012;
-        public static final int btn_answers=0x7f020013;
-        public static final int btn_cab_done_anime_app_style=0x7f020014;
-        public static final int btn_cab_done_default_anime_app_style=0x7f020015;
-        public static final int btn_cab_done_focused_anime_app_style=0x7f020016;
-        public static final int btn_cab_done_pressed_anime_app_style=0x7f020017;
-        public static final int btooom_img=0x7f020018;
-        public static final int cab_background_bottom_anime_app_style=0x7f020019;
-        public static final int cab_background_top_anime_app_style=0x7f02001a;
-        public static final int chobits_img=0x7f02001b;
-        public static final int clannad_img=0x7f02001c;
-        public static final int codegeass_img=0x7f02001d;
-        public static final int cross_fade=0x7f02001e;
-        public static final int customprogressbar=0x7f02001f;
-        public static final int dnangel_img=0x7f020020;
-        public static final int dragonball_img=0x7f020021;
-        public static final int evangelion_img=0x7f020022;
-        public static final int fairytail_img=0x7f020023;
-        public static final int fatezero_img=0x7f020024;
-        public static final int fullmetalalchemist_img=0x7f020025;
-        public static final int gankutsuou_img=0x7f020026;
-        public static final int gatchamancrowds_img=0x7f020027;
-        public static final int ghostintheshell_img=0x7f020028;
-        public static final int gintama_img=0x7f020029;
-        public static final int greatteacheronizuka_img=0x7f02002a;
-        public static final int guiltycrown_img=0x7f02002b;
-        public static final int gurren_img=0x7f02002c;
-        public static final int hajimenoippo_img=0x7f02002d;
-        public static final int haruhisuzumiya_img=0x7f02002e;
-        public static final int higurashi_img=0x7f02002f;
-        public static final int hunterxhunter_img=0x7f020030;
-        public static final int ic_launcher=0x7f020031;
-        public static final int imagefun=0x7f020032;
-        public static final int imagefun2=0x7f020033;
-        public static final int imagefun3=0x7f020034;
-        public static final int inuyasha_img=0x7f020035;
-        public static final int jormungand_img=0x7f020036;
-        public static final int kakumeikivalvrave_img=0x7f020037;
-        public static final int kidsontheslope_img=0x7f020038;
-        public static final int killlakill_img=0x7f020039;
-        public static final int kon_img=0x7f02003a;
-        public static final int kurokonobasket_img=0x7f02003b;
-        public static final int level1=0x7f02003c;
-        public static final int level1button=0x7f02003d;
-        public static final int level1down=0x7f02003e;
-        public static final int level2=0x7f02003f;
-        public static final int level2button=0x7f020040;
-        public static final int level2down=0x7f020041;
-        public static final int level3=0x7f020042;
-        public static final int level3button=0x7f020043;
-        public static final int level3down=0x7f020044;
-        public static final int level4=0x7f020045;
-        public static final int level4button=0x7f020046;
-        public static final int level4down=0x7f020047;
-        public static final int level5=0x7f020048;
-        public static final int level5button=0x7f020049;
-        public static final int level5down=0x7f02004a;
-        public static final int list_focused_anime_app_style=0x7f02004b;
-        public static final int list_pressed_anime_app_style=0x7f02004c;
-        public static final int magithelabyrinthofmagic_img=0x7f02004d;
-        public static final int mahoushoujomadoka_img=0x7f02004e;
-        public static final int majors3_img=0x7f02004f;
-        public static final int menu_dropdown_panel_anime_app_style=0x7f020050;
-        public static final int mirainikki_img=0x7f020051;
-        public static final int mondaijitachi_img=0x7f020052;
-        public static final int mushishi_img=0x7f020053;
-        public static final int music_backtogrid=0x7f020054;
-        public static final int music_musicinfo=0x7f020055;
-        public static final int music_nextbtn=0x7f020056;
-        public static final int music_pausebutton=0x7f020057;
-        public static final int music_playbutton=0x7f020058;
-        public static final int music_youtubebtn=0x7f020059;
-        public static final int musicinfo=0x7f02005a;
-        public static final int musicinfopressed=0x7f02005b;
-        public static final int nana_img=0x7f02005c;
-        public static final int naruto_img=0x7f02005d;
-        public static final int nextbtn=0x7f02005e;
-        public static final int nextbtnpressed=0x7f02005f;
-        public static final int nichijou_img=0x7f020060;
-        public static final int nogamenolife_img=0x7f020061;
-        public static final int onepiece_img=0x7f020062;
-        public static final int pausebutton=0x7f020063;
-        public static final int pausebuttonpressed=0x7f020064;
-        public static final int planetes_img=0x7f020065;
-        public static final int playbutton=0x7f020066;
-        public static final int playbuttonpressed=0x7f020067;
-        public static final int progress_bg_anime_app_style=0x7f020068;
-        public static final int progress_horizontal_anime_app_style=0x7f020069;
-        public static final int progress_primary_anime_app_style=0x7f02006a;
-        public static final int progress_secondary_anime_app_style=0x7f02006b;
-        public static final int psychopass_img=0x7f02006c;
-        public static final int rank_a=0x7f02006d;
-        public static final int rank_b=0x7f02006e;
-        public static final int rank_c=0x7f02006f;
-        public static final int rank_d=0x7f020070;
-        public static final int rank_f=0x7f020071;
-        public static final int rank_s=0x7f020072;
-        public static final int requiemforthephantom_img=0x7f020073;
-        public static final int seekbar_progress=0x7f020074;
-        public static final int seekbar_progress_bg=0x7f020075;
-        public static final int seeker_bg=0x7f020076;
-        public static final int seeker_progress=0x7f020077;
-        public static final int seeker_thumb=0x7f020078;
-        public static final int selectable_background_anime_app_style=0x7f020079;
-        public static final int spacebros_img=0x7f02007a;
-        public static final int spinner_ab_default_anime_app_style=0x7f02007b;
-        public static final int spinner_ab_disabled_anime_app_style=0x7f02007c;
-        public static final int spinner_ab_focused_anime_app_style=0x7f02007d;
-        public static final int spinner_ab_pressed_anime_app_style=0x7f02007e;
-        public static final int spinner_background_ab_anime_app_style=0x7f02007f;
-        public static final int steinsgate_img=0x7f020080;
-        public static final int swordartonline_img=0x7f020081;
-        public static final int tab_indicator_ab_anime_app_style=0x7f020082;
-        public static final int tab_selected_anime_app_style=0x7f020083;
-        public static final int tab_selected_focused_anime_app_style=0x7f020084;
-        public static final int tab_selected_pressed_anime_app_style=0x7f020085;
-        public static final int tab_unselected_anime_app_style=0x7f020086;
-        public static final int tab_unselected_focused_anime_app_style=0x7f020087;
-        public static final int tab_unselected_pressed_anime_app_style=0x7f020088;
-        public static final int toradora_img=0x7f020089;
-        public static final int trigun_img=0x7f02008a;
-        public static final int unknown_music=0x7f02008b;
-        public static final int watashigamotenai_img=0x7f02008c;
-        public static final int welcometothenhk_img=0x7f02008d;
-        public static final int white_tiles=0x7f02008e;
-        public static final int white_titlebitmap=0x7f02008f;
-        public static final int youtubebtn=0x7f020090;
-        public static final int youtubebtnpressed=0x7f020091;
-        public static final int zetsuennotempest_img=0x7f020092;
-        public static final int zoom_in=0x7f020093;
+        public static final int accelworld_img=0x7f020006;
+        public static final int angelbeats_img=0x7f020007;
+        public static final int areanokirshi_img=0x7f020008;
+        public static final int attackontitan_img=0x7f020009;
+        public static final int baccano_img=0x7f02000a;
+        public static final int backbtnaction=0x7f02000b;
+        public static final int backtogrid=0x7f02000c;
+        public static final int backtogridpressed=0x7f02000d;
+        public static final int beck_img=0x7f02000e;
+        public static final int berserk_img=0x7f02000f;
+        public static final int binbougami_img=0x7f020010;
+        public static final int blackbutler_img=0x7f020011;
+        public static final int blacklagoon_img=0x7f020012;
+        public static final int bleach_img=0x7f020013;
+        public static final int btn_answer=0x7f020014;
+        public static final int btn_answer_pressed=0x7f020015;
+        public static final int btn_answers=0x7f020016;
+        public static final int btn_cab_done_anime_app_style=0x7f020017;
+        public static final int btn_cab_done_default_anime_app_style=0x7f020018;
+        public static final int btn_cab_done_focused_anime_app_style=0x7f020019;
+        public static final int btn_cab_done_pressed_anime_app_style=0x7f02001a;
+        public static final int btooom_img=0x7f02001b;
+        public static final int cab_background_bottom_anime_app_style=0x7f02001c;
+        public static final int cab_background_top_anime_app_style=0x7f02001d;
+        public static final int carnival_img=0x7f02001e;
+        public static final int chobits_img=0x7f02001f;
+        public static final int chuunibyoudemokoigashitairen_img=0x7f020020;
+        public static final int clannad_img=0x7f020021;
+        public static final int codegeass_img=0x7f020022;
+        public static final int common_signin_btn_icon_dark=0x7f020023;
+        public static final int common_signin_btn_icon_disabled_dark=0x7f020024;
+        public static final int common_signin_btn_icon_disabled_focus_dark=0x7f020025;
+        public static final int common_signin_btn_icon_disabled_focus_light=0x7f020026;
+        public static final int common_signin_btn_icon_disabled_light=0x7f020027;
+        public static final int common_signin_btn_icon_focus_dark=0x7f020028;
+        public static final int common_signin_btn_icon_focus_light=0x7f020029;
+        public static final int common_signin_btn_icon_light=0x7f02002a;
+        public static final int common_signin_btn_icon_normal_dark=0x7f02002b;
+        public static final int common_signin_btn_icon_normal_light=0x7f02002c;
+        public static final int common_signin_btn_icon_pressed_dark=0x7f02002d;
+        public static final int common_signin_btn_icon_pressed_light=0x7f02002e;
+        public static final int common_signin_btn_text_dark=0x7f02002f;
+        public static final int common_signin_btn_text_disabled_dark=0x7f020030;
+        public static final int common_signin_btn_text_disabled_focus_dark=0x7f020031;
+        public static final int common_signin_btn_text_disabled_focus_light=0x7f020032;
+        public static final int common_signin_btn_text_disabled_light=0x7f020033;
+        public static final int common_signin_btn_text_focus_dark=0x7f020034;
+        public static final int common_signin_btn_text_focus_light=0x7f020035;
+        public static final int common_signin_btn_text_light=0x7f020036;
+        public static final int common_signin_btn_text_normal_dark=0x7f020037;
+        public static final int common_signin_btn_text_normal_light=0x7f020038;
+        public static final int common_signin_btn_text_pressed_dark=0x7f020039;
+        public static final int common_signin_btn_text_pressed_light=0x7f02003a;
+        public static final int cross_fade=0x7f02003b;
+        public static final int customprogressbar=0x7f02003c;
+        public static final int devilsurvivor2_img=0x7f02003d;
+        public static final int dnangel_img=0x7f02003e;
+        public static final int dragonball_img=0x7f02003f;
+        public static final int evangelion_img=0x7f020040;
+        public static final int fairytail_img=0x7f020041;
+        public static final int fatestaynight_img=0x7f020042;
+        public static final int fatezero_img=0x7f020043;
+        public static final int free_img=0x7f020044;
+        public static final int fullmetalalchemist_img=0x7f020045;
+        public static final int gankutsuou_img=0x7f020046;
+        public static final int gatchamancrowds_img=0x7f020047;
+        public static final int ghostintheshell_img=0x7f020048;
+        public static final int gintama_img=0x7f020049;
+        public static final int greatteacheronizuka_img=0x7f02004a;
+        public static final int guiltycrown_img=0x7f02004b;
+        public static final int gundambuildfighters_img=0x7f02004c;
+        public static final int gurren_img=0x7f02004d;
+        public static final int hajimenoippo_img=0x7f02004e;
+        public static final int haruhisuzumiya_img=0x7f02004f;
+        public static final int hataraku_img=0x7f020050;
+        public static final int higurashi_img=0x7f020051;
+        public static final int hunterxhunter_img=0x7f020052;
+        public static final int hyakkaryouran_img=0x7f020053;
+        public static final int ic_launcher=0x7f020054;
+        public static final int ic_plusone_medium_off_client=0x7f020055;
+        public static final int ic_plusone_small_off_client=0x7f020056;
+        public static final int ic_plusone_standard_off_client=0x7f020057;
+        public static final int ic_plusone_tall_off_client=0x7f020058;
+        public static final int imagefun=0x7f020059;
+        public static final int imagefun2=0x7f02005a;
+        public static final int imagefun3=0x7f02005b;
+        public static final int inuyasha_img=0x7f02005c;
+        public static final int jojosbizarreadventure_img=0x7f02005d;
+        public static final int jormungand_img=0x7f02005e;
+        public static final int k_img=0x7f02005f;
+        public static final int kakumeikivalvrave2_img=0x7f020060;
+        public static final int kakumeikivalvrave_img=0x7f020061;
+        public static final int kidsontheslope_img=0x7f020062;
+        public static final int killlakill_img=0x7f020063;
+        public static final int kinosjourney_img=0x7f020064;
+        public static final int kon_img=0x7f020065;
+        public static final int kurokonobasket_img=0x7f020066;
+        public static final int level1=0x7f020067;
+        public static final int level1button=0x7f020068;
+        public static final int level1down=0x7f020069;
+        public static final int level2=0x7f02006a;
+        public static final int level2button=0x7f02006b;
+        public static final int level2down=0x7f02006c;
+        public static final int level3=0x7f02006d;
+        public static final int level3button=0x7f02006e;
+        public static final int level3down=0x7f02006f;
+        public static final int level4=0x7f020070;
+        public static final int level4button=0x7f020071;
+        public static final int level4down=0x7f020072;
+        public static final int level5=0x7f020073;
+        public static final int level5button=0x7f020074;
+        public static final int level5down=0x7f020075;
+        public static final int list_focused_anime_app_style=0x7f020076;
+        public static final int list_pressed_anime_app_style=0x7f020077;
+        public static final int loghorizon_img=0x7f020078;
+        public static final int magithelabyrinthofmagic_img=0x7f020079;
+        public static final int mahoushoujomadoka_img=0x7f02007a;
+        public static final int majors3_img=0x7f02007b;
+        public static final int menu_dropdown_panel_anime_app_style=0x7f02007c;
+        public static final int mirainikki_img=0x7f02007d;
+        public static final int mondaijitachi_img=0x7f02007e;
+        public static final int moribitoguardian_img=0x7f02007f;
+        public static final int mushishi_img=0x7f020080;
+        public static final int music_backtogrid=0x7f020081;
+        public static final int music_musicinfo=0x7f020082;
+        public static final int music_nextbtn=0x7f020083;
+        public static final int music_pausebutton=0x7f020084;
+        public static final int music_playbutton=0x7f020085;
+        public static final int music_youtubebtn=0x7f020086;
+        public static final int musicinfo=0x7f020087;
+        public static final int musicinfopressed=0x7f020088;
+        public static final int nana_img=0x7f020089;
+        public static final int naruto_img=0x7f02008a;
+        public static final int narutoshippuden_img=0x7f02008b;
+        public static final int nextbtn=0x7f02008c;
+        public static final int nextbtnpressed=0x7f02008d;
+        public static final int nichijou_img=0x7f02008e;
+        public static final int nisemogatari_img=0x7f02008f;
+        public static final int noein_img=0x7f020090;
+        public static final int nogamenolife_img=0x7f020091;
+        public static final int onepiece_img=0x7f020092;
+        public static final int pausebutton=0x7f020093;
+        public static final int pausebuttonpressed=0x7f020094;
+        public static final int planetes_img=0x7f020095;
+        public static final int playbutton=0x7f020096;
+        public static final int playbuttonpressed=0x7f020097;
+        public static final int princessjellyfish_img=0x7f020098;
+        public static final int progress_bg_anime_app_style=0x7f020099;
+        public static final int progress_horizontal_anime_app_style=0x7f02009a;
+        public static final int progress_primary_anime_app_style=0x7f02009b;
+        public static final int progress_secondary_anime_app_style=0x7f02009c;
+        public static final int psychopass_img=0x7f02009d;
+        public static final int rank_a=0x7f02009e;
+        public static final int rank_b=0x7f02009f;
+        public static final int rank_c=0x7f0200a0;
+        public static final int rank_d=0x7f0200a1;
+        public static final int rank_f=0x7f0200a2;
+        public static final int rank_s=0x7f0200a3;
+        public static final int requiemforthephantom_img=0x7f0200a4;
+        public static final int seekbar_progress=0x7f0200a5;
+        public static final int seekbar_progress_bg=0x7f0200a6;
+        public static final int seeker_bg=0x7f0200a7;
+        public static final int seeker_progress=0x7f0200a8;
+        public static final int seeker_thumb=0x7f0200a9;
+        public static final int selectable_background_anime_app_style=0x7f0200aa;
+        public static final int shiki_img=0x7f0200ab;
+        public static final int shinsekaiyori_img=0x7f0200ac;
+        public static final int spacebros_img=0x7f0200ad;
+        public static final int spinner_ab_default_anime_app_style=0x7f0200ae;
+        public static final int spinner_ab_disabled_anime_app_style=0x7f0200af;
+        public static final int spinner_ab_focused_anime_app_style=0x7f0200b0;
+        public static final int spinner_ab_pressed_anime_app_style=0x7f0200b1;
+        public static final int spinner_background_ab_anime_app_style=0x7f0200b2;
+        public static final int steinsgate_img=0x7f0200b3;
+        public static final int striketheblood_img=0x7f0200b4;
+        public static final int swordartonline_img=0x7f0200b5;
+        public static final int tab_indicator_ab_anime_app_style=0x7f0200b6;
+        public static final int tab_selected_anime_app_style=0x7f0200b7;
+        public static final int tab_selected_focused_anime_app_style=0x7f0200b8;
+        public static final int tab_selected_pressed_anime_app_style=0x7f0200b9;
+        public static final int tab_unselected_anime_app_style=0x7f0200ba;
+        public static final int tab_unselected_focused_anime_app_style=0x7f0200bb;
+        public static final int tab_unselected_pressed_anime_app_style=0x7f0200bc;
+        public static final int toarukagakunorailguns_img=0x7f0200bd;
+        public static final int toradora_img=0x7f0200be;
+        public static final int trigun_img=0x7f0200bf;
+        public static final int unknown_music=0x7f0200c0;
+        public static final int watashigamotenai_img=0x7f0200c1;
+        public static final int welcometothenhk_img=0x7f0200c2;
+        public static final int white_tiles=0x7f0200c3;
+        public static final int white_titlebitmap=0x7f0200c4;
+        public static final int youtubebtn=0x7f0200c5;
+        public static final int youtubebtnpressed=0x7f0200c6;
+        public static final int zetsuennotempest_img=0x7f0200c7;
+        public static final int zettaikarenunlimited_img=0x7f0200c8;
+        public static final int zoom_in=0x7f0200c9;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f0a0000;
-        public static final int ScrollView1=0x7f0a0004;
-        public static final int Scrollview_animeAnswersView=0x7f0a001e;
-        public static final int Scrollview_buttons=0x7f0a0019;
-        public static final int animeAnswerTextv=0x7f0a0024;
-        public static final int animeAnswersgroup=0x7f0a001f;
-        public static final int animeArtistTextv=0x7f0a0023;
-        public static final int animeNameTextv=0x7f0a0021;
-        public static final int animeSongTextv=0x7f0a0022;
-        public static final int animeimageView=0x7f0a0020;
-        public static final int backtolistbtn=0x7f0a0025;
-        public static final int gridView1=0x7f0a0028;
-        public static final int level_1=0x7f0a0005;
-        public static final int level_2=0x7f0a0008;
-        public static final int level_3=0x7f0a000b;
-        public static final int level_4=0x7f0a000e;
-        public static final int level_5=0x7f0a0011;
-        public static final int level_6=0x7f0a0014;
-        public static final int level_7=0x7f0a0015;
-        public static final int level_8=0x7f0a0016;
-        public static final int menu_userGrade=0x7f0a002a;
-        public static final int musicPlayButton=0x7f0a0018;
-        public static final int musicSeekBar=0x7f0a0017;
-        public static final int nextAnimebtn=0x7f0a0026;
-        public static final int picture=0x7f0a0003;
-        public static final int playbutton=0x7f0a0001;
-        public static final int progressBar1=0x7f0a0006;
-        public static final int progressBar2=0x7f0a0009;
-        public static final int progressBar3=0x7f0a000c;
-        public static final int progressBar4=0x7f0a000f;
-        public static final int progressBar5=0x7f0a0012;
-        public static final int question1_Button=0x7f0a001a;
-        public static final int question2_Button=0x7f0a001b;
-        public static final int question3_Button=0x7f0a001c;
-        public static final int question4_Button=0x7f0a001d;
-        public static final int rankView1=0x7f0a0007;
-        public static final int rankView2=0x7f0a000a;
-        public static final int rankView3=0x7f0a000d;
-        public static final int rankView4=0x7f0a0010;
-        public static final int rankView5=0x7f0a0013;
-        public static final int reset_btn=0x7f0a0029;
-        public static final int settings_btn=0x7f0a0002;
-        public static final int youtubebtn=0x7f0a0027;
+        public static final int RelativeLayout1=0x7f060005;
+        public static final int ScrollView1=0x7f06000a;
+        public static final int Scrollview_animeAnswersView=0x7f060024;
+        public static final int Scrollview_buttons=0x7f06001f;
+        public static final int adView=0x7f060008;
+        public static final int animeAnswerTextv=0x7f06002a;
+        public static final int animeAnswersgroup=0x7f060025;
+        public static final int animeArtistTextv=0x7f060029;
+        public static final int animeNameTextv=0x7f060027;
+        public static final int animeSongTextv=0x7f060028;
+        public static final int animeimageView=0x7f060026;
+        public static final int attemptsView=0x7f06002e;
+        public static final int backtolistbtn=0x7f06002b;
+        public static final int gridView1=0x7f06002f;
+        public static final int hybrid=0x7f060004;
+        public static final int level_1=0x7f06000b;
+        public static final int level_2=0x7f06000e;
+        public static final int level_3=0x7f060011;
+        public static final int level_4=0x7f060014;
+        public static final int level_5=0x7f060017;
+        public static final int level_6=0x7f06001a;
+        public static final int level_7=0x7f06001b;
+        public static final int level_8=0x7f06001c;
+        public static final int menu_userGrade=0x7f060031;
+        public static final int musicPlayButton=0x7f06001e;
+        public static final int musicSeekBar=0x7f06001d;
+        public static final int nextAnimebtn=0x7f06002c;
+        public static final int none=0x7f060000;
+        public static final int normal=0x7f060001;
+        public static final int picture=0x7f060009;
+        public static final int playbutton=0x7f060006;
+        public static final int progressBar1=0x7f06000c;
+        public static final int progressBar2=0x7f06000f;
+        public static final int progressBar3=0x7f060012;
+        public static final int progressBar4=0x7f060015;
+        public static final int progressBar5=0x7f060018;
+        public static final int question1_Button=0x7f060020;
+        public static final int question2_Button=0x7f060021;
+        public static final int question3_Button=0x7f060022;
+        public static final int question4_Button=0x7f060023;
+        public static final int rankView1=0x7f06000d;
+        public static final int rankView2=0x7f060010;
+        public static final int rankView3=0x7f060013;
+        public static final int rankView4=0x7f060016;
+        public static final int rankView5=0x7f060019;
+        public static final int reset_btn=0x7f060030;
+        public static final int satellite=0x7f060002;
+        public static final int settings_btn=0x7f060007;
+        public static final int terrain=0x7f060003;
+        public static final int youtubebtn=0x7f06002d;
+    }
+    public static final class integer {
+        public static final int google_play_services_version=0x7f080000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -368,94 +599,215 @@ public final class R {
         public static final int settings=0x7f030005;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int main=0x7f0b0000;
     }
     public static final class raw {
-        public static final int angelbeats_op1_mysoulyourbeats=0x7f040000;
-        public static final int attackontitan_ed2_greatescape=0x7f040001;
-        public static final int baccano_op1_gunsandroses=0x7f040002;
-        public static final int beck_op1_hitintheusa=0x7f040003;
-        public static final int berserk_op1_tellmewhy=0x7f040004;
-        public static final int berserkop1tellmewhy=0x7f040005;
-        public static final int blackbutler_op1_kissofmonochrome=0x7f040006;
-        public static final int blacklagoon_op1_redfraction=0x7f040007;
-        public static final int bleach_op8_chubura=0x7f040008;
-        public static final int btooom_op1_nopainnogame=0x7f040009;
-        public static final int chobits_op1_letmebewithyou=0x7f04000a;
-        public static final int clannad_ed1_torch=0x7f04000b;
-        public static final int codegeass_op1_colors=0x7f04000c;
-        public static final int dnangel_op1_byakuyatruelight=0x7f04000d;
-        public static final int dragonballkai_op1_dragonsoul=0x7f04000e;
-        public static final int evangelion_op1_acruelangelsthesis=0x7f04000f;
-        public static final int fairytail_op1_snowfairy=0x7f040010;
-        public static final int fatezero_ed2_memoria=0x7f040011;
-        public static final int fullmetalbrotherhood_op4_period=0x7f040012;
-        public static final int gankutsuou_ed1_youwontseemecoming=0x7f040013;
-        public static final int gatchamancrowds_op1_crowds=0x7f040014;
-        public static final int ghostintheshell_ed1_lithiumflower=0x7f040015;
-        public static final int gintama_op1_tougenkyoualien=0x7f040016;
-        public static final int greatteacheronizuka_op2_hitorinoyoru=0x7f040017;
-        public static final int guiltycrown_op1_mydearest=0x7f040018;
-        public static final int gurrenlagann_op1_sorairo=0x7f040019;
-        public static final int hajimenoippo_op1_hekireki=0x7f04001a;
-        public static final int haruhisuzumiya_op1_bouken=0x7f04001b;
-        public static final int higurashi_op1_higurashi=0x7f04001c;
-        public static final int hunterxhunter_ed2_hfyd=0x7f04001d;
-        public static final int inuyasha_ed2_fukaimori=0x7f04001e;
-        public static final int jormungand_op1_borderland=0x7f04001f;
-        public static final int kakumeikivalvrave_op1_preservedroses=0x7f040020;
-        public static final int kidsontheslop_op1_sakamichi=0x7f040021;
-        public static final int killlakill_op2_ambiguous=0x7f040022;
-        public static final int kon_op1_cagayakegirls=0x7f040023;
-        public static final int kurokonobasket2nd_theotherself=0x7f040024;
-        public static final int magithelabyrinthofmagic_op1_vip=0x7f040025;
-        public static final int mahoushoujomadoka_ed2_magia=0x7f040026;
-        public static final int majors3_op1_playthegame=0x7f040027;
-        public static final int mirainikki_op1_kuusou=0x7f040028;
-        public static final int mondaijitachi_op1_blackwhite=0x7f040029;
-        public static final int mushishi_op1_thesorefeetsong=0x7f04002a;
-        public static final int nana_op1_rose=0x7f04002b;
-        public static final int naruto_op2_haruka_kanata=0x7f04002c;
-        public static final int naruto_op3_kanashimiwoyasashisani=0x7f04002d;
-        public static final int nichijou_op1_hyadain=0x7f04002e;
-        public static final int nogamenolife_op1_thisgame=0x7f04002f;
-        public static final int onepiece_op16_handsup=0x7f040030;
-        public static final int planetes_op1_diveinthesky=0x7f040031;
-        public static final int pshychopass_op2_outofcontrol=0x7f040032;
-        public static final int requiemforthephantom_gatesofhell=0x7f040033;
-        public static final int sound_click=0x7f040034;
-        public static final int spacebros_op1_feelsomoon=0x7f040035;
-        public static final int steinsgate_op1_hackingtothegate=0x7f040036;
-        public static final int swordartonline_op1_crossingfield=0x7f040037;
-        public static final int toradora_op1_preparade=0x7f040038;
-        public static final int trigun_op1_ht=0x7f040039;
-        public static final int watashigamotenai_op1_watashigamotenai=0x7f04003a;
-        public static final int welcometothenhk_ed_odoruakachanningen=0x7f04003b;
-        public static final int zetsuennotempest_op1_spiritinspiration=0x7f04003c;
+        public static final int accelworld_op1_kotoko=0x7f040000;
+        public static final int angelbeats_op1_mysoulyourbeats=0x7f040001;
+        public static final int areanokirshi_op1_higherground=0x7f040002;
+        public static final int attackontitan_ed2_greatescape=0x7f040003;
+        public static final int baccano_op1_gunsandroses=0x7f040004;
+        public static final int beck_op1_hitintheusa=0x7f040005;
+        public static final int berserk_op1_tellmewhy=0x7f040006;
+        public static final int berserkop1tellmewhy=0x7f040007;
+        public static final int binbougami_op1_makemyday=0x7f040008;
+        public static final int blackbutler_op1_kissofmonochrome=0x7f040009;
+        public static final int blacklagoon_op1_redfraction=0x7f04000a;
+        public static final int bleach_op8_chubura=0x7f04000b;
+        public static final int btooom_op1_nopainnogame=0x7f04000c;
+        public static final int carnival_op1_superaffection=0x7f04000d;
+        public static final int chobits_op1_letmebewithyou=0x7f04000e;
+        public static final int chuunibyoudemokoigashitairen_op1_voice=0x7f04000f;
+        public static final int clannad_ed1_torch=0x7f040010;
+        public static final int codegeass_op1_colors=0x7f040011;
+        public static final int devilsurvivor2_ed1_be=0x7f040012;
+        public static final int dnangel_op1_byakuyatruelight=0x7f040013;
+        public static final int dragonballkai_op1_dragonsoul=0x7f040014;
+        public static final int evangelion_op1_acruelangelsthesis=0x7f040015;
+        public static final int fairytail_op1_snowfairy=0x7f040016;
+        public static final int fatestaynight_op1_disillusion=0x7f040017;
+        public static final int fatezero_ed2_memoria=0x7f040018;
+        public static final int free_op1_rangeon=0x7f040019;
+        public static final int fullmetalbrotherhood_op4_period=0x7f04001a;
+        public static final int gankutsuou_ed1_youwontseemecoming=0x7f04001b;
+        public static final int gankutsuou_op1_wewerelovers=0x7f04001c;
+        public static final int gatchamancrowds_op1_crowds=0x7f04001d;
+        public static final int ghostintheshell_ed1_lithiumflower=0x7f04001e;
+        public static final int gintama_op1_tougenkyoualien=0x7f04001f;
+        public static final int greatteacheronizuka_op2_hitorinoyoru=0x7f040020;
+        public static final int guiltycrown_op1_mydearest=0x7f040021;
+        public static final int gundambuildfighters_op1_nibun=0x7f040022;
+        public static final int gurrenlagann_op1_sorairo=0x7f040023;
+        public static final int hajimenoippo_op1_hekireki=0x7f040024;
+        public static final int haruhisuzumiya_op1_bouken=0x7f040025;
+        public static final int hataraku_ed1_tsukihana=0x7f040026;
+        public static final int higurashi_op1_higurashi=0x7f040027;
+        public static final int hunterxhunter_ed2_hfyd=0x7f040028;
+        public static final int hyakkaryouran_op1_aido=0x7f040029;
+        public static final int inuyasha_ed2_fukaimori=0x7f04002a;
+        public static final int jojosbizarreadventure_ed1_roundabout=0x7f04002b;
+        public static final int jormungand_op1_borderland=0x7f04002c;
+        public static final int k_op1_kings=0x7f04002d;
+        public static final int kakumeikivalvrave2_op1_nanaxtm=0x7f04002e;
+        public static final int kakumeikivalvrave_op1_preservedroses=0x7f04002f;
+        public static final int kidsontheslop_op1_sakamichi=0x7f040030;
+        public static final int killlakill_op2_ambiguous=0x7f040031;
+        public static final int kinosjourney_op1_allltheway=0x7f040032;
+        public static final int kon_op1_cagayakegirls=0x7f040033;
+        public static final int kurokonobasket2nd_theotherself=0x7f040034;
+        public static final int loghorizon_op1manwithamission=0x7f040035;
+        public static final int magithelabyrinthofmagic_op1_vip=0x7f040036;
+        public static final int mahoushoujomadoka_ed2_magia=0x7f040037;
+        public static final int majors3_op1_playthegame=0x7f040038;
+        public static final int mirainikki_op1_kuusou=0x7f040039;
+        public static final int mondaijitachi_op1_blackwhite=0x7f04003a;
+        public static final int moribito_op1_shine=0x7f04003b;
+        public static final int mushishi_op1_thesorefeetsong=0x7f04003c;
+        public static final int nana_op1_rose=0x7f04003d;
+        public static final int naruto_op2_haruka_kanata=0x7f04003e;
+        public static final int naruto_op3_kanashimiwoyasashisani=0x7f04003f;
+        public static final int narutoshippuden_ed29_flame=0x7f040040;
+        public static final int nichijou_op1_hyadain=0x7f040041;
+        public static final int nisemogatari_op1_marshmallow=0x7f040042;
+        public static final int noein_op1_idea=0x7f040043;
+        public static final int nogamenolife_op1_thisgame=0x7f040044;
+        public static final int onepiece_op16_handsup=0x7f040045;
+        public static final int planetes_op1_diveinthesky=0x7f040046;
+        public static final int princessjellyflish_op1_kokodake=0x7f040047;
+        public static final int pshychopass_op2_outofcontrol=0x7f040048;
+        public static final int requiemforthephantom_gatesofhell=0x7f040049;
+        public static final int shiki_bucktick=0x7f04004a;
+        public static final int shinsekaiyori_ed1_wareta=0x7f04004b;
+        public static final int sound_click=0x7f04004c;
+        public static final int spacebros_op1_feelsomoon=0x7f04004d;
+        public static final int steinsgate_op1_hackingtothegate=0x7f04004e;
+        public static final int striketheblood_op1_kishida=0x7f04004f;
+        public static final int swordartonline_op1_crossingfield=0x7f040050;
+        public static final int toarukagakunorailguns_op2_sistersnoise=0x7f040051;
+        public static final int toradora_op1_preparade=0x7f040052;
+        public static final int trigun_op1_ht=0x7f040053;
+        public static final int watashigamotenai_op1_watashigamotenai=0x7f040054;
+        public static final int welcometothenhk_ed_odoruakachanningen=0x7f040055;
+        public static final int zetsuennotempest_op1_spiritinspiration=0x7f040056;
+        public static final int zettaikarenunlimited_ed1_outlaws=0x7f040057;
     }
     public static final class string {
-        public static final int action_settings=0x7f070001;
-        public static final int app_name=0x7f070000;
-        public static final int contentDescriptionLevel1=0x7f070002;
-        public static final int contentDescriptionLevel2=0x7f070003;
-        public static final int contentDescriptionLevel3=0x7f070004;
-        public static final int contentDescriptionLevel4=0x7f070005;
-        public static final int contentDescriptionMusicPlay=0x7f070006;
-        public static final int levelTitle=0x7f070008;
-        public static final int musicPlay=0x7f07000b;
-        public static final int musicPlayActivity=0x7f07000a;
-        public static final int musicSelect=0x7f070009;
-        public static final int play=0x7f070007;
-        public static final int reset_btn=0x7f07000d;
-        public static final int settingsActivity=0x7f07000c;
-        public static final int userGradetext=0x7f07000e;
-        public static final int userRank=0x7f07000f;
+        public static final int action_settings=0x7f07001b;
+        public static final int app_name=0x7f07001a;
+        /**   Title for notification shown when GooglePlayServices needs to be
+        enabled for a application to work. [CHAR LIMIT=70] 
+         */
+        public static final int auth_client_needs_enabling_title=0x7f070015;
+        /**   Title for notification shown when GooglePlayServices needs to be
+        installed for a application to work. [CHAR LIMIT=70] 
+         */
+        public static final int auth_client_needs_installation_title=0x7f070016;
+        /**   Title for notification shown when GooglePlayServices needs to be
+        udpated for a application to work. [CHAR LIMIT=70] 
+         */
+        public static final int auth_client_needs_update_title=0x7f070017;
+        /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=42] 
+         */
+        public static final int auth_client_play_services_err_notification_msg=0x7f070018;
+        /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
+         */
+        public static final int auth_client_requested_by_msg=0x7f070019;
+        /**   Title for notification shown when a bad version of GooglePlayServices
+        has been installed and needs correction for an application to work.
+        [CHAR LIMIT=70] 
+         */
+        public static final int auth_client_using_bad_version_title=0x7f070014;
+        /**  Button in confirmation dialog to enable Google Play services.  Clicking it
+        will direct user to application settings of Google Play services where they
+        can enable it [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_enable_button=0x7f070006;
+        /**  Message in confirmation dialog informing user they need to enable
+        Google Play services in application settings [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_enable_text=0x7f070005;
+        /**  Title of confirmation dialog informing user they need to enable
+        Google Play services in application settings [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_enable_title=0x7f070004;
+        /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_install_button=0x7f070003;
+        /**  (For phones) Message in confirmation dialog informing user that
+        they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_install_text_phone=0x7f070001;
+        /**  (For tablets) Message in confirmation dialog informing user that
+        they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_install_text_tablet=0x7f070002;
+        /**  Title of confirmation dialog informing user that they need to install
+        Google Play services (from Play Store) [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_install_title=0x7f070000;
+        /**  Message in confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_invalid_account_text=0x7f07000c;
+        /**  Title of confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_invalid_account_title=0x7f07000b;
+        /**  Message in confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_network_error_text=0x7f07000a;
+        /**  Title of confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_network_error_title=0x7f070009;
+        /**  Message in confirmation dialog informing user there is an unknown issue in Google Play
+        services [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_unknown_issue=0x7f07000d;
+        /**  Message in confirmation dialog informing user that date on the device is not correct,
+    causing certificate checks to fail. [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_unsupported_date_text=0x7f070010;
+        /**  Message in confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_unsupported_text=0x7f07000f;
+        /**  Title of confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_unsupported_title=0x7f07000e;
+        /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_update_button=0x7f070011;
+        /**  Message in confirmation dialog informing user that they need to update
+        Google Play services (from Play Store) [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_update_text=0x7f070008;
+        /**  Title of confirmation dialog informing user that they need to update
+        Google Play services (from Play Store) [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_update_title=0x7f070007;
+        /**  Sign-in button text [CHAR LIMIT=15] 
+         */
+        public static final int common_signin_button_text=0x7f070012;
+        /**  Long form sign-in button text [CHAR LIMIT=30] 
+         */
+        public static final int common_signin_button_text_long=0x7f070013;
+        public static final int contentDescriptionLevel1=0x7f07001c;
+        public static final int contentDescriptionLevel2=0x7f07001d;
+        public static final int contentDescriptionLevel3=0x7f07001e;
+        public static final int contentDescriptionLevel4=0x7f07001f;
+        public static final int contentDescriptionMusicPlay=0x7f070020;
+        public static final int levelTitle=0x7f070022;
+        public static final int musicPlay=0x7f070025;
+        public static final int musicPlayActivity=0x7f070024;
+        public static final int musicSelect=0x7f070023;
+        public static final int play=0x7f070021;
+        public static final int reset_btn=0x7f070027;
+        public static final int settingsActivity=0x7f070026;
+        public static final int userGradetext=0x7f070028;
+        public static final int userRank=0x7f070029;
     }
     public static final class style {
-        public static final int ActionBar_Solid_Anime_app_style=0x7f080004;
-        public static final int ActionBar_Transparent_Anime_app_style=0x7f080005;
-        public static final int ActionBarTabStyle_Anime_app_style=0x7f080008;
-        public static final int ActionButton_CloseMode_Anime_app_style=0x7f08000b;
+        public static final int ActionBar_Solid_Anime_app_style=0x7f0a0004;
+        public static final int ActionBar_Transparent_Anime_app_style=0x7f0a0005;
+        public static final int ActionBarTabStyle_Anime_app_style=0x7f0a0008;
+        public static final int ActionButton_CloseMode_Anime_app_style=0x7f0a000b;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -477,21 +829,342 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f0a0000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
-        public static final int CustomProgressBarHorizontal=0x7f080002;
-        public static final int DropDownListView_Anime_app_style=0x7f080007;
-        public static final int DropDownNav_Anime_app_style=0x7f080009;
-        public static final int PopupMenu_Anime_app_style=0x7f080006;
-        public static final int ProgressBar_Anime_app_style=0x7f08000a;
+        public static final int AppTheme=0x7f0a0001;
+        public static final int CustomProgressBarHorizontal=0x7f0a0002;
+        public static final int DropDownListView_Anime_app_style=0x7f0a0007;
+        public static final int DropDownNav_Anime_app_style=0x7f0a0009;
+        public static final int PopupMenu_Anime_app_style=0x7f0a0006;
+        public static final int ProgressBar_Anime_app_style=0x7f0a000a;
         /**  Light.DarkActionBar specific 
          */
-        public static final int Theme_Anime_app_style=0x7f080003;
+        public static final int Theme_Anime_app_style=0x7f0a0003;
         /**  this style is only referenced in a Light.DarkActionBar based theme 
          */
-        public static final int Theme_Anime_app_style_Widget=0x7f08000c;
+        public static final int Theme_Anime_app_style_Widget=0x7f0a000c;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a AdsAttrs.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AdsAttrs_adSize com.gobi.animeopedquiz2:adSize}</code></td><td>
+    The size of the ad.</td></tr>
+           <tr><td><code>{@link #AdsAttrs_adSizes com.gobi.animeopedquiz2:adSizes}</code></td><td>
+    A comma-separated list of the supported ad sizes.</td></tr>
+           <tr><td><code>{@link #AdsAttrs_adUnitId com.gobi.animeopedquiz2:adUnitId}</code></td><td> The ad unit ID.</td></tr>
+           </table>
+           @see #AdsAttrs_adSize
+           @see #AdsAttrs_adSizes
+           @see #AdsAttrs_adUnitId
+         */
+        public static final int[] AdsAttrs = {
+            0x7f010000, 0x7f010001, 0x7f010002
+        };
+        /**
+          <p>
+          @attr description
+          
+    The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
+    MEDIUM_RECTANGLE, SMART_BANNER, WIDE_SKYSCRAPER, or
+    &lt;width&gt;x&lt;height&gt;.
+    
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.gobi.animeopedquiz2:adSize
+        */
+        public static final int AdsAttrs_adSize = 0;
+        /**
+          <p>
+          @attr description
+          
+    A comma-separated list of the supported ad sizes. The sizes must be one of
+    BANNER, FULL_BANNER, LEADERBOARD, MEDIUM_RECTANGLE, SMART_BANNER,
+    WIDE_SKYSCRAPER, or &lt;width&gt;x&lt;height&gt;.
+    
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.gobi.animeopedquiz2:adSizes
+        */
+        public static final int AdsAttrs_adSizes = 1;
+        /**
+          <p>
+          @attr description
+           The ad unit ID. 
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.gobi.animeopedquiz2:adUnitId
+        */
+        public static final int AdsAttrs_adUnitId = 2;
+        /** Attributes that can be used with a MapAttrs.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #MapAttrs_cameraBearing com.gobi.animeopedquiz2:cameraBearing}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLat com.gobi.animeopedquiz2:cameraTargetLat}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLng com.gobi.animeopedquiz2:cameraTargetLng}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTilt com.gobi.animeopedquiz2:cameraTilt}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraZoom com.gobi.animeopedquiz2:cameraZoom}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_mapType com.gobi.animeopedquiz2:mapType}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiCompass com.gobi.animeopedquiz2:uiCompass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiRotateGestures com.gobi.animeopedquiz2:uiRotateGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiScrollGestures com.gobi.animeopedquiz2:uiScrollGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiTiltGestures com.gobi.animeopedquiz2:uiTiltGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomControls com.gobi.animeopedquiz2:uiZoomControls}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomGestures com.gobi.animeopedquiz2:uiZoomGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_useViewLifecycle com.gobi.animeopedquiz2:useViewLifecycle}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_zOrderOnTop com.gobi.animeopedquiz2:zOrderOnTop}</code></td><td></td></tr>
+           </table>
+           @see #MapAttrs_cameraBearing
+           @see #MapAttrs_cameraTargetLat
+           @see #MapAttrs_cameraTargetLng
+           @see #MapAttrs_cameraTilt
+           @see #MapAttrs_cameraZoom
+           @see #MapAttrs_mapType
+           @see #MapAttrs_uiCompass
+           @see #MapAttrs_uiRotateGestures
+           @see #MapAttrs_uiScrollGestures
+           @see #MapAttrs_uiTiltGestures
+           @see #MapAttrs_uiZoomControls
+           @see #MapAttrs_uiZoomGestures
+           @see #MapAttrs_useViewLifecycle
+           @see #MapAttrs_zOrderOnTop
+         */
+        public static final int[] MapAttrs = {
+            0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006,
+            0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a,
+            0x7f01000b, 0x7f01000c, 0x7f01000d, 0x7f01000e,
+            0x7f01000f, 0x7f010010
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#cameraBearing}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:cameraBearing
+        */
+        public static final int MapAttrs_cameraBearing = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#cameraTargetLat}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:cameraTargetLat
+        */
+        public static final int MapAttrs_cameraTargetLat = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#cameraTargetLng}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:cameraTargetLng
+        */
+        public static final int MapAttrs_cameraTargetLng = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#cameraTilt}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:cameraTilt
+        */
+        public static final int MapAttrs_cameraTilt = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#cameraZoom}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:cameraZoom
+        */
+        public static final int MapAttrs_cameraZoom = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#mapType}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>normal</code></td><td>1</td><td></td></tr>
+<tr><td><code>satellite</code></td><td>2</td><td></td></tr>
+<tr><td><code>terrain</code></td><td>3</td><td></td></tr>
+<tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
+</table>
+          @attr name com.gobi.animeopedquiz2:mapType
+        */
+        public static final int MapAttrs_mapType = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#uiCompass}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:uiCompass
+        */
+        public static final int MapAttrs_uiCompass = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#uiRotateGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:uiRotateGestures
+        */
+        public static final int MapAttrs_uiRotateGestures = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#uiScrollGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:uiScrollGestures
+        */
+        public static final int MapAttrs_uiScrollGestures = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#uiTiltGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:uiTiltGestures
+        */
+        public static final int MapAttrs_uiTiltGestures = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#uiZoomControls}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:uiZoomControls
+        */
+        public static final int MapAttrs_uiZoomControls = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#uiZoomGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:uiZoomGestures
+        */
+        public static final int MapAttrs_uiZoomGestures = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#useViewLifecycle}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:useViewLifecycle
+        */
+        public static final int MapAttrs_useViewLifecycle = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.gobi.animeopedquiz2.R.attr#zOrderOnTop}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.gobi.animeopedquiz2:zOrderOnTop
+        */
+        public static final int MapAttrs_zOrderOnTop = 13;
+    };
 }

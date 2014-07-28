@@ -180,4 +180,15 @@
         android:background="@drawable/music_youtubebtn" 
         android:onClick="youtubebtnclick"/>
 
+    <TextView
+        android:id="@+id/attemptsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/musicPlayButton"
+        android:layout_margin="21dp"
+        android:layout_marginTop="21dp"
+        android:layout_toRightOf="@+id/musicPlayButton"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>
