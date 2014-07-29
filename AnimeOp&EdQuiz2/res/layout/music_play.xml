@@ -41,7 +41,7 @@
 
             <Button
                 android:id="@+id/question1_Button"
-                android:layout_width="280dp"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
@@ -51,7 +51,7 @@
 
             <Button
                 android:id="@+id/question2_Button"
-                android:layout_width="280dp"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/question1_Button"
                 android:layout_centerHorizontal="true"
@@ -62,7 +62,7 @@
 
             <Button
                 android:id="@+id/question3_Button"
-                android:layout_width="280dp"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/question2_Button"
                 android:layout_below="@+id/question2_Button"
@@ -73,7 +73,7 @@
 
             <Button
                 android:id="@+id/question4_Button"
-                android:layout_width="280dp"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/question3_Button"
                 android:layout_below="@+id/question3_Button"

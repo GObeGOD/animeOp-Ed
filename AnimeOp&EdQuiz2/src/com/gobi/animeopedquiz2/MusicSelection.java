@@ -308,36 +308,41 @@ public class MusicSelection extends BaseActivity {
 
 			if (dataSource.getCountByLevel(bylevel3) == 0) {
 				Log.e("getCountByLevel", "ADDING LEVEL 1");
+				//   dataSource.addAnimeOPandED(new AnimeOpAndEdData(name, song, artist, music, youtube, answer, question1, question2, question3, question4, image, 3, "no",0));
+				   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Carnival Phantasm", "Super☆Affection", "Minami Kuribayashi, Miyuki Hashimoto, Faylan, Aki Misato, yozuca*, rino", "carnival_op1_superaffection", "https://www.youtube.com/watch?v=uvbaM-URygs", "Carnival Phantasm", "Carnival Phantasm", "Higurashi no Naku Koro ni Kira", "Seitokai Yakuindomo", "Fate/kaleid liner Prisma☆Illya", "carnival_img", 3, "no",0));
+				   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Shinsekai yori", "Wareta Ringo", "Saki Watanabe (Risa Taneda)", "shinsekaiyori_ed1_wareta", "https://www.youtube.com/watch?v=LV31EHwtayo", "Shinsekai yori", "Shinsekai yori", "Nagi no Asukara", "Suisei no Gargantia", "Shinreigari: Ghost Hound", "shinsekaiyori_img", 3, "no",0));
+				   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Area no Kirshi", "Higher Ground", "S.R.S", "areanokirshi_op1_higherground", "https://www.youtube.com/watch?v=N0R2r6XQ-Qw", "Area no Kirshi", "Area no Kirshi", "Whistle!", "Kuroko no Basket ", "Giant Killing", "areanokirshi_img", 3, "no",0));
+			       dataSource.addAnimeOPandED(new AnimeOpAndEdData("K", "KINGS", "angela", "k_op1_kings", "https://www.youtube.com/watch?v=cvdZQ4q_Vxg", "K", "K", "Durarara!!", "Hamatora The Animation", "Karneval (TV)", "k_img", 3, "no",0));
+			       dataSource.addAnimeOPandED(new AnimeOpAndEdData("Binbougami ga!", "Make My Day!", "Piko", "binbougami_op1_makemyday", "https://www.youtube.com/watch?v=-LKgE5Tyryw", "Binbougami ga!", "Binbougami ga!", "Gintama", "Blood Lad", "Working'!!", "binbougami_img", 3, "no",0));
+			       dataSource.addAnimeOPandED(new AnimeOpAndEdData("Nisemonogatari", "marshmallow justice ", "Karen Araragi", "nisemogatari_op1_marshmallow", "https://www.youtube.com/watch?v=-HTGOn7KVJ8", "Nisemonogatari", "Nisemonogatari", "Ore no Imouto ga Konnani Kawaii Wake ga Nai ", "Arakawa Under the Bridge", "Sayonara Zetsubou Sensei", "nisemogatari_img", 3, "no",0));
+			       
+			       
+			       dataSource.addAnimeOPandED(new AnimeOpAndEdData("Accel World", "→unfinished→", "KOTOKO", "accelworld_op1_kotoko", "https://www.youtube.com/watch?v=BKh82W9o4i8", "Accel World", "Accel World", "Sword Art Online", "C: The Money of Soul and Possibility Control", "Btooom!", "accelworld_img", 3, "no",0));
+				   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Hataraku Maou-sama!", "Tsuki Hana", "nano.RIPE", "hataraku_ed1_tsukihana", "https://www.youtube.com/watch?v=gwm97PgqpbA", "Hataraku Maou-sama!", "Hataraku Maou-sama!", "Yuusha ni Narenakatta Ore wa Shibushibu Shuushoku wo Ketsui Shimashita.", "Blood Lad", "Maoyuu Maou Yuusha", "hataraku_img", 3, "no",0));
+				   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Naruto Shippuden", "FLAME", "DISH//", "narutoshippuden_ed29_flame", "https://www.youtube.com/watch?v=16jY5U1hfhc", "Naruto Shippuden", "Naruto Shippuden", "Noragami", "Z/X: Ignition", "Hoozuki no Reitetsu", "narutoshippuden_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Zettai Karen Children: The Unlimited - Hyoubu Kyousuke", "OUTLAWS", "eyelis", "zettaikarenunlimited_ed1_outlaws", "https://www.youtube.com/watch?v=a5a5lgUFwxs", "Zettai Karen Children: The Unlimited - Hyoubu Kyousuke", "Zettai Karen Children: The Unlimited - Hyoubu Kyousuke", "Toaru Majutsu no Index", "Code:Breaker", "K", "zettaikarenunlimited_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Gankutsuou", "We Were Lovers", "Jean-Jacques Burnel", "gankutsuou_op1_wewerelovers", "https://www.youtube.com/watch?v=Im6-iZGmgsA", "Gankutsuou", "Gankutsuou", "Mononoke", "Monster", "Romeo x Juliet ", "gankutsuou_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Hyakka Ryouran: Samurai Bride", "AI DO.", "Miyuki Hashimoto", "hyakkaryouran_op1_aido", "https://www.youtube.com/watch?v=dXXPp2k_g38", "Hyakka Ryouran: Samurai Bride", "Hyakka Ryouran: Samurai Bride", "Senran Kagura ", "Sekirei", "Maken-Ki!", "hyakkaryouran_img", 3, "no",0));
 
-				dataSource.addAnimeOPandED(new AnimeOpAndEdData("naruto", "go",
-						"artist", "music", "youtube", "answer", "question1",
-						"question2", "question3", "question4", "imagefun", 3,
-						"no",0));
+				   
+					  dataSource.addAnimeOPandED(new AnimeOpAndEdData("Kino's Journey", "All the Way", "Mikuni Shimokawa", "kinosjourney_op1_allltheway", "https://www.youtube.com/watch?v=ZVgHN8cfy1I", "Kino's Journey", "Kino's Journey", "Mushishi", "Haibane Renmei", "Kaiba", "kinosjourney_img", 3, "no",0));
 
-				dataSource.addAnimeOPandED(new AnimeOpAndEdData("naruto", "go",
-						"artist", "music", "youtube", "answer", "question1",
-						"question2", "question3", "question4", "imagefun", 3,
-						"no",0));
-				dataSource.addAnimeOPandED(new AnimeOpAndEdData("naruto", "go",
-						"artist", "music", "youtube", "answer", "question1",
-						"question2", "question3", "question4", "naruto", 3,
-						"no",0));
-				dataSource.addAnimeOPandED(new AnimeOpAndEdData("naruto", "go",
-						"artist", "music", "youtube", "answer", "question1",
-						"question2", "question3", "question4", "imagefun", 3,
-						"no",0));
-				dataSource.addAnimeOPandED(new AnimeOpAndEdData("naruto", "go",
-						"artist", "music", "youtube", "answer", "question1",
-						"question2", "question3", "question4", "naruto", 3,
-						"no",0));
-				dataSource.addAnimeOPandED(new AnimeOpAndEdData("naruto", "go",
-						"artist", "music", "youtube", "answer", "question1",
-						"question2", "question3", "question4", "imagefun", 3,
-						"no",0));
-				dataSource.addAnimeOPandED(new AnimeOpAndEdData("naruto", "go",
-						"artist", "music", "youtube", "answer", "question1",
-						"question2", "question3", "question4", "level4", 3,
-						"no",0));
+				   
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Toaru Kagaku no Railgun S", "sister's noise", "fripSide", "toarukagakunorailguns_op2_sistersnoise", "https://www.youtube.com/watch?v=vX7wobS48YA", "Toaru Kagaku no Railgun S", "Toaru Kagaku no Railgun S", "Toaru Majutsu no Index ", "Shakugan no Shana", "Kaze no Stigma", "toarukagakunorailguns_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Strike the Blood", "Strike the Blood", "Kishida Kyoudan & The Akeboshi Rockets", "striketheblood_op1_kishida", "https://www.youtube.com/watch?v=qAFSVQkavKw", "Strike the Blood", "Strike the Blood", "Tokyo Ravens", "High School DxD", "Mahou Sensou", "striketheblood_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Log Horizon", "database feat. TAKUMA (10 Feet)", "MAN WITH A MISSION", "loghorizon_op1manwithamission", "https://www.youtube.com/watch?v=0_JAS_bctIY", "Log Horizon", "Log Horizon", "No Game No Life", "Oda Nobuna no Yabou", "JoJo's Bizarre Adventure (2012)", "loghorizon_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Kakumeiki Valvrave 2nd Season", "Kakumei Dualism", "Nana Mizuki x T.M.Revolution", "kakumeikivalvrave2_op1_nanaxtm", "https://www.youtube.com/watch?v=-92Uw2sFGdo", "Kakumeiki Valvrave 2nd Season", "Kakumeiki Valvrave 2nd Season", "Buddy Complex", "Mobile Suit Gundam 00", "Guilty Crown", "kakumeikivalvrave2_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Gundam Build Fighters", "Nibun no Ichi", "BACK-ON", "gundambuildfighters_op1_nibun", "https://www.youtube.com/watch?v=CtpVjl6LcNw", "Gundam Build Fighters", "Gundam Build Fighters", "Angelic Layer", "Mobile Fighter G Gundam", "Robotics;Notes", "gundambuildfighters_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Chuunibyou demo Koi ga Shitai! Ren", "VOICE", "ZAQ", "chuunibyoudemokoigashitairen_op1_voice", "https://www.youtube.com/watch?v=n7qPM88ZoiU", "Chuunibyou demo Koi ga Shitai! Ren", "Chuunibyou demo Koi ga Shitai! Ren", "Golden Time", "Ore no Kanojo to Osananajimi ga Shuraba Sugiru", "Sakurasou no Pet na Kanojo", "chuunibyoudemokoigashitairen_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("JoJo's Bizarre Adventure (2012)", "Roundabout", "YES", "jojosbizarreadventure_ed1_roundabout", "https://www.youtube.com/watch?v=16jY5U1hfhc", "JoJo's Bizarre Adventure (2012)", "JoJo's Bizarre Adventure (2012)", "Sengoku Basara", "Zankyou no Terror", "Inu x Boku SS", "jojosbizarreadventure_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Princess Jellyfish", "Koko Dake no Hanashi", "Chatmonchy", "princessjellyflish_op1_kokodake", "https://www.youtube.com/watch?v=jJoeGEEu5L4", "Princess Jellyfish", "Kimi ni Todoke", "Arakawa Under the Bridge", "Skip Beat!", "Princess Jellyfish", "princessjellyfish_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Free!", "Rage on", "OLDCODEX", "free_op1_rangeon", "https://www.youtube.com/watch?v=rqYdp6rOBaI", "Free!", "Free!", "K", "Over Drive", "Kuroko's Basketball", "free_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Noein", "Idea", "eufonius", "noein_op1_idea", "https://www.youtube.com/watch?v=SMYAABG4DEg", "Noein: To Your Other Self", "Noein: To Your Other Self", "Dennou Coil", "Now and Then, Here and There", "Darker than Black", "noein_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Moribito - Guardian of the Spirit", "SHINE", "L'Arc~en~Ciel", "moribito_op1_shine", "https://www.youtube.com/watch?v=YmJSwiHeOo4", "Moribito - Guardian of the Spirit", "Moribito - Guardian of the Spirit", "Tokyo Magnitude 8.0", "The Twelve Kingdoms", "Kure-nai", "moribitoguardian_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Fate/stay night", "disillusion", "Tainaka Sachi", "fatestaynight_op1_disillusion", "https://www.youtube.com/watch?v=Qy7Q77ZD_ME", "Fate/stay night", "Fate/stay night", "Shakugan no Shana", "Claymore", "Kurokami The Animation", "fatestaynight_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Devil Survivor 2 The Animation", "Be", "Song Riders", "devilsurvivor2_ed1_be", "https://www.youtube.com/watch?v=8w7t8zseUpU", "Devil Survivor 2 The Animation", "Devil Survivor 2 The Animation", "Persona 4 The Animation", "Gantz 2nd Stage", "Accel World", "devilsurvivor2_img", 3, "no",0));
+					   dataSource.addAnimeOPandED(new AnimeOpAndEdData("Shiki", "Kuchizuke", "Buck-Tick", "shiki_bucktick", "https://www.youtube.com/watch?v=Iw5u3QVdHjA", "Shiki", "Shiki", "Another", "Shinsekai yori", "Ghost Hound", "shiki_img", 3, "no",0));
+
 
 			} else {
 				Log.e("InsertLevel", "LEVEL ALREADY INSERTED");

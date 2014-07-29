@@ -129,6 +129,7 @@ public class LevelActivity extends BaseActivity {
 		//ONly Levels that are complete and are able to change rank AND TO BE CHANGED
 		changerankIcon(1);
 		changerankIcon(2);
+		changerankIcon(3);
 
 		Log.i("OKAY","totalLevel_1_complete!!!:"+ totalLevel_1_complete);
 		Log.i("OKAY","totalLevel_2_complete!!!:"+ totalLevel_2_complete);
@@ -171,6 +172,7 @@ public class LevelActivity extends BaseActivity {
 		//ONly Levels that are complete and are able to change rank AND TO BE CHANGED
 		changerankIcon(1);
 		changerankIcon(2);
+		changerankIcon(3);
 		
 		Log.i("OKAY","totalLevel_1_complete!!!:"+ totalLevel_1_complete);
 		Log.i("OKAY","totalLevel_2_complete!!!:"+ totalLevel_2_complete);
